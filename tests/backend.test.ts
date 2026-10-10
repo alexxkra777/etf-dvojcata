@@ -22,7 +22,7 @@ const SID2 = '22345678-1234-4234-8234-123456789abc';
 const SID3 = '32345678-1234-4234-8234-123456789abc';
 const baseEvent = { sid: SID, variant: 'a', type: 'page_view', ts: 1000 };
 const baseLead = {
-  email: ' Investor@Example.cz ', consent: true, consent_text_version: '2026-10',
+  email: ' Investor@Example.cz ', marketing_consent: false, notice_version: '2026-10',
   sid: SID, variant: 'a', utm: {}, context: {}, company: '',
 };
 
@@ -204,10 +204,12 @@ describe('event endpoint and body limits', () => {
 });
 
 describe('lead validation and storage', () => {
-  it('normalizes email and requires literal consent', () => {
+  it('normalizes email and keeps marketing consent optional', () => {
     expect(parseLead(baseLead).email).toBe('investor@example.cz');
-    for (const consent of [false, 'true', 1, undefined]) {
-      expect(() => parseLead({ ...baseLead, consent })).toThrow();
+    expect(parseLead({ ...baseLead, marketing_consent: undefined }).marketing_consent).toBe(false);
+    expect(parseLead({ ...baseLead, marketing_consent: true }).marketing_consent).toBe(true);
+    for (const marketing_consent of ['true', 1, null]) {
+      expect(() => parseLead({ ...baseLead, marketing_consent })).toThrow();
     }
   });
 
@@ -217,20 +219,25 @@ describe('lead validation and storage', () => {
       catch (error) { expect(error).toMatchObject({ status: 422, field: 'email', code: 'invalid' }); }
     });
 
-  it('limits calculator context and requires a consent version', () => {
+  it('limits calculator context and requires a notice version', () => {
     expect(() => parseLead({ ...baseLead, context: { text: 'a'.repeat(2048) } })).toThrow();
-    expect(() => parseLead({ ...baseLead, consent_text_version: '' })).toThrow();
+    expect(() => parseLead({ ...baseLead, notice_version: '' })).toThrow();
   });
 
   it('keeps first creation time, session history and consent proof on upsert', async () => {
     const first = await saveLead(parseLead(baseLead), new Date('2026-10-01T12:00:00Z'));
-    const second = await saveLead(parseLead({ ...baseLead, sid: SID2, consent_text_version: '2026-11' }), new Date('2026-10-10T12:00:00Z'));
+    const second = await saveLead(parseLead({ ...baseLead, sid: SID2, notice_version: '2026-11', marketing_consent: true }), new Date('2026-10-10T12:00:00Z'));
+    const third = await saveLead(parseLead({ ...baseLead, sid: SID3 }), new Date('2026-10-11T12:00:00Z'));
     expect(memory.leads.size).toBe(1);
     expect(second.created_at).toBe(first.created_at);
     expect(second.last_seen_at).toBe('2026-10-10T12:00:00.000Z');
     expect(second.sids).toEqual([SID, SID2]);
     expect(second.consent_history).toHaveLength(2);
-    expect(second.consent_history[1]).toEqual({ at: second.consent_at, version: '2026-11', sid: SID2 });
+    expect(second.consent_history[1]).toEqual({ at: '2026-10-10T12:00:00.000Z', version: '2026-11', marketing: true, sid: SID2 });
+    // a later visit with the box unticked keeps the earlier opt-in
+    expect(first.marketing_consent).toBe(false);
+    expect(third.marketing_consent).toBe(true);
+    expect(third.marketing_consent_at).toBe('2026-10-10T12:00:00.000Z');
   });
 });
 
@@ -272,9 +279,9 @@ describe('lead endpoint', () => {
     expect(checkDomain).not.toHaveBeenCalled();
   });
 
-  it('requires consent', async () => {
+  it('rejects a malformed marketing consent flag', async () => {
     const { res, result } = response();
-    await leadHandler(request({ ...baseLead, consent: 'true' }), res);
+    await leadHandler(request({ ...baseLead, marketing_consent: 'true' }), res);
     expect(result.statusCode).toBe(400);
     expect(memory.leads.size).toBe(0);
   });
@@ -305,7 +312,7 @@ describe('lead endpoint', () => {
     }));
     expect(timeout).toHaveBeenCalledWith(2000);
     const payload = JSON.parse(fetchMock.mock.calls[0][1]?.body as string);
-    expect(payload).toMatchObject({ email: 'investor@example.cz', consent: true, consent_text_version: '2026-10' });
+    expect(payload).toMatchObject({ email: 'investor@example.cz', marketing_consent: false, notice_version: '2026-10' });
     finishDelivery(new Response(null, { status: 200 }));
     await completion;
   });

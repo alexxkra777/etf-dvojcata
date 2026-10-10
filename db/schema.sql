@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS events (
   type text NOT NULL CHECK (type IN (
     'page_view', 'section_view', 'scroll_depth', 'engaged_5s', 'engaged_15s',
     'calc_change', 'compare_filter', 'twin_open', 'cta_click', 'form_view',
-    'form_focus', 'form_submit', 'lead_ok', 'lead_error', 'pdf_download', 'share_click'
+    'form_focus', 'form_submit', 'lead_ok', 'lead_error', 'pdf_download', 'share_click',
+    'quiz_answer', 'broker_answer'
   )),
   section varchar(32),
   value double precision,
@@ -31,8 +32,9 @@ CREATE TABLE IF NOT EXISTS leads (
   email varchar(254) PRIMARY KEY,
   created_at timestamptz NOT NULL DEFAULT now(),
   last_seen_at timestamptz NOT NULL DEFAULT now(),
-  consent_at timestamptz NOT NULL,
-  consent_text_version varchar(128) NOT NULL,
+  notice_version varchar(128) NOT NULL,
+  marketing_consent boolean NOT NULL DEFAULT false,
+  marketing_consent_at timestamptz,
   consent_history jsonb NOT NULL,
   sids uuid[] NOT NULL,
   variant varchar(16) NOT NULL,

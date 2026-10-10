@@ -2,6 +2,7 @@ export const eventTypes = [
   'page_view', 'section_view', 'scroll_depth', 'engaged_5s', 'engaged_15s',
   'calc_change', 'compare_filter', 'twin_open', 'cta_click', 'form_view',
   'form_focus', 'form_submit', 'lead_ok', 'lead_error', 'pdf_download', 'share_click',
+  'quiz_answer', 'broker_answer',
 ] as const;
 export type EventType = typeof eventTypes[number];
 export type Utm = Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>;
@@ -25,8 +26,9 @@ export interface StoredEvent extends EventInput {
 }
 export interface LeadInput {
   email: string;
-  consent: true;
-  consent_text_version: string;
+  // the guide is what they asked for, so it never depends on marketing consent
+  marketing_consent: boolean;
+  notice_version: string;
   sid: string;
   variant: string;
   utm: Utm;
@@ -99,9 +101,9 @@ export function parseLead(value: unknown): LeadInput {
     email.split('@')[0].length > 64 || email.split('@')[1]?.split('.').some(label => label.length > 63) || email.startsWith('.') || email.includes('..') || email.split('@')[0].endsWith('.')) {
     throw new HttpError(422, 'invalid', 'email');
   }
-  if (input.consent !== true) throw new HttpError(400, 'consent_required', 'consent');
+  if (input.marketing_consent !== undefined && typeof input.marketing_consent !== 'boolean') return invalid();
   return {
-    email, consent: true, consent_text_version: string(input.consent_text_version, 128),
+    email, marketing_consent: input.marketing_consent === true, notice_version: string(input.notice_version, 128),
     sid: sid(input.sid), variant: string(input.variant, 16), utm: utm(input.utm),
     context: smallObject(input.context, 2048),
   };

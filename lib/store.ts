@@ -4,9 +4,9 @@ import { HttpError, type LeadInput, type StoredEvent } from './validation.js';
 export interface StoredLead extends LeadInput {
   created_at: string;
   last_seen_at: string;
-  consent_at: string;
+  marketing_consent_at: string | null;
   sids: string[];
-  consent_history: { at: string; version: string; sid: string }[];
+  consent_history: { at: string; version: string; marketing: boolean; sid: string }[];
 }
 export const memory = { events: [] as StoredEvent[], leads: new Map<string, StoredLead>() };
 export function database() {
@@ -60,13 +60,17 @@ export async function saveEvents(events: StoredEvent[]): Promise<void> {
 
 export async function saveLead(lead: LeadInput, now = new Date(), event?: StoredEvent): Promise<StoredLead> {
   const at = now.toISOString();
-  const proof = { at, version: lead.consent_text_version, sid: lead.sid };
+  const proof = { at, version: lead.notice_version, marketing: lead.marketing_consent, sid: lead.sid };
   const sql = database();
   if (!sql) {
     if (event) checkMemoryLimit([event]);
     const old = memory.leads.get(lead.email);
+    // an unticked box on a later visit doesn't revoke an earlier opt-in, unsubscribing does
+    const marketing = lead.marketing_consent || Boolean(old?.marketing_consent);
     const saved: StoredLead = {
-      ...lead, created_at: old?.created_at ?? at, last_seen_at: at, consent_at: at,
+      ...lead, marketing_consent: marketing,
+      marketing_consent_at: lead.marketing_consent ? at : old?.marketing_consent_at ?? null,
+      created_at: old?.created_at ?? at, last_seen_at: at,
       sids: [...new Set([...(old?.sids ?? []), lead.sid])],
       consent_history: [...(old?.consent_history ?? []), proof],
     };
@@ -77,21 +81,22 @@ export async function saveLead(lead: LeadInput, now = new Date(), event?: Stored
   }
   const query = sql.query(`
     INSERT INTO leads (
-      email, created_at, last_seen_at, consent_at, consent_text_version,
+      email, created_at, last_seen_at, notice_version, marketing_consent, marketing_consent_at,
       consent_history, sids, variant, utm, context
-    ) VALUES ($1, $2, $2, $2, $3, $4::jsonb, ARRAY[$5::uuid], $6, $7::jsonb, $8::jsonb)
+    ) VALUES ($1, $2, $2, $3, $9, CASE WHEN $9 THEN $2::timestamptz END, $4::jsonb, ARRAY[$5::uuid], $6, $7::jsonb, $8::jsonb)
     ON CONFLICT (email) DO UPDATE SET
       last_seen_at = EXCLUDED.last_seen_at,
-      consent_at = EXCLUDED.consent_at,
-      consent_text_version = EXCLUDED.consent_text_version,
+      notice_version = EXCLUDED.notice_version,
+      marketing_consent = leads.marketing_consent OR EXCLUDED.marketing_consent,
+      marketing_consent_at = COALESCE(EXCLUDED.marketing_consent_at, leads.marketing_consent_at),
       consent_history = leads.consent_history || EXCLUDED.consent_history,
       sids = ARRAY(SELECT DISTINCT unnest(leads.sids || EXCLUDED.sids)),
       variant = EXCLUDED.variant, utm = EXCLUDED.utm, context = EXCLUDED.context
     RETURNING *
-  `, [lead.email, at, lead.consent_text_version, JSON.stringify([proof]), lead.sid,
-    lead.variant, JSON.stringify(lead.utm), JSON.stringify(lead.context)]);
+  `, [lead.email, at, lead.notice_version, JSON.stringify([proof]), lead.sid,
+    lead.variant, JSON.stringify(lead.utm), JSON.stringify(lead.context), lead.marketing_consent]);
   try {
     const [rows] = await sql.transaction([query, ...(event ? eventQueries(sql, [event]) : [])]);
-    return { ...rows[0], consent: true, sid: lead.sid } as StoredLead;
+    return { ...rows[0], sid: lead.sid } as StoredLead;
   } catch (error) { return databaseError(error); }
 }
