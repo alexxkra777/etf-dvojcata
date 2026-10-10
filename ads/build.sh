@@ -19,17 +19,35 @@ for source in Path(root,'ads').glob('*-*.html'):
     Path(temp,source.name).write_text(source.read_text().replace('{{N}}',number))
 Path(temp,'creative.css').write_text(Path(root,'ads/creative.css').read_text())
 PY
-for version in a b; do
-  for format in feed story; do
-    height=1350
-    [[ "$format" == story ]] && height=1920
-    "$CHROME" --headless=new --hide-scrollbars --force-device-scale-factor=1 \
-      --user-data-dir="$TEMP/profile-$version-$format" --no-first-run \
-      --no-default-browser-check --disable-background-networking \
-      --screenshot="$ROOT/ads/out/$version-$format.png" \
-      --window-size="1080,$height" --virtual-time-budget=1500 \
-      "file://$TEMP/$version-$format.html" >"$TEMP/$version-$format.log" 2>&1
-    [[ -s "$ROOT/ads/out/$version-$format.png" ]] || { cat "$TEMP/$version-$format.log" >&2; exit 1; }
-  done
-done
+python3 - "$ROOT" "$TEMP" "$CHROME" <<'PYRENDER'
+from pathlib import Path
+import os, shutil, signal, subprocess, sys, time
+root,temp,chrome=sys.argv[1:]
+for version in ('a','b'):
+    for form,height in (('feed',1350),('story',1920)):
+        output=Path(temp,f'{version}-{form}.png')
+        destination=Path(root,'ads/out',output.name)
+        args=[chrome,'--headless=new','--hide-scrollbars','--force-device-scale-factor=1',
+              f'--user-data-dir={temp}/profile-{version}-{form}','--no-first-run',
+              '--no-default-browser-check','--disable-background-networking',
+              f'--screenshot={output}',f'--window-size=1080,{height}',
+              '--virtual-time-budget=1500',f'file://{temp}/{version}-{form}.html']
+        with open(f'{temp}/{version}-{form}.log','w') as log:
+            proc=subprocess.Popen(args,stdout=log,stderr=log,start_new_session=True)
+            try:
+                deadline=time.monotonic()+45
+                while not output.exists() and proc.poll() is None and time.monotonic()<deadline:
+                    time.sleep(.2)
+                if not output.exists() or output.stat().st_size==0:
+                    raise RuntimeError(f'Chrome did not render {version}-{form}')
+                time.sleep(.3)
+            finally:
+                try: os.killpg(proc.pid,signal.SIGTERM)
+                except ProcessLookupError: pass
+                try: proc.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    os.killpg(proc.pid,signal.SIGKILL)
+                    proc.wait()
+        shutil.move(str(output),str(destination))
+PYRENDER
 printf 'Rendered feed (1080 × 1350) and story (1080 × 1920) for both versions.\n'
