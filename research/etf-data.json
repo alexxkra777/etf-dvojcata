@@ -1,0 +1,2585 @@
+{
+  "meta": {
+    "purpose": "Data for a landing page comparing popular NYSE / NYSE Arca ETFs with UCITS twins for a Czech retail investor",
+    "compiled": "2026-10-11",
+    "currency_note": "US ETF figures in USD; justETF fund sizes in EUR",
+    "returns_note": "Past returns as of 2026-09-30 unless stated; NAV-based; USD (not CZK - a CZK investor's result also depends on USD/CZK)"
+  },
+  "etfs": [
+    {
+      "ticker": "SPY",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "State Street SPDR S&P 500 ETF Trust",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "issuer": {
+        "value": "State Street (SPDR / State Street Investment Management)",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-10",
+        "note": "SSGA 'Listing Information as of Oct 10 2026': NYSE ARCA, USD, ISIN US78462F1030"
+      },
+      "inception_date": {
+        "value": "1993-01-22",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.0945,
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Gross expense ratio per prospectus; stockanalysis rounds to 0.09%"
+      },
+      "aum": {
+        "value": "USD 817,200.17 M",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "holdings_count": {
+        "value": 504,
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08",
+        "note": "fund holdings; index has 503 constituents"
+      },
+      "sec_yield_30d_pct": {
+        "value": 0.95,
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 0.97,
+        "source_url": "https://stockanalysis.com/etf/spy/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "index_tracked": {
+        "value": "S&P 500 Index",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "Fund before-tax NAV, average annual, USD",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 15.6,
+        "3y": 22.73,
+        "5y": 13.65,
+        "10y": 15.18,
+        "since_inception": 10.82,
+        "since_inception_start": "1993-01-22"
+      }
+    },
+    {
+      "ticker": "VOO",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard S&P 500 ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VOO/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/voo/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows 'NYSEARCA: VOO'; Vanguard API has no exchange field"
+      },
+      "inception_date": {
+        "value": "2010-09-07",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VOO/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.03,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-04-28",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VOO/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 1.0 trillion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VOO/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 1.8 trillion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 505,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VOO/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": 1.0,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "note": "Vanguard 'yield' field, footnote: based on holdings' yield for last 30 days"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 1.04,
+        "source_url": "https://stockanalysis.com/etf/voo/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VOO/distribution"
+      },
+      "index_tracked": {
+        "value": "S&P 500",
+        "source_url": "https://stockanalysis.com/etf/voo/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'S&P 500 Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo (API https://investor.vanguard.com/vmf/api/VOO/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 15.7,
+        "3y": 22.85,
+        "5y": 13.75,
+        "10y": 15.29,
+        "since_inception": 14.94,
+        "since_inception_start": "2010-09-07"
+      }
+    },
+    {
+      "ticker": "IVV",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "iShares Core S&P 500 ETF",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "issuer": {
+        "value": "iShares (BlackRock)",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "inception_date": {
+        "value": "2000-05-15",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.03,
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Fees as stated in the prospectus"
+      },
+      "aum": {
+        "value": "USD 896,439,871,787 (net assets of fund)",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "holdings_count": {
+        "value": 504,
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "sec_yield_30d_pct": {
+        "value": 0.94,
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 1.06,
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "iShares '12m Trailing Yield'"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "index_tracked": {
+        "value": "S&P 500 Index",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 15.71,
+        "3y": 22.85,
+        "5y": 13.76,
+        "10y": 15.3,
+        "since_inception": 8.42,
+        "since_inception_start": "2000-05-15"
+      }
+    },
+    {
+      "ticker": "VTI",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard Morningstar Total Stock Market ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VTI/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/vti/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows NYSEARCA"
+      },
+      "inception_date": {
+        "value": "2001-05-24",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VTI/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.03,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": "2026-04-28",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VTI/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 690.1 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VTI/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 2.3 trillion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 3507,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VTI/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": 1.03,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "note": "Vanguard 'yield' field, footnote: based on holdings' yield for last 30 days"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 1.03,
+        "source_url": "https://stockanalysis.com/etf/vti/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VTI/distribution"
+      },
+      "index_tracked": {
+        "value": "Morningstar US Total Market Index (formerly CRSP US Total Market Index)",
+        "source_url": "https://stockanalysis.com/etf/vti/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Spliced Total Stock Market Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vti (API https://investor.vanguard.com/vmf/api/VTI/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 15.33,
+        "3y": 22.32,
+        "5y": 12.56,
+        "10y": 14.7,
+        "since_inception": 9.44,
+        "since_inception_start": "2001-05-24"
+      },
+      "rename_note": {
+        "value": "Fund renamed from 'Vanguard Total Stock Market ETF' and benchmark rebranded CRSP -> Morningstar after Morningstar acquired CRSP; Vanguard fact sheet (as of 2026-06-30) said the change was expected in July 2026. The Vanguard API now returns the new name.",
+        "source_url": "https://workplace.vanguard.com/iippdf/pdfs/FS970R.pdf",
+        "source_url_secondary": "https://investor.vanguard.com/vmf/api/VTI/profile",
+        "accessed": "2026-10-11",
+        "as_of": "2026-06-30",
+        "note": "Fact sheet content seen only via search-result summary; new name confirmed in Vanguard API profile"
+      }
+    },
+    {
+      "ticker": "VT",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard Total World Stock ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VT/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/vt/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows NYSEARCA"
+      },
+      "inception_date": {
+        "value": "2008-06-24",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VT/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.06,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": "2026-02-27",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VT/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 81.9 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VT/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 101.7 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 10088,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VT/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": null,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "not published by the Vanguard API for this fund"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 1.51,
+        "source_url": "https://stockanalysis.com/etf/vt/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VT/distribution"
+      },
+      "index_tracked": {
+        "value": "FTSE Global All Cap Index",
+        "source_url": "https://stockanalysis.com/etf/vt/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Spliced Total World Stock Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vt (API https://investor.vanguard.com/vmf/api/VT/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 16.32,
+        "3y": 21.42,
+        "5y": 11.34,
+        "10y": 12.32,
+        "since_inception": 8.78,
+        "since_inception_start": "2008-06-24"
+      }
+    },
+    {
+      "ticker": "VEA",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard FTSE Developed Markets ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VEA/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/vea/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows NYSEARCA"
+      },
+      "inception_date": {
+        "value": "2007-07-20",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VEA/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.03,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": "2026-04-28",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VEA/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 238.1 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VEA/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 323.8 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 3895,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VEA/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": null,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "not published by the Vanguard API for this fund"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 2.42,
+        "source_url": "https://stockanalysis.com/etf/vea/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VEA/distribution"
+      },
+      "index_tracked": {
+        "value": "FTSE Developed All Cap ex US Index",
+        "source_url": "https://stockanalysis.com/etf/vea/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Spliced Developed ex US Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vea (API https://investor.vanguard.com/vmf/api/VEA/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 20.77,
+        "3y": 20.95,
+        "5y": 10.32,
+        "10y": 9.76,
+        "since_inception": 4.93,
+        "since_inception_start": "2007-07-20"
+      }
+    },
+    {
+      "ticker": "VWO",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard FTSE Emerging Markets ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VWO/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/vwo/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows NYSEARCA"
+      },
+      "inception_date": {
+        "value": "2005-03-04",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VWO/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.06,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-02-27",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VWO/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 127.3 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VWO/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 168.5 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 6348,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VWO/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": null,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "not published by the Vanguard API for this fund"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 2.04,
+        "source_url": "https://stockanalysis.com/etf/vwo/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VWO/distribution"
+      },
+      "index_tracked": {
+        "value": "FTSE Emerging Markets All Cap China A Inclusion Index",
+        "source_url": "https://stockanalysis.com/etf/vwo/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Spliced Emerging Markets Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo (API https://investor.vanguard.com/vmf/api/VWO/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 12.54,
+        "3y": 17.91,
+        "5y": 6.62,
+        "10y": 7.66,
+        "since_inception": 6.79,
+        "since_inception_start": "2005-03-04"
+      }
+    },
+    {
+      "ticker": "SCHD",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Schwab U.S. Dividend Equity ETF",
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "issuer": {
+        "value": "Schwab Asset Management (Charles Schwab)",
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Schwab fund profile: 'Exchange: NYSE Arca, Inc.'"
+      },
+      "inception_date": {
+        "value": "2011-10-20",
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.06,
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "aum": {
+        "value": "USD 110,315,371,812.80 (total net assets)",
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "holdings_count": {
+        "value": 102,
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "sec_yield_30d_pct": {
+        "value": 3.32,
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 3.0,
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Schwab 'Distribution Yield (TTM)'; stockanalysis shows 3.19% as of 2026-10-09"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://stockanalysis.com/etf/schd/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "index_tracked": {
+        "value": "Dow Jones U.S. Dividend 100 Index",
+        "source_url": "https://www.schwabassetmanagement.com/products/schd",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "average annual total return, USD (third-party data shown on investor.vanguard.com)",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/schd (API https://investor.vanguard.com/vmf/api/SCHD/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 23.36,
+        "3y": 15.44,
+        "5y": 9.48,
+        "10y": 12.44,
+        "since_inception": 13.11,
+        "since_inception_start": "2011-10-20",
+        "note": "Schwab's own performance table did not load (HTTP 403 to curl/WebFetch; the browser snapshot had only the key-facts block). Secondary source - verify against Schwab before publishing."
+      },
+      "access_note": "Schwab key facts were read from a Playwright accessibility snapshot of the Schwab page taken 2026-10-11 ~01:12 CEST; direct HTTP requests got 403."
+    },
+    {
+      "ticker": "VYM",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard High Dividend Yield ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VYM/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/vym/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows NYSEARCA"
+      },
+      "inception_date": {
+        "value": "2006-11-10",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VYM/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.04,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": "2026-02-27",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VYM/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 83.1 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VYM/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 100.8 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 603,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VYM/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": 2.35,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "note": "Vanguard 'yield' field, footnote: based on holdings' yield for last 30 days"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 2.32,
+        "source_url": "https://stockanalysis.com/etf/vym/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VYM/distribution"
+      },
+      "index_tracked": {
+        "value": "FTSE High Dividend Yield Index",
+        "source_url": "https://stockanalysis.com/etf/vym/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'FTSE High Dividend Yield Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vym (API https://investor.vanguard.com/vmf/api/VYM/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 12.72,
+        "3y": 17.67,
+        "5y": 11.63,
+        "10y": 11.28,
+        "since_inception": 9.13,
+        "since_inception_start": "2006-11-10"
+      }
+    },
+    {
+      "ticker": "AGG",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "iShares Core U.S. Aggregate Bond ETF",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "issuer": {
+        "value": "iShares (BlackRock)",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "inception_date": {
+        "value": "2003-09-22",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.03,
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "aum": {
+        "value": "USD 137,104,891,172 (net assets of fund)",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "holdings_count": {
+        "value": 13400,
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "sec_yield_30d_pct": {
+        "value": 5.1,
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 4.19,
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08",
+        "note": "iShares '12m Trailing Yield'"
+      },
+      "distribution_frequency": {
+        "value": "Monthly",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "index_tracked": {
+        "value": "Bloomberg US Aggregate Bond Index",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": -1.87,
+        "3y": 4.05,
+        "5y": -0.64,
+        "10y": 1.11,
+        "since_inception": 2.95,
+        "since_inception_start": "2003-09-22"
+      }
+    },
+    {
+      "ticker": "GLD",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "SPDR Gold Shares",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "issuer": {
+        "value": "State Street (SPDR); sponsor World Gold Trust Services not verified this session",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "SSGA listing table: NYSE ARCA, USD, ISIN US78463V1070"
+      },
+      "inception_date": {
+        "value": "2004-11-18",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.4,
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Gross expense ratio"
+      },
+      "aum": {
+        "value": "USD 141,682.53 M",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "holdings_count": {
+        "value": "n/a - physical gold bullion",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis lists 2 lines: Gold 100%, Cash 0%"
+      },
+      "sec_yield_30d_pct": null,
+      "dividend_yield_ttm_pct": {
+        "value": "none - GLD pays no distributions",
+        "source_url": "https://stockanalysis.com/etf/gld/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "none",
+        "source_url": "https://stockanalysis.com/etf/gld/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "index_tracked": {
+        "value": "LBMA Gold Price PM (benchmark)",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "LBMA Gold Price PM on 2026-10-09: USD 4,124.55/oz per SSGA page"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-gold-shares-gld",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 8.74,
+        "3y": 30.16,
+        "5y": 18.62,
+        "10y": 11.74,
+        "since_inception": 10.37,
+        "since_inception_start": "2004-11-18"
+      }
+    },
+    {
+      "ticker": "VNQ",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "Vanguard Real Estate ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VNQ/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://stockanalysis.com/etf/vnq/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis shows NYSEARCA"
+      },
+      "inception_date": {
+        "value": "2004-09-23",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VNQ/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.13,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": "2026-05-28",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VNQ/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 38.1 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VNQ/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 70.8 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 139,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VNQ/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": null,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "not published by the Vanguard API for this fund"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 3.76,
+        "source_url": "https://stockanalysis.com/etf/vnq/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/VNQ/distribution"
+      },
+      "index_tracked": {
+        "value": "MSCI US Investable Market Real Estate 25/50 Index",
+        "source_url": "https://stockanalysis.com/etf/vnq/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Real Estate Spliced Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vnq (API https://investor.vanguard.com/vmf/api/VNQ/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 1.68,
+        "3y": 10.04,
+        "5y": 1.34,
+        "10y": 4.39,
+        "since_inception": 7.25,
+        "since_inception_start": "2004-09-23"
+      }
+    },
+    {
+      "ticker": "IWM",
+      "in_nyse_list": true,
+      "full_name": {
+        "value": "iShares Russell 2000 ETF",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "issuer": {
+        "value": "iShares (BlackRock)",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "NYSE Arca",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "inception_date": {
+        "value": "2000-05-22",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.19,
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "aum": {
+        "value": "USD 78,740,032,209 (net assets of fund)",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "holdings_count": {
+        "value": 1984,
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08"
+      },
+      "sec_yield_30d_pct": {
+        "value": 1.09,
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 0.9,
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "iShares '12m Trailing Yield'"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "index_tracked": {
+        "value": "Russell 2000 Index",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 16.06,
+        "3y": 17.59,
+        "5y": 6.22,
+        "10y": 9.75,
+        "since_inception": 8.35,
+        "since_inception_start": "2000-05-22"
+      }
+    },
+    {
+      "ticker": "QQQ",
+      "in_nyse_list": false,
+      "exclusion_reason": "Primary listing is Nasdaq, not NYSE/NYSE Arca. Keep only as 'you may have heard of it' context.",
+      "full_name": {
+        "value": "Invesco QQQ Trust, Series 1",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "issuer": {
+        "value": "Invesco",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "Nasdaq",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis shows 'NASDAQ: QQQ'"
+      },
+      "inception_date": {
+        "value": "1999-03-10",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "expense_ratio_pct": {
+        "value": 0.18,
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "same 0.18% in Vanguard-hosted third-party profile (as of 2025-12-22)"
+      },
+      "aum": {
+        "value": "USD 507.76 B",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "holdings_count": {
+        "value": 103,
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 0.41,
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "index_tracked": {
+        "value": "Nasdaq-100 Index",
+        "source_url": "https://stockanalysis.com/etf/qqq/",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "average annual total return, USD (third-party data on investor.vanguard.com)",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/qqq (API https://investor.vanguard.com/vmf/api/QQQ/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 23.75,
+        "3y": 28.04,
+        "5y": 16.32,
+        "10y": 20.91,
+        "since_inception": 10.88,
+        "since_inception_start": "1999-03-10",
+        "note": "invesco.com not fetched; secondary source"
+      }
+    },
+    {
+      "ticker": "VXUS",
+      "in_nyse_list": false,
+      "full_name": {
+        "value": "Vanguard Total International Stock ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/3369/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "Nasdaq",
+        "source_url": "https://stockanalysis.com/etf/vxus/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "stockanalysis 'NASDAQ: VXUS'; Nasdaq listed and began trading VXUS on 2011-01-28 (per search result citing Nasdaq press material). Vanguard API only answered via fund id 3369."
+      },
+      "inception_date": {
+        "value": "2011-01-26",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/3369/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.05,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": "2026-02-27",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/3369/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 164.9 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/3369/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 665.7 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 8790,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/3369/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": null,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "not published by the Vanguard API for this fund"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 2.34,
+        "source_url": "https://stockanalysis.com/etf/vxus/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Quarterly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/3369/distribution"
+      },
+      "index_tracked": {
+        "value": "FTSE Global All Cap ex US Index",
+        "source_url": "https://stockanalysis.com/etf/vxus/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Spl Total International Stock Index'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/vxus (API https://investor.vanguard.com/vmf/api/3369/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": 18.49,
+        "3y": 20.15,
+        "5y": 9.35,
+        "10y": 9.2,
+        "since_inception": 6.53,
+        "since_inception_start": "2011-01-26"
+      },
+      "exclusion_reason": "Primary listing is Nasdaq."
+    },
+    {
+      "ticker": "BND",
+      "in_nyse_list": false,
+      "full_name": {
+        "value": "Vanguard Total Bond Market ETF",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/BND/profile (longName)"
+      },
+      "issuer": {
+        "value": "Vanguard",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": null
+      },
+      "primary_listing_exchange": {
+        "value": "Nasdaq",
+        "source_url": "https://corpaemdisp.essp.c1.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/Press-Release-Vanguard-To-Transfer-BND-To-Nasdaq-Exchange-062018.html",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard press release 2018-06-20: BND listing moved from NYSE Arca to Nasdaq (~2018-07-26); stockanalysis also shows 'NASDAQ: BND'. Holdings: Vanguard API 11,421 bonds vs stockanalysis '15,000'."
+      },
+      "inception_date": {
+        "value": "2007-04-03",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/BND/profile"
+      },
+      "expense_ratio_pct": {
+        "value": 0.03,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-04-28",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/BND/profile; expenseRatioAsOfDate = prospectus date"
+      },
+      "aum_etf_share_class": {
+        "value": "USD 163.3 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/BND/characteristic shareClassTotalNetAssets (ETF share class only)"
+      },
+      "aum_fund_total_all_share_classes": {
+        "value": "USD 398.9 billion",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "totalNetAssets incl. mutual-fund share classes"
+      },
+      "holdings_count": {
+        "value": 11421,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-08-31",
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/BND/characteristic"
+      },
+      "sec_yield_30d_pct": {
+        "value": 5.14,
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-08",
+        "note": "Vanguard 'yield' field, footnote: based on holdings' yield for last 30 days"
+      },
+      "dividend_yield_ttm_pct": {
+        "value": 4.19,
+        "source_url": "https://stockanalysis.com/etf/bnd/",
+        "accessed": "2026-10-11",
+        "as_of": "2026-10-09",
+        "note": "stockanalysis.com page, price at close 2026-10-09, page 'last checked' 2026-10-10; secondary source"
+      },
+      "distribution_frequency": {
+        "value": "Monthly",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard API https://investor.vanguard.com/vmf/api/BND/distribution"
+      },
+      "index_tracked": {
+        "value": "Bloomberg U.S. Aggregate Float Adjusted Index",
+        "source_url": "https://stockanalysis.com/etf/bnd/",
+        "accessed": "2026-10-11",
+        "as_of": null,
+        "note": "Vanguard benchmark label: 'Spliced Bloomberg USAgg Flt AdjIx'"
+      },
+      "returns_nav_annualized_pct": {
+        "basis": "NAV total return, average annual, USD",
+        "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/bnd (API https://investor.vanguard.com/vmf/api/BND/performance)",
+        "accessed": "2026-10-11",
+        "as_of": "2026-09-30",
+        "1y": -1.82,
+        "3y": 4.04,
+        "5y": -0.64,
+        "10y": 1.13,
+        "since_inception": 2.86,
+        "since_inception_start": "2007-04-03"
+      },
+      "exclusion_reason": "Primary listing moved to Nasdaq in 2018. Use AGG as the NYSE Arca bond example."
+    }
+  ],
+  "ucits_twins": [
+    {
+      "isin": "IE00B5BMR087",
+      "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+      "us_counterparts": [
+        "SPY",
+        "VOO",
+        "IVV"
+      ],
+      "match_quality": "same index (S&P 500)",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR CSSPX",
+        "Euronext Amsterdam EUR CSPX",
+        "London Stock Exchange GBX CSP1",
+        "London Stock Exchange USD CSPX",
+        "XETRA EUR SXR8"
+      ],
+      "ter_pct": "0.07% p.a.",
+      "fund_size": "EUR 141,385 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "S&P 500®",
+      "holdings": "503",
+      "inception": "19 May 2010",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B5BMR087",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)",
+      "note": "Largest UCITS S&P 500 ETF. Fund size likely covers this share class; justETF does not say."
+    },
+    {
+      "isin": "IE00BFMXXD54",
+      "name": "Vanguard S&P 500 UCITS ETF (USD) Accumulating",
+      "us_counterparts": [
+        "VOO",
+        "SPY",
+        "IVV"
+      ],
+      "match_quality": "same index (S&P 500), Vanguard's own UCITS version (accumulating)",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VUAA",
+        "London Stock Exchange GBP VUAG",
+        "London Stock Exchange USD VUAA",
+        "XETRA EUR VUAA"
+      ],
+      "ter_pct": "0.07% p.a.",
+      "fund_size": "EUR 33,371 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "S&P 500®",
+      "holdings": "503",
+      "inception": "14 May 2019",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BFMXXD54",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B3XXRP09",
+      "name": "Vanguard S&P 500 UCITS ETF (USD) Distributing",
+      "us_counterparts": [
+        "VOO",
+        "SPY",
+        "IVV"
+      ],
+      "match_quality": "same index (S&P 500), distributing share class",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VUSA",
+        "Euronext Amsterdam EUR VUSA",
+        "Euronext Paris EUR VUSA",
+        "London Stock Exchange GBP VUSA",
+        "London Stock Exchange USD VUSD",
+        "XETRA EUR VUSA"
+      ],
+      "ter_pct": "0.07% p.a.",
+      "fund_size": "EUR 48,236 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "S&P 500®",
+      "holdings": "503",
+      "inception": "22 May 2012",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B3XXRP09",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE000XZSV718",
+      "name": "State Street SPDR S&P 500 UCITS ETF USD Unhedged (Acc)",
+      "us_counterparts": [
+        "SPY",
+        "VOO",
+        "IVV"
+      ],
+      "match_quality": "same index (S&P 500); lowest TER in this list (0.03%)",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR SP5A",
+        "Euronext Amsterdam EUR SPYL",
+        "London Stock Exchange GBP SPXL",
+        "London Stock Exchange USD SPYL",
+        "XETRA EUR SPYL"
+      ],
+      "ter_pct": "0.03% p.a.",
+      "fund_size": "EUR 17,596 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "S&P 500®",
+      "holdings": "504",
+      "inception": "31 October 2023",
+      "legal_form": "UCITS ETF",
+      "provider": "State Street",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE000XZSV718",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BJ0KDR00",
+      "name": "Xtrackers MSCI USA UCITS ETF 1C",
+      "us_counterparts": [
+        "VTI"
+      ],
+      "match_quality": "approximate: MSCI USA = large+mid caps (~85% of US market), no small caps",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR XD9U",
+        "London Stock Exchange GBX XDUS",
+        "London Stock Exchange USD XD9U",
+        "XETRA EUR XD9U"
+      ],
+      "ter_pct": "0.03% p.a.",
+      "fund_size": "EUR 12,329 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "MSCI USA",
+      "holdings": "525",
+      "inception": "9 May 2014",
+      "legal_form": "UCITS ETF",
+      "provider": "Xtrackers",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BJ0KDR00",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)",
+      "note": "No liquid UCITS ETF tracking a US total-market index was found. SPDR Russell 3000 US Total Market UCITS ETF (IE00BKY7WX37) exists on justETF but shows fund size EUR 4 m and no exchange listings - not practical."
+    },
+    {
+      "isin": "IE00BK5BQT80",
+      "name": "Vanguard FTSE All-World UCITS ETF (USD) Accumulating",
+      "us_counterparts": [
+        "VT"
+      ],
+      "match_quality": "close: FTSE All-World (large+mid, developed+emerging); VT tracks FTSE Global All Cap incl. small caps",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VWCE",
+        "Euronext Amsterdam EUR VWCE",
+        "London Stock Exchange GBP VWRP",
+        "London Stock Exchange USD VWRA",
+        "XETRA EUR VWCE"
+      ],
+      "ter_pct": "0.14% p.a.",
+      "fund_size": "EUR 55,102 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "FTSE All-World",
+      "holdings": "3,759",
+      "inception": "23 July 2019",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BK5BQT80",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B3RBWM25",
+      "name": "Vanguard FTSE All-World UCITS ETF (USD) Distributing",
+      "us_counterparts": [
+        "VT"
+      ],
+      "match_quality": "close: distributing version of VWCE",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VWRL",
+        "Euronext Amsterdam EUR VWRL",
+        "Euronext Paris EUR VWRL",
+        "London Stock Exchange GBP VWRL",
+        "London Stock Exchange USD VWRD",
+        "XETRA EUR VGWL"
+      ],
+      "ter_pct": "0.14% p.a.",
+      "fund_size": "EUR 24,335 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "FTSE All-World",
+      "holdings": "3,759",
+      "inception": "22 May 2012",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B3RBWM25",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B3YLTY66",
+      "name": "State Street SPDR MSCI All Country World Investable Market UCITS ETF USD Unhedged (Acc)",
+      "us_counterparts": [
+        "VT"
+      ],
+      "match_quality": "close: MSCI ACWI IMI includes small caps like VT's index",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR IMIE",
+        "Euronext Paris EUR IMIE",
+        "London Stock Exchange USD IMID",
+        "XETRA EUR SPYI"
+      ],
+      "ter_pct": "0.17% p.a.",
+      "fund_size": "EUR 8,257 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "MSCI All Country World Investable Market (ACWI IMI)",
+      "holdings": "5,981",
+      "inception": "13 May 2011",
+      "legal_form": "UCITS ETF",
+      "provider": "State Street",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B3YLTY66",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE0009A5ADV9",
+      "name": "Vanguard FTSE All-World Ex-U.S. UCITS ETF USD Acc",
+      "us_counterparts": [
+        "VXUS"
+      ],
+      "match_quality": "close: FTSE All-World ex US (large+mid); VXUS index also includes small caps",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VXUS",
+        "Euronext Amsterdam EUR VXUS",
+        "London Stock Exchange GBP VXUS",
+        "London Stock Exchange USD VXUA",
+        "XETRA EUR VXUS"
+      ],
+      "ter_pct": "0.12% p.a.",
+      "fund_size": "EUR 110 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Sampling )",
+      "fund_currency": "USD",
+      "index": "FTSE All-World ex US",
+      "holdings": "2,340",
+      "inception": "18 August 2026",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE0009A5ADV9",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)",
+      "note": "Very new (inception 2026-08-18) and small (EUR 110 m) - check liquidity/spreads; justETF fund size on access date."
+    },
+    {
+      "isin": "IE0006WW1TQ4",
+      "name": "Xtrackers MSCI World ex USA UCITS ETF 1C",
+      "us_counterparts": [
+        "VEA"
+      ],
+      "match_quality": "approximate: MSCI World ex USA (developed, large+mid, ~755 holdings) vs VEA's FTSE Developed All Cap ex US (~3,900 holdings)",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR EXUS",
+        "London Stock Exchange GBP XMWX",
+        "London Stock Exchange USD EXUS",
+        "XETRA EUR EXUS"
+      ],
+      "ter_pct": "0.15% p.a.",
+      "fund_size": "EUR 6,989 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "MSCI World ex USA",
+      "holdings": "755",
+      "inception": "6 March 2024",
+      "legal_form": "UCITS ETF",
+      "provider": "Xtrackers",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE0006WW1TQ4",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BK5BR733",
+      "name": "Vanguard FTSE Emerging Markets UCITS ETF (USD) Accumulating",
+      "us_counterparts": [
+        "VWO"
+      ],
+      "match_quality": "same index family (FTSE Emerging), Vanguard UCITS accumulating",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VFEA",
+        "London Stock Exchange GBP VFEG",
+        "London Stock Exchange USD VFEA",
+        "XETRA EUR VFEA"
+      ],
+      "ter_pct": "0.17% p.a.",
+      "fund_size": "EUR 2,192 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "FTSE Emerging",
+      "holdings": "2,289",
+      "inception": "24 September 2019",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BK5BR733",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B3VVMM84",
+      "name": "Vanguard FTSE Emerging Markets UCITS ETF (USD) Distributing",
+      "us_counterparts": [
+        "VWO"
+      ],
+      "match_quality": "same index family (FTSE Emerging), distributing",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VFEM",
+        "Euronext Amsterdam EUR VFEM",
+        "Euronext Paris EUR VFEM",
+        "London Stock Exchange GBP VFEM",
+        "London Stock Exchange USD VDEM",
+        "XETRA EUR VFEM"
+      ],
+      "ter_pct": "0.17% p.a.",
+      "fund_size": "EUR 3,234 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "FTSE Emerging",
+      "holdings": "2,289",
+      "inception": "22 May 2012",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B3VVMM84",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BKM4GZ66",
+      "name": "iShares Core MSCI Emerging Markets IMI UCITS ETF (Acc)",
+      "us_counterparts": [
+        "VWO"
+      ],
+      "match_quality": "close: MSCI EM IMI (incl. small caps), most popular UCITS EM ETF by size",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR EIMI",
+        "Euronext Amsterdam EUR EMIM",
+        "London Stock Exchange GBX EMIM",
+        "London Stock Exchange USD EIMI",
+        "XETRA EUR IS3N"
+      ],
+      "ter_pct": "0.18% p.a.",
+      "fund_size": "EUR 40,895 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "MSCI Emerging Markets Investable Market (IMI)",
+      "holdings": "2,902",
+      "inception": "30 May 2014",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BKM4GZ66",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B6YX5D40",
+      "name": "State Street SPDR S&P U.S. Dividend Aristocrats UCITS ETF USD Unhedged (Dist)",
+      "us_counterparts": [
+        "SCHD",
+        "VYM"
+      ],
+      "match_quality": "different index: S&P High Yield Dividend Aristocrats (US); no UCITS ETF on Dow Jones U.S. Dividend 100 found",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR USDV",
+        "London Stock Exchange GBP USDV",
+        "London Stock Exchange USD UDVD",
+        "XETRA EUR SPYD"
+      ],
+      "ter_pct": "0.35% p.a.",
+      "fund_size": "EUR 3,261 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "S&P High Yield Dividend Aristocrats",
+      "holdings": "155",
+      "inception": "14 October 2011",
+      "legal_form": "UCITS ETF",
+      "provider": "State Street",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B6YX5D40",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B8GKDB10",
+      "name": "Vanguard FTSE All-World High Dividend Yield UCITS ETF Distributing",
+      "us_counterparts": [
+        "VYM",
+        "SCHD"
+      ],
+      "match_quality": "different scope: global (FTSE All-World High Dividend Yield), not US-only",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VHYL",
+        "Euronext Amsterdam EUR VHYL",
+        "Euronext Paris EUR VHYL",
+        "London Stock Exchange GBP VHYL",
+        "London Stock Exchange USD VHYD",
+        "XETRA EUR VGWD"
+      ],
+      "ter_pct": "0.29% p.a.",
+      "fund_size": "EUR 9,982 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "FTSE All-World High Dividend Yield",
+      "holdings": "2,348",
+      "inception": "21 May 2013",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B8GKDB10",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BK5BR626",
+      "name": "Vanguard FTSE All-World High Dividend Yield UCITS ETF Acc",
+      "us_counterparts": [
+        "VYM",
+        "SCHD"
+      ],
+      "match_quality": "different scope: global; accumulating version of VHYL",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR VHYA",
+        "Euronext Amsterdam EUR VGWE",
+        "London Stock Exchange GBP VHYG",
+        "London Stock Exchange USD VHYA",
+        "XETRA EUR VGWE"
+      ],
+      "ter_pct": "0.29% p.a.",
+      "fund_size": "EUR 3,093 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "FTSE All-World High Dividend Yield",
+      "holdings": "2,348",
+      "inception": "24 September 2019",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BK5BR626",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B44CGS96",
+      "name": "iShares US Aggregate Bond UCITS ETF (Dist)",
+      "us_counterparts": [
+        "AGG",
+        "BND"
+      ],
+      "match_quality": "same index (Bloomberg US Aggregate Bond), USD, distributing",
+      "tickers_by_exchange": [
+        "London Stock Exchange GBP SUAG",
+        "London Stock Exchange USD IUAG",
+        "XETRA EUR EUNX"
+      ],
+      "ter_pct": "0.25% p.a.",
+      "fund_size": "EUR 1,054 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Semi annually",
+      "domicile": "Ireland",
+      "replication": "Physical ( Sampling )",
+      "fund_currency": "USD",
+      "index": "Bloomberg US Aggregate Bond",
+      "holdings": "9,580",
+      "inception": "13 September 2011",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B44CGS96",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BDFJYM28",
+      "name": "iShares US Aggregate Bond UCITS ETF EUR Hedged (Acc)",
+      "us_counterparts": [
+        "AGG",
+        "BND"
+      ],
+      "match_quality": "same index, EUR-hedged accumulating share class (removes USD/EUR risk, not CZK risk)",
+      "tickers_by_exchange": [
+        "London Stock Exchange EUR IUAE"
+      ],
+      "ter_pct": "0.30% p.a.",
+      "fund_size": "EUR 343 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Sampling )",
+      "fund_currency": "EUR",
+      "index": "Bloomberg US Aggregate Bond (EUR Hedged)",
+      "holdings": "9,580",
+      "inception": "10 April 2018",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BDFJYM28",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B579F325",
+      "name": "Invesco Physical Gold ETC",
+      "us_counterparts": [
+        "GLD"
+      ],
+      "match_quality": "same exposure (physical gold) but ETC, not a fund",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR SGLD",
+        "Euronext Amsterdam EUR SGLD",
+        "London Stock Exchange GBX SGLP",
+        "London Stock Exchange USD SGLD",
+        "XETRA EUR 8PSG"
+      ],
+      "ter_pct": "0.12% p.a.",
+      "fund_size": "EUR 25,786 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Physically backed )",
+      "fund_currency": "USD",
+      "index": null,
+      "holdings": null,
+      "inception": "25 June 2009",
+      "legal_form": "ETC (debt security backed by physical gold), not a UCITS fund",
+      "provider": "Invesco",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B579F325",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)",
+      "note": "Physical gold cannot be packed into a single-commodity UCITS fund; European gold products are ETCs (debt securities)."
+    },
+    {
+      "isin": "IE00B4ND3602",
+      "name": "iShares Physical Gold ETC",
+      "us_counterparts": [
+        "GLD"
+      ],
+      "match_quality": "same exposure (physical gold), ETC",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR SGLN",
+        "London Stock Exchange EUR EGLN",
+        "London Stock Exchange GBX SGLN",
+        "London Stock Exchange USD IGLN",
+        "XETRA EUR PPFB"
+      ],
+      "ter_pct": "0.12% p.a.",
+      "fund_size": "EUR 34,064 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Physically backed )",
+      "fund_currency": "USD",
+      "index": null,
+      "holdings": null,
+      "inception": "8 April 2011",
+      "legal_form": "ETC (debt security backed by physical gold), not a UCITS fund",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B4ND3602",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "DE000A0S9GB0",
+      "name": "Xetra-Gold",
+      "us_counterparts": [
+        "GLD"
+      ],
+      "match_quality": "same exposure (physical gold), German bearer bond with right to delivery; TER shown 0.00% by justETF (custody costs charged differently - not verified)",
+      "tickers_by_exchange": [
+        "XETRA EUR 4GLD"
+      ],
+      "ter_pct": "0.00% p.a.",
+      "fund_size": "EUR 20,886 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Germany",
+      "replication": "Physical ( Physically backed )",
+      "fund_currency": "EUR",
+      "index": null,
+      "holdings": null,
+      "inception": "27 November 2007",
+      "legal_form": "ETC (debt security backed by physical gold), not a UCITS fund",
+      "provider": "Deutsche Boerse",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=DE000A0S9GB0",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B1FZSF77",
+      "name": "iShares US Property Yield UCITS ETF",
+      "us_counterparts": [
+        "VNQ"
+      ],
+      "match_quality": "approximate: FTSE EPRA/NAREIT United States Dividend+ (85 holdings) vs VNQ's MSCI US IMI Real Estate 25/50",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR IUSP",
+        "Euronext Amsterdam EUR IUSP",
+        "London Stock Exchange GBX IUSP",
+        "London Stock Exchange USD IDUP",
+        "XETRA EUR IQQ7"
+      ],
+      "ter_pct": "0.40% p.a.",
+      "fund_size": "EUR 507 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "FTSE EPRA/NAREIT United States Dividend+",
+      "holdings": "85",
+      "inception": "3 November 2006",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B1FZSF77",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BJ38QD84",
+      "name": "State Street SPDR Russell 2000 U.S. Small Cap UCITS ETF USD",
+      "us_counterparts": [
+        "IWM"
+      ],
+      "match_quality": "same index (Russell 2000)",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR R2US",
+        "Euronext Paris EUR R2US",
+        "London Stock Exchange GBP R2SC",
+        "London Stock Exchange USD R2US",
+        "XETRA EUR ZPRR"
+      ],
+      "ter_pct": "0.30% p.a.",
+      "fund_size": "EUR 4,233 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "Russell 2000®",
+      "holdings": "1,939",
+      "inception": "30 June 2014",
+      "legal_form": "UCITS ETF",
+      "provider": "State Street",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BJ38QD84",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE0032077012",
+      "name": "Invesco EQQQ Nasdaq-100 UCITS ETF",
+      "us_counterparts": [
+        "QQQ"
+      ],
+      "match_quality": "same index (Nasdaq-100), distributing",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR EQQQ",
+        "Euronext Paris EUR EQQQ",
+        "London Stock Exchange GBX EQQQ",
+        "London Stock Exchange USD EQQU",
+        "XETRA EUR EQQQ"
+      ],
+      "ter_pct": "0.30% p.a.",
+      "fund_size": "EUR 13,244 m",
+      "distribution_policy": "Distributing",
+      "distribution_frequency": "Quarterly",
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "Nasdaq 100®",
+      "holdings": "102",
+      "inception": "2 December 2002",
+      "legal_form": "UCITS ETF",
+      "provider": "Invesco",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE0032077012",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00BFZXGZ54",
+      "name": "Invesco EQQQ Nasdaq-100 UCITS ETF Acc",
+      "us_counterparts": [
+        "QQQ"
+      ],
+      "match_quality": "same index (Nasdaq-100), accumulating",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR EQAC",
+        "XETRA EUR EQQB"
+      ],
+      "ter_pct": "0.30% p.a.",
+      "fund_size": "EUR 4,484 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "Nasdaq 100®",
+      "holdings": "102",
+      "inception": "24 September 2018",
+      "legal_form": "UCITS ETF",
+      "provider": "Invesco",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00BFZXGZ54",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B53SZB19",
+      "name": "iShares Nasdaq 100 UCITS ETF (Acc)",
+      "us_counterparts": [
+        "QQQ"
+      ],
+      "match_quality": "same index (Nasdaq-100), iShares accumulating",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR CSNDX",
+        "Euronext Amsterdam EUR CNDX",
+        "London Stock Exchange GBX CNX1",
+        "London Stock Exchange USD CNDX",
+        "XETRA EUR SXRV"
+      ],
+      "ter_pct": "0.30% p.a.",
+      "fund_size": "EUR 26,969 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Full replication )",
+      "fund_currency": "USD",
+      "index": "Nasdaq 100®",
+      "holdings": "103",
+      "inception": "26 January 2010",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B53SZB19",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    },
+    {
+      "isin": "IE00B4L5Y983",
+      "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+      "us_counterparts": [
+        "VT"
+      ],
+      "match_quality": "developed markets only (MSCI World) - very common choice of Czech investors, listed as reference, not a VT twin",
+      "tickers_by_exchange": [
+        "Borsa Italiana EUR SWDA",
+        "Euronext Amsterdam EUR IWDA",
+        "London Stock Exchange GBP SWDA",
+        "London Stock Exchange GBX SWDA",
+        "London Stock Exchange USD IWDA",
+        "XETRA EUR EUNL"
+      ],
+      "ter_pct": "0.20% p.a.",
+      "fund_size": "EUR 133,406 m",
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical ( Optimized sampling )",
+      "fund_currency": "USD",
+      "index": "MSCI World",
+      "holdings": "1,252",
+      "inception": "25 September 2009",
+      "legal_form": "UCITS ETF",
+      "provider": "iShares",
+      "source_url": "https://www.justetf.com/en/etf-profile.html?isin=IE00B4L5Y983",
+      "accessed": "2026-10-11",
+      "as_of": "page as served on access date (justETF shows no explicit as-of date next to fund size/TER)"
+    }
+  ],
+  "regulation_access": [
+    {
+      "value": "PRIIPs Regulation (EU) No 1286/2014 applies from 1 January 2018; a manufacturer must draw up a KID and a person advising on or selling a PRIIP to a retail investor must provide it before the investor is bound. US ETF issuers do not publish PRIIPs KIDs, so most EU brokers block retail BUY orders of US-domiciled ETFs; existing positions can usually be held/sold.",
+      "source_url": "https://www.justetf.com/en/news/etf/us-domiciled-etfs.html",
+      "source_url_secondary": "https://www.cnb.cz/cs/dohled-financni-trh/legislativni-zakladna/stanoviska-k-regulaci-financniho-trhu/RS2018-12",
+      "accessed": "2026-10-11",
+      "as_of": "2018-03-28",
+      "note": "justETF article 28 Mar 2018 ('you won't be able to buy more'); EUR-Lex text could not be fetched (bot challenge). Article numbers (Art. 5, 13) confirmed via ČNB Q&A RS2018-12."
+    },
+    {
+      "value": "UCITS funds were exempt from PRIIPs KID until 31 Dec 2022 (Reg. (EU) 2021/2259); since 1 Jan 2023 UCITS ETFs sold to retail must have a PRIIPs KID too - which is why UCITS twins are available.",
+      "source_url": "https://elvingerhoss.lu/publications/priips-end-ucits-exemption-31-december-2022",
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "note": "Seen via search-result summary; also https://eur-lex.europa.eu/eli/reg/2021/2259/oj"
+    },
+    {
+      "value": "ČNB (Czech National Bank) Q&A RS2018-12 (22 Oct 2018): a securities dealer that only provides execution-only service on the client's own instruction / access to a foreign exchange, without offering or advising on the product, does not 'sell' a PRIIP in the sense of Art. 4(5) and is not subject to the Art. 13(1) KID-delivery duty (but must still act with due care and give risk information, § 15d ZPKT). This is the legal basis that lets some Czech-licensed brokers (Fio) offer US ETFs to retail clients.",
+      "source_url": "https://www.cnb.cz/cs/dohled-financni-trh/legislativni-zakladna/stanoviska-k-regulaci-financniho-trhu/RS2018-12",
+      "accessed": "2026-10-11",
+      "as_of": "2018-10-22",
+      "note": "Verbatim: 'Pokud tedy obchodník s cennými papíry provádí pouze execution-only služby v návaznosti na podnět investora ... nelze jej považovat za subjekt povinnosti podle čl. 13 odst. 1 nařízení PRIIPs.'"
+    },
+    {
+      "value": "Professional client on request (MiFID II Annex II, transposed in CZ as § 2b(1)(b) zákon 256/2004 Sb.): must meet at least 2 of 3 - (1) in each of the last 4 consecutive quarters, trades of significant size averaging at least 10 per quarter; (2) assets in cash + investment instruments of at least EUR 500,000; (3) at least 1 year working in the financial market in a role requiring knowledge of the transactions. Professional clients lose part of retail protection; PRIIPs KID duty does not apply to them.",
+      "source_url": "https://www.zakonyprolidi.cz/cs/2004-256",
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "note": "Czech law text read on zakonyprolidi.cz; EUR-Lex original not fetched"
+    },
+    {
+      "value": "IBKR's knowledge base (PRIIPs Overview): US ETF issuers generally don't produce KIDs, so EEA/UK retail clients cannot buy them; listed alternatives: European-issued equivalents, CFDs on large US ETFs issued by IBKR's EU entities, or reclassification as professional client. Individual clients are 'Retail' by default.",
+      "source_url": "https://ibkb.interactivebrokers.com/node/3324",
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "note": "Page redirects to ibkr.info and blocked direct fetch (403/search redirect); content taken from search-result summaries of the IBKR page. Medium confidence."
+    },
+    {
+      "value": "'Options exercise' route (buy/sell options on a US ETF and get the shares by exercise/assignment) is described only by third-party blogs/forums; no IBKR documentation found. Treat as unverified.",
+      "source_url": "https://www.quantconnect.com/forum/discussion/4153/uk-retail-investors/",
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "note": "also financialexpertclass.com blog; FinHacker promised it in part 3 of its series"
+    }
+  ],
+  "brokers_cz": [
+    {
+      "broker": "Fio e-Broker (Fio banka, CZ licence)",
+      "us_etfs_for_retail": "YES - Fio says 'U nás můžete obchodovat i s americkými ETF'; Fio does not itself offer/recommend ETFs (execution-only), consistent with ČNB Q&A RS2018-12.",
+      "source_url": "https://www.fio.cz/akcie-investice/etf",
+      "accessed": "2026-10-11",
+      "as_of": "page live 2026-10-11 (page says 'Copyright © 2026', content may be older)",
+      "extra": "Review finex.cz (updated 2025-08-01): US market fee 7.95 USD up to 100 shares, 9.95 USD above (https://finex.cz/recenze/fio-broker/) - verify against Fio ceník."
+    },
+    {
+      "broker": "Patria Finance (CZ)",
+      "us_etfs_for_retail": "PROBABLY YES (unverified, old source): FinHacker (2020, upd. 2022-01-14) says US ETFs can be traded if the client searches them by ISIN in the platform.",
+      "source_url": "https://www.finhacker.cz/jak-obejit-znemozneni-obchodovani-americkych-etfek-2-cast/",
+      "accessed": "2026-10-11",
+      "as_of": "2022-01-14"
+    },
+    {
+      "broker": "XTB (Polish licence, CZ branch)",
+      "us_etfs_for_retail": "NO for real US ETFs per FinHacker (2022): only European equivalents or CFDs. XTB lists a CFD on SPY. XTB CZ ETF page (2,300+ ETFs) doesn't state whether US-listed ETFs are included.",
+      "source_url": "https://www.finhacker.cz/jak-obejit-znemozneni-obchodovani-americkych-etfek-2-cast/",
+      "accessed": "2026-10-11",
+      "as_of": "2022-01-14",
+      "extra": "https://www.xtb.com/cz/etf ; https://www.xtb.com/int/etfs-cfd/sdpr-s-p-500-trust"
+    },
+    {
+      "broker": "Trading 212",
+      "us_etfs_for_retail": "NO (community answer: US ETFs rarely comply with EU regs and cannot be offered); suggests UCITS e.g. SXR8.",
+      "source_url": "https://community.trading212.com/t/us-traded-etfs-vanguard-schwab/21777",
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "extra": "No official help-centre article found. Medium confidence."
+    },
+    {
+      "broker": "Interactive Brokers (EU clients via IBKR Ireland)",
+      "us_etfs_for_retail": "NO for retail; YES for professional clients; CFDs on large US ETFs available.",
+      "source_url": "https://ibkb.interactivebrokers.com/node/3324",
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "extra": "Lynx (IBKR introducing broker in CZ): US ETFs only with Professional status (FinHacker 2022)."
+    },
+    {
+      "broker": "DEGIRO",
+      "us_etfs_for_retail": "NO - removed products without public KID/KIID; existing positions can be closed but not increased (DEGIRO notice quoted on forum, ~2018).",
+      "source_url": "https://forum.mustachianpost.com/t/us-etfs-vt-for-instance-not-available-anymore-in-switzerland/1648?page=2",
+      "accessed": "2026-10-11",
+      "as_of": "~2018",
+      "extra": "No current DEGIRO help page found. Medium confidence."
+    },
+    {
+      "broker": "Saxo",
+      "us_etfs_for_retail": "NO for retail (KID check before order; generic 'instrument configuration' error), professional status route exists; one forum report claims otherwise - unresolved.",
+      "source_url": "https://home.saxo/content/commentaries/ppu/partner-product-update/etf-kid-solution-for-wl-partners-under-priips-23092022",
+      "accessed": "2026-10-11",
+      "as_of": "2022-09-23"
+    },
+    {
+      "broker": "Revolut",
+      "us_etfs_for_retail": "NOT VERIFIED - no Revolut source found. Assume PRIIPs block like other EU brokers, but do not state as fact.",
+      "source_url": null,
+      "accessed": "2026-10-11",
+      "as_of": null
+    },
+    {
+      "broker": "Portu, Fondee (Czech robo-advisors)",
+      "us_etfs_for_retail": "N/A - client does not pick tickers; the provider builds portfolios from ETFs. Which exact ETFs they use was NOT verified (pages didn't load / don't list them).",
+      "source_url": "https://www.fondee.cz/cs/",
+      "accessed": "2026-10-11",
+      "as_of": null
+    }
+  ],
+  "tax_notes": [
+    {
+      "value": "US withholding on dividends paid to foreign persons is 30% by default; reduced treaty rates apply when the beneficial owner certifies foreign status (Form W-8BEN).",
+      "source_url": "https://www.irs.gov/individuals/international-taxpayers/nra-withholding",
+      "accessed": "2026-10-11",
+      "as_of": "2026-03-14 (page last reviewed)"
+    },
+    {
+      "value": "Czech-US tax treaty (Sdělení č. 32/1994 Sb.), Art. 10(2)(b): portfolio dividends max 15% US tax; Art. 10(3): 15% rate explicitly applies to dividends from a US Regulated Investment Company (US ETFs are RICs).",
+      "source_url": "https://www.zakonyprolidi.cz/cs/1994-32",
+      "accessed": "2026-10-11",
+      "as_of": "treaty signed 1993-09-16, published 1994-02-15"
+    },
+    {
+      "value": "Czech tax on foreign dividends: can go into the separate tax base under § 8(8) ZDP taxed at 15% (§ 16a(1)); US tax withheld up to the treaty rate (15%) is credited, so with W-8BEN the total is ~15%; without W-8BEN 30% is withheld and only 15% is creditable (the rest must be reclaimed from the IRS).",
+      "source_url": "https://www.zakonyprolidi.cz/cs/1992-586",
+      "source_url_secondary": "https://www.e15.cz/etf-prodej-dividendy-dane",
+      "accessed": "2026-10-11",
+      "as_of": "law version 2026-08-01 to 2026-12-31",
+      "note": "Rates verified in the law text; the 'credit max 15%' mechanics confirmed by e15.cz (2026-04-27) on a German example: 'v daňovém přiznání se započte maximálně 15 procent'."
+    },
+    {
+      "value": "Irish-domiciled UCITS ETFs: under the US-Ireland treaty, portfolio dividends from US companies to the Irish fund are generally taxed at 15% (instead of 30%). This 15% is lost inside the fund; the Czech investor cannot credit it.",
+      "source_url": "https://www.irs.gov/pub/irs-trty/ireland.pdf",
+      "accessed": "2026-10-11",
+      "as_of": "treaty 1997",
+      "note": "Treaty technical explanation: 'Other dividends are generally taxable at 15 percent.' 'Cannot credit' is our inference (the investor receives no US-source dividend), not a quoted source."
+    },
+    {
+      "value": "Accumulating ETF: no distribution -> no dividend income to report; gain taxed only on sale (and exempt after the 3-year time test). Distributing ETF: distributions taxed at 15% in CZ.",
+      "source_url": "https://www.e15.cz/etf-prodej-dividendy-dane",
+      "accessed": "2026-10-11",
+      "as_of": "2026-04-27",
+      "note": "e15.cz article 'Zdanění ETF v roce 2026' (updated)"
+    },
+    {
+      "value": "Time test (časový test): income from sale of a security is exempt if more than 3 years passed between acquisition and sale - § 4(1)(u) ZDP.",
+      "source_url": "https://www.zakonyprolidi.cz/cs/1992-586",
+      "accessed": "2026-10-11",
+      "as_of": "law version 2026-08-01 to 2026-12-31"
+    },
+    {
+      "value": "Value test: income from sales of securities is exempt if the TOTAL (gross proceeds, not profit) in the tax year does not exceed CZK 100,000 - § 4(1)(t) ZDP.",
+      "source_url": "https://www.zakonyprolidi.cz/cs/1992-586",
+      "accessed": "2026-10-11",
+      "as_of": "law version 2026-08-01 to 2026-12-31"
+    },
+    {
+      "value": "CZK 40 million cap: introduced from 1 Jan 2025 (consolidation package) for time-test-exempt income from securities and business shares; ABOLISHED for securities and business shares from 1 Jan 2026 by zákon č. 360/2025 Sb.; it remains only for crypto-assets (§ 4(3) ZDP now refers only to § 4(1)(zk) crypto). Sales made in 2025 are still under the cap.",
+      "source_url": "https://www.zakonyprolidi.cz/cs/1992-586",
+      "source_url_secondary": "https://arws.cz/novinky-v-arrows/jak-se-od-roku-2026-opet-meni-daneni-prijmu-z-prevodu-podilu-v-s-r-o-a-prodeje-akcii",
+      "accessed": "2026-10-11",
+      "as_of": "law version 2026-08-01 to 2026-12-31",
+      "note": "Current § 4(3) text read directly; law number 360/2025 Sb. from Forvis Mazars / dauc.cz via search summary; MF press release https://mf.gov.cz/cs/ministerstvo/media/tiskove-zpravy/2025/zmeny-v-daneni-prodeje-podilu-ve-firmach-a-akcii-a-61234"
+    },
+    {
+      "value": "Reporting duty: an exempt income above CZK 5,000,000 must be reported to the tax office by the tax-return deadline (§ 38v ZDP).",
+      "source_url": "https://www.zakonyprolidi.cz/cs/1992-586",
+      "accessed": "2026-10-11",
+      "as_of": "law version 2026-08-01 to 2026-12-31"
+    },
+    {
+      "value": "Personal income tax rate 2025: 15% up to tax base CZK 1,676,052, 23% above.",
+      "source_url": "https://www.e15.cz/etf-prodej-dividendy-dane",
+      "accessed": "2026-10-11",
+      "as_of": "2026-04-27"
+    },
+    {
+      "value": "Unified FX rates for tax year 2025 (Pokyn GFŘ-D-75): 1 EUR = 24.66 CZK, 1 USD = 21.84 CZK.",
+      "source_url": "https://www.mfcr.cz/assets/attachments/2026-01-14_Financni-zpravodaj-cislo-2-2026.pdf",
+      "accessed": "2026-10-11",
+      "as_of": "2026-01-14 (Finanční zpravodaj 2/2026)"
+    },
+    {
+      "value": "US estate tax for non-resident non-citizens: return (Form 706-NA) required if US-situated assets exceed USD 60,000; US-situs includes stock of US corporations (US-domiciled ETFs = US corporations/trusts - our reading). Max unified credit USD 13,000 (= tax on the first USD 60,000). Rate schedule goes from 18% up to 40% above USD 1,000,000.",
+      "source_url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+      "accessed": "2026-10-11",
+      "as_of": "2026-06-27 (page last reviewed)",
+      "note": "Credit: https://www.irs.gov/instructions/i706na (rev. 09/2025, reviewed 2026-04-30); rates: Table A in https://www.irs.gov/instructions/i706 (rev. 07/2026)"
+    },
+    {
+      "value": "The Czech Republic has NO estate/gift tax treaty with the US (IRS list of 15 countries: Australia, Austria, Canada, Denmark, Finland, France, Germany, Greece, Ireland, Italy, Japan, Netherlands, South Africa, Switzerland, UK). Irish-domiciled UCITS ETFs are not US-situs assets.",
+      "source_url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+      "accessed": "2026-10-11",
+      "as_of": "2026-09-08 (page last reviewed)",
+      "note": "'Irish UCITS not US-situs' is the widely accepted reading; no IRS page saying it literally was fetched."
+    }
+  ],
+  "assumptions": [
+    {
+      "value": {
+        "S&P_500_geometric_1928_2025_pct": 10.02,
+        "arithmetic_1928_2025_pct": 11.86,
+        "geometric_1976_2025_pct": 11.93,
+        "geometric_1996_2025_pct": 10.26,
+        "geometric_2016_2025_pct": 14.68
+      },
+      "source_url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+      "accessed": "2026-10-11",
+      "as_of": "updated 2026-01-05 (data through 2025)",
+      "note": "Computed by me from Damodaran's annual S&P 500 total returns (incl. dividends), nominal USD. Damodaran's page itself doesn't print these averages."
+    },
+    {
+      "value": {
+        "US_equities_nominal_1900_2025_pct": 9.76,
+        "USD1_in_1900_grew_to_nominal": 124854,
+        "developed_markets_equity_annualized_since_1900_pct": 8.5,
+        "emerging_markets_equity_annualized_since_1900_pct": 6.9,
+        "gold_real_annualized_since_1900_pct": 1.3
+      },
+      "source_url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20260303-global-investment-returns-yearbook-2026.html",
+      "accessed": "2026-10-11",
+      "as_of": "2026-03-03 (UBS Global Investment Returns Yearbook 2026, Dimson/Marsh/Staunton)",
+      "note": "9.76% is my calculation from 'USD 1 -> USD 124,854 nominal by end 2025' (126 years). UBS does not say if 8.5%/6.9% are real or nominal. World real return figure NOT obtained (summary PDF returned 403)."
+    },
+    {
+      "value": {
+        "US_equities_10y_expected_pct": "4.2-6.2",
+        "developed_ex_US_10y_expected_pct": "4.5-6.5",
+        "emerging_markets_10y_expected_pct": "2-4"
+      },
+      "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/vemo/vemo-return-forecasts.html",
+      "accessed": "2026-10-11",
+      "as_of": "model run 2026-06-30, page updated 2026-07-22",
+      "note": "Vanguard Capital Markets Model, nominal USD, before inflation/taxes/fees. Forward-looking, not a guarantee."
+    },
+    {
+      "value": {
+        "active_large_cap_funds_underperforming_SP500_in_2025_pct": 79,
+        "same_in_2024_pct": 65
+      },
+      "source_url": "https://www.spglobal.com/spdji/en/spiva/article/spiva-us-year-end-2025/",
+      "accessed": "2026-10-11",
+      "as_of": "year-end 2025",
+      "note": "Page returned 403; figure taken from the search-result quote of the S&P DJI page. 15y/20y figures not verified."
+    },
+    {
+      "value": {
+        "recommended_calculator_default": "7% nominal p.a. (conservative middle between Vanguard 10y forecast ~4-6.5% and 1928-2025 S&P 500 history ~10%); offer 5% / 7% / 9% scenarios"
+      },
+      "source_url": null,
+      "accessed": "2026-10-11",
+      "as_of": null,
+      "note": "This is a suggestion, not a sourced fact."
+    },
+    {
+      "value": {
+        "EUR_CZK": 24.365,
+        "USD_CZK": 21.745,
+        "fixing": "ČNB daily fixing No. 195"
+      },
+      "source_url": "https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt",
+      "accessed": "2026-10-11",
+      "as_of": "2026-10-09",
+      "note": "Latest fixing as of 2026-10-11 (Sunday)."
+    }
+  ]
+}
