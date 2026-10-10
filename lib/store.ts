@@ -12,46 +12,58 @@ export const memory = { events: [] as StoredEvent[], leads: new Map<string, Stor
 export function database() {
   return process.env.DATABASE_URL ? neon(process.env.DATABASE_URL) : null;
 }
-export async function saveEvents(events: StoredEvent[]): Promise<void> {
+function eventCounts(events: StoredEvent[]) {
   const counts = new Map<string, number>();
   for (const event of events) counts.set(event.sid, (counts.get(event.sid) ?? 0) + 1);
-  const sql = database();
-  if (!sql) {
-    for (const [sid, count] of counts) {
+  return counts;
+}
+function checkMemoryLimit(events: StoredEvent[]) {
+    for (const [sid, count] of eventCounts(events)) {
       if (memory.events.filter(event => event.sid === sid).length + count > 300) throw new HttpError(429, 'session_limit');
     }
+ }
+function eventQueries(sql: NonNullable<ReturnType<typeof database>>, events: StoredEvent[]) {
+  return [
+    ...[...eventCounts(events)].sort(([a], [b]) => a.localeCompare(b)).map(([sid, count]) => sql.query(`
+      INSERT INTO event_sessions (sid, event_count) VALUES ($1::uuid, $2)
+      ON CONFLICT (sid) DO UPDATE
+      SET event_count = event_sessions.event_count + EXCLUDED.event_count
+    `, [sid, count])),
+    sql.query(`
+      INSERT INTO events (sid, variant, type, section, value, props, utm, ref, path, ts, received_at, device, is_bot)
+      SELECT sid, variant, type, section, value, props, utm, ref, path, ts, received_at, device, is_bot
+      FROM jsonb_to_recordset($1::jsonb) AS e (
+        sid uuid, variant text, type text, section text, value double precision,
+        props jsonb, utm jsonb, ref text, path text, ts bigint,
+        received_at timestamptz, device text, is_bot boolean
+      )
+    `, [JSON.stringify(events)]),
+  ];
+}
+function databaseError(error: unknown): never {
+  if ((error as { code?: string; table?: string }).code === "23514" &&
+    (error as { table?: string }).table === "event_sessions") throw new HttpError(429, "session_limit");
+  throw error;
+}
+export async function saveEvents(events: StoredEvent[]): Promise<void> {
+  const sql = database();
+  if (!sql) {
+    checkMemoryLimit(events);
     memory.events.push(...events);
     console.log('Events stored in memory', { count: events.length });
     return;
   }
   try {
-    await sql.transaction([
-      ...[...counts].sort(([a], [b]) => a.localeCompare(b)).map(([sid, count]) => sql.query(`
-        INSERT INTO event_sessions (sid, event_count) VALUES ($1::uuid, $2)
-        ON CONFLICT (sid) DO UPDATE
-        SET event_count = event_sessions.event_count + EXCLUDED.event_count
-      `, [sid, count])),
-      sql.query(`
-        INSERT INTO events (sid, variant, type, section, value, props, utm, ref, path, ts, received_at, device, is_bot)
-        SELECT sid, variant, type, section, value, props, utm, ref, path, ts, received_at, device, is_bot
-        FROM jsonb_to_recordset($1::jsonb) AS e (
-          sid uuid, variant text, type text, section text, value double precision,
-          props jsonb, utm jsonb, ref text, path text, ts bigint,
-          received_at timestamptz, device text, is_bot boolean
-        )
-      `, [JSON.stringify(events)]),
-    ]);
-  } catch (error) {
-    if ((error as { code?: string; table?: string }).code === '23514' &&
-      (error as { table?: string }).table === 'event_sessions') throw new HttpError(429, 'session_limit');
-    throw error;
-  }
+    await sql.transaction(eventQueries(sql, events));
+  } catch (error) { databaseError(error); }
 }
-export async function saveLead(lead: LeadInput, now = new Date()): Promise<StoredLead> {
+
+export async function saveLead(lead: LeadInput, now = new Date(), event?: StoredEvent): Promise<StoredLead> {
   const at = now.toISOString();
   const proof = { at, version: lead.consent_text_version, sid: lead.sid };
   const sql = database();
   if (!sql) {
+    if (event) checkMemoryLimit([event]);
     const old = memory.leads.get(lead.email);
     const saved: StoredLead = {
       ...lead, created_at: old?.created_at ?? at, last_seen_at: at, consent_at: at,
@@ -59,10 +71,11 @@ export async function saveLead(lead: LeadInput, now = new Date()): Promise<Store
       consent_history: [...(old?.consent_history ?? []), proof],
     };
     memory.leads.set(lead.email, saved);
+    if (event) memory.events.push(event);
     console.log('Lead stored in memory');
     return saved;
   }
-  const rows = await sql.query(`
+  const query = sql.query(`
     INSERT INTO leads (
       email, created_at, last_seen_at, consent_at, consent_text_version,
       consent_history, sids, variant, utm, context
@@ -77,5 +90,8 @@ export async function saveLead(lead: LeadInput, now = new Date()): Promise<Store
     RETURNING *
   `, [lead.email, at, lead.consent_text_version, JSON.stringify([proof]), lead.sid,
     lead.variant, JSON.stringify(lead.utm), JSON.stringify(lead.context)]);
-  return { ...rows[0], consent: true, sid: lead.sid } as StoredLead;
+  try {
+    const [rows] = await sql.transaction([query, ...(event ? eventQueries(sql, [event]) : [])]);
+    return { ...rows[0], consent: true, sid: lead.sid } as StoredLead;
+  } catch (error) { return databaseError(error); }
 }
