@@ -6,18 +6,27 @@ export async function readBody(req: VercelRequest, limit: number): Promise<unkno
   if (length && Number(length) > limit) throw new HttpError(413, 'payload_too_large');
   const contentType = req.headers['content-type']?.split(';')[0].trim().toLowerCase();
   if (contentType && !['application/json', 'text/plain'].includes(contentType)) throw new HttpError(415, 'unsupported_media_type');
-  let body: unknown = req.body;
-  if (body === undefined) {
-    const chunks: Buffer[] = [];
-    let size = 0;
-    for await (const chunk of req) {
-      const bytes = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
-      size += bytes.length;
-      if (size > limit) throw new HttpError(413, 'payload_too_large');
-      chunks.push(bytes);
-    }
-    body = Buffer.concat(chunks);
-  }
+  let body: unknown;
+  if (typeof req.on === 'function') {
+    body = await new Promise<Buffer>((resolve, reject) => {
+      const chunks: Buffer[] = [];
+      let size = 0;
+      let exceeded = false;
+      req.on('data', (chunk: Buffer | string) => {
+        if (exceeded) return;
+        const bytes = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
+        size += bytes.length;
+        if (size > limit) {
+          exceeded = true;
+          chunks.length = 0;
+          reject(new HttpError(413, 'payload_too_large'));
+        } else chunks.push(bytes);
+      });
+      req.on('end', () => { if (!exceeded) resolve(Buffer.concat(chunks)); });
+      req.on('error', reject);
+      req.on('aborted', () => reject(new HttpError(400, 'invalid_payload')));
+    });
+  } else body = req.body;
   const raw = Buffer.isBuffer(body) ? body.toString('utf8') : typeof body === 'string' ? body : JSON.stringify(body);
   if (!raw) throw new HttpError(400, 'invalid_payload');
   if (Buffer.byteLength(raw) > limit) throw new HttpError(413, 'payload_too_large');

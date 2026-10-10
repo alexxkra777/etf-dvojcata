@@ -18,10 +18,10 @@ function eventCounts(events: StoredEvent[]) {
   return counts;
 }
 function checkMemoryLimit(events: StoredEvent[]) {
-    for (const [sid, count] of eventCounts(events)) {
-      if (memory.events.filter(event => event.sid === sid).length + count > 300) throw new HttpError(429, 'session_limit');
-    }
- }
+  for (const [sid, count] of eventCounts(events)) {
+    if (memory.events.filter(event => event.sid === sid).length + count > 300) throw new HttpError(429, 'session_limit');
+  }
+}
 function eventQueries(sql: NonNullable<ReturnType<typeof database>>, events: StoredEvent[]) {
   return [
     ...[...eventCounts(events)].sort(([a], [b]) => a.localeCompare(b)).map(([sid, count]) => sql.query(`
@@ -41,8 +41,8 @@ function eventQueries(sql: NonNullable<ReturnType<typeof database>>, events: Sto
   ];
 }
 function databaseError(error: unknown): never {
-  if ((error as { code?: string; table?: string }).code === "23514" &&
-    (error as { table?: string }).table === "event_sessions") throw new HttpError(429, "session_limit");
+  if ((error as { code?: string; table?: string }).code === '23514' &&
+    (error as { table?: string }).table === 'event_sessions') throw new HttpError(429, 'session_limit');
   throw error;
 }
 export async function saveEvents(events: StoredEvent[]): Promise<void> {

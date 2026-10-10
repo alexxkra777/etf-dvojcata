@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS event_sessions (
 );
 
 CREATE TABLE IF NOT EXISTS events (
-  id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  id bigserial PRIMARY KEY,
   sid uuid NOT NULL,
   variant varchar(16) NOT NULL,
   type text NOT NULL CHECK (type IN (

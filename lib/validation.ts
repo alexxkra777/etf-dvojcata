@@ -96,7 +96,7 @@ export function parseLead(value: unknown): LeadInput {
   const input = object(value);
   const email = typeof input.email === 'string' ? input.email.trim().toLowerCase() : '';
   if (email.length > 254 || !/^[a-z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/.test(email) ||
-    email.split('@')[0].length > 64 || email.startsWith('.') || email.includes('..') || email.split('@')[0].endsWith('.')) {
+    email.split('@')[0].length > 64 || email.split('@')[1]?.split('.').some(label => label.length > 63) || email.startsWith('.') || email.includes('..') || email.split('@')[0].endsWith('.')) {
     throw new HttpError(422, 'invalid', 'email');
   }
   if (input.consent !== true) throw new HttpError(400, 'consent_required', 'consent');
