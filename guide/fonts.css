@@ -1,0 +1,7 @@
+@font-face{font-family:"Guide Serif";font-style:normal;font-weight:100 900;src:url("../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+2020-2027;font-display:block}
+@font-face{font-family:"Guide Serif";font-style:normal;font-weight:100 900;src:url("../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+2000-201F,U+2028-206F,U+20AC,U+2190-21FF;font-display:block}
+:root{--heading:"Guide Serif",Georgia,serif}
+@font-face{font-family:"Guide Sans";font-style:normal;font-weight:400;src:url("../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-ext-400-normal.woff2") format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+2020-2027;font-display:block}
+@font-face{font-family:"Guide Sans";font-style:normal;font-weight:400;src:url("../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+2000-201F,U+2028-206F,U+20AC,U+2190-21FF;font-display:block}
+:root{--body:"Guide Sans",system-ui,sans-serif}
+:root{--paper:#F5F1E8;--ink:#16201B;--muted:#4A554F;--rule:#D9D2C3;--us:#3A5A80;--eu:#0E6B47;--accent:#B83A16;--highlight:#F2E36B}
