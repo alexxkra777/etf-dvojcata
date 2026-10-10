@@ -4,7 +4,7 @@ Educational Czech ETF comparison, prepared 11 October 2026. Two promises, two ma
 
 ## Creative files and build
 
-`a-feed.html`, `a-story.html`, `b-feed.html`, `b-story.html` share `creative.css`. Feed is 1080 × 1350; story is 1080 × 1920. All story text fits between y=250 and y=1670. The background extends to every edge. Hooks are at least 70 px. The mark uses two overlapping circles. Local type packages and landing tokens were absent when the templates were prepared: Georgia and system sans use the specified fallback palette.
+`a-feed.html`, `a-story.html`, `b-feed.html`, `b-story.html` share `creative.css`. Feed is 1080 × 1350; story is 1080 × 1920. All story text fits between y=250 and y=1670. The background extends to every edge. Hooks are at least 70 px. The mark uses two overlapping circles. The creatives import the landing design tokens and load local Fraunces and IBM Plex Sans font files, including Czech glyphs. Georgia and system sans are fallbacks. The renderer resolves local font and token URLs for its temporary HTML.
 
 Run from the repository root:
 
@@ -14,7 +14,7 @@ ads/build.sh 41300
 
 This example supplies a number; it is **not a verified calculator result**. The script renders all four files into `ads/out/`, formats whole crowns with non-breaking thousands separators (`41 300`), uses isolated temporary Chrome profiles, and removes its temporary files. Chrome must be installed at `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`; Python 3 is required. No package installation is needed. Template `{{N}}` placeholders remain untouched.
 
-The initial Chrome invocation wrote A's feed image but stayed running. The renderer now stops its own process group after the PNG is written; a corrected layout pass completed with `ads/build.sh 0`. Only A's production PNGs remain in `out/`; B's dummy PNGs were removed after visual inspection. B is pending the landing calculator's confirmed value. Before rebuilding B, record the calculator settings (monthly contribution, years, selected brokers, FX rates, returns, commission and liquidation assumptions). Reproduce that same scenario on the first screen or directly reachable calculator. The value must describe a modeled cost difference, not an investment return or guaranteed saving. For a value wider than the available number line, adjust type size while keeping hook text at least 48 px and inspect both outputs again.
+The layout check used `ads/build.sh 0`. Only A's production PNGs remain in `out/`; B's dummy PNGs were removed after visual inspection. B is pending the landing calculator's confirmed value. Before rebuilding B, record the calculator settings (monthly contribution, years, selected brokers, FX rates, returns, commission and liquidation assumptions). Reproduce that same scenario on the first screen or directly reachable calculator. The value must describe a modeled cost difference, not an investment return or guaranteed saving. For a value wider than the available number line, adjust type size while keeping hook text at least 48 px and inspect both outputs again.
 
 ## A — Mýtus VOO
 

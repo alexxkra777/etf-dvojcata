@@ -12,12 +12,17 @@ trap 'rm -rf "$TEMP"' EXIT
 mkdir -p "$ROOT/ads/out"
 python3 - "$ROOT" "$TEMP" "$1" <<'PY'
 from pathlib import Path
-import sys
+import re, sys
 root,temp,raw=map(str,sys.argv[1:])
 number=f'{int(raw):,}'.replace(',', '\u00a0')
 for source in Path(root,'ads').glob('*-*.html'):
     Path(temp,source.name).write_text(source.read_text().replace('{{N}}',number))
-Path(temp,'creative.css').write_text(Path(root,'ads/creative.css').read_text())
+css=Path(root,'ads/creative.css').read_text()
+def absolute_url(match):
+    relative=match.group(1).strip('"\'')
+    return 'url("'+(Path(root,'ads')/relative).resolve().as_uri()+'")'
+css=re.sub(r'url\(([^)]+)\)',absolute_url,css)
+Path(temp,'creative.css').write_text(css)
 PY
 python3 - "$ROOT" "$TEMP" "$CHROME" <<'PYRENDER'
 from pathlib import Path
