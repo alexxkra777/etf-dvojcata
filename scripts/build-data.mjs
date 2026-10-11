@@ -20,7 +20,7 @@ const groups = {
 // Overall verdict per US fund: same index / similar index / no twin / gold ETC.
 const verdicts = {
   SPY: 'same', VOO: 'same', IVV: 'same', IWM: 'same', AGG: 'same', QQQ: 'same',
-  VTI: 'similar', VT: 'similar', VEA: 'similar', VWO: 'similar', VYM: 'similar', VNQ: 'similar',
+  VTI: 'similar', VT: 'same', VEA: 'similar', VWO: 'similar', VYM: 'similar', VNQ: 'similar',
   VXUS: 'similar', BND: 'similar',
   SCHD: 'none',
   GLD: 'etc',
@@ -28,6 +28,7 @@ const verdicts = {
 
 // Czech one-liners about how close each twin is. Written from the match_quality / note fields.
 const twinNotes = {
+  IE000VAHT5T0: ['same', 'Stejná rodina indexu FTSE Global All Cap včetně malých firem. Evropská verze od Vanguardu, uvedená v srpnu 2026. Výnos se může lišit kvůli daním a vzorkování.'],
   IE00B5BMR087: ['same', 'Stejný index S&P 500. Největší evropský fond na tenhle index.'],
   IE00BFMXXD54: ['same', 'Stejný index, evropská verze přímo od Vanguardu.'],
   IE00B3XXRP09: ['same', 'Stejný index, verze, která vyplácí dividendy.'],
@@ -108,7 +109,7 @@ const twins = raw.ucits_twins.map(twin => {
     alias: knownAs[twin.isin] ?? (lseUsd && lseUsd !== xetra ? lseUsd : null),
     listings: list,
     ter: percent(twin.ter_pct),
-    size: eurMillions(twin.fund_size),
+    size: twin.fund_size === null ? null : eurMillions(twin.fund_size),
     acc: twin.distribution_policy === 'Accumulating',
     index: twin.index,
     holdings: twin.holdings,
@@ -175,7 +176,7 @@ export interface Fund {
 export interface Listing { ex: string; cur: string; t: string }
 export interface Twin {
   isin: string; name: string; ticker: string; alias: string | null; listings: Listing[];
-  ter: number; size: number; acc: boolean; index: string | null; holdings: string | null; domicile: string | null;
+  ter: number; size: number | null; acc: boolean; index: string | null; holdings: string | null; domicile: string | null;
   match: Match; note: string; src: string; asOf: string;
 }
 export interface Data {

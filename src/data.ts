@@ -12,7 +12,7 @@ export interface Fund {
 export interface Listing { ex: string; cur: string; t: string }
 export interface Twin {
   isin: string; name: string; ticker: string; alias: string | null; listings: Listing[];
-  ter: number; size: number; acc: boolean; index: string | null; holdings: string | null; domicile: string | null;
+  ter: number; size: number | null; acc: boolean; index: string | null; holdings: string | null; domicile: string | null;
   match: Match; note: string; src: string; asOf: string;
 }
 export interface Data {
@@ -218,7 +218,7 @@ export const data: Data = {
    "group": "world",
    "nyse": true,
    "exchange": "NYSE Arca",
-   "verdict": "similar",
+   "verdict": "same",
    "ter": {
     "v": 0.06,
     "src": "https://investor.vanguard.com/investment-products/etfs/profile/vt",
@@ -247,6 +247,7 @@ export const data: Data = {
     "secondary": false
    },
    "twins": [
+    "IE000VAHT5T0",
     "IE00BK5BQT80",
     "IE00B3RBWM25",
     "IE00B3YLTY66",
@@ -681,6 +682,54 @@ export const data: Data = {
   }
  ],
  "twins": [
+  {
+   "isin": "IE000VAHT5T0",
+   "name": "Vanguard FTSE Global All-Cap UCITS ETF (USD) Accumulating",
+   "ticker": "VGLA",
+   "alias": "VALU",
+   "listings": [
+    {
+     "ex": "Xetra",
+     "cur": "EUR",
+     "t": "VGLA"
+    },
+    {
+     "ex": "LSE",
+     "cur": "USD",
+     "t": "VALU"
+    },
+    {
+     "ex": "LSE",
+     "cur": "GBP",
+     "t": "VALL"
+    },
+    {
+     "ex": "Euronext Amsterdam",
+     "cur": "EUR",
+     "t": "VALL"
+    },
+    {
+     "ex": "Borsa Italiana",
+     "cur": "EUR",
+     "t": "VALL"
+    },
+    {
+     "ex": "SIX Swiss Exchange",
+     "cur": "USD",
+     "t": "VALL"
+    }
+   ],
+   "ter": 0.07,
+   "size": null,
+   "acc": true,
+   "index": "FTSE Global All Cap Net Tax Index USD",
+   "holdings": "6,429 (31 August 2026)",
+   "domicile": "Ireland",
+   "match": "same",
+   "note": "Stejná rodina indexu FTSE Global All Cap včetně malých firem. Evropská verze od Vanguardu, uvedená v srpnu 2026. Výnos se může lišit kvůli daním a vzorkování.",
+   "src": "https://www.vanguard.co.uk/professional/product/etf/equity/E161/ftse-global-all-cap-ucits-etf-usd-acc",
+   "asOf": "2026-10-11"
+  },
   {
    "isin": "IE00B5BMR087",
    "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",

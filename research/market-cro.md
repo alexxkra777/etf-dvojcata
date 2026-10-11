@@ -298,3 +298,7 @@ Forum-level question frequencies are therefore **[unverifiable]** in this sessio
     - Plan bigger spend around January, when interest peaks (§1.4).
 
 **Answer to the reviewer:** **No-go tomorrow as briefed** because of the NYSE-ETF premise, missing consent/CMP plumbing and missing MAR/affiliate disclosures. It becomes a **conditional go for a small Meta test** once decisions 1, 3, 6, 8 and 9 are implemented, which is about 1–2 days of work.
+
+## Independent tariff check — 11 Oct 2026
+
+DEGIRO Core Selection pricing (€1 handling only) applies exclusively to Tradegate. The calculator uses SXR8 on Xetra, so it now uses €2 commission + €1 handling and the Xetra connectivity fee. ETF trades on Tradegate have no connectivity fee. Sources: [Core Selection exchange rule](https://www.degiro.cz/helpdesk/fees/why-are-there-commission-fees-charged-etf-etf-core-selection-list), [current price list](https://www.degiro.cz/poplatky), [Core Selection](https://www.degiro.cz/poplatky/etf-core-selection), accessed 2026-10-11.

@@ -23,7 +23,7 @@ export function leadForm(where: string, button: string): string {
   <p class="lead__msg" id="${id}-msg" aria-live="assertive"></p>
   <p class="lead__micro" id="${id}-note">Zdarma. PDF hned ke stažení. Žádný telefon.</p>
   <label class="check"><input type="checkbox" name="marketing"><span>Chci občas dostat tipy a novinky e-mailem (odhlásíte se jedním klikem)</span></label>
-  <p class="lead__privacy">E-mail použijeme k zaslání srovnání. <a href="#ochrana-udaju">Ochrana údajů</a></p>
+  <p class="lead__privacy">Po zadání e-mailu získáte PDF hned ke stažení. <a href="#ochrana-udaju">Ochrana údajů</a></p>
   <div class="hp" aria-hidden="true"><label>Firma <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
 </form>`;
 }
@@ -70,9 +70,9 @@ function values(): Record<string, string> {
     email: esc(site.email),
     retention: String(site.retentionMonths),
     logo: logo(),
-    'form:hero': leadForm('hero', 'Pošlete mi srovnání (PDF)'),
-    'form:calc': leadForm('calc', 'Pošlete mi výpočet + celé srovnání'),
-    'form:guide': leadForm('guide', 'Pošlete mi srovnání (PDF)'),
+    'form:hero': leadForm('hero', 'Získat srovnání (PDF)'),
+    'form:calc': leadForm('calc', 'Získat PDF srovnání'),
+    'form:guide': leadForm('guide', 'Získat srovnání (PDF)'),
   };
 }
 

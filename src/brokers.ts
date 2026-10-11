@@ -27,8 +27,8 @@ export const routes: BrokerRoute[] = [
   },
   {
     id: 'degiro', name: 'DEGIRO', fund: cspx.ticker, ter: cspx.ter, currency: 'EUR', sameFund: true,
-    commission: { kind: 'flat', fee: 1 }, fxPct: 0.25, connectivity: { pct: 0.25, capPerYear: 2.5 },
-    note: 'Počítáno s ETF z výběru Core Selection. Mimo něj je nákup o 2 € dražší.',
+    commission: { kind: 'flat', fee: 3 }, fxPct: 0.25, connectivity: { pct: 0.25, capPerYear: 2.5 },
+    note: 'Počítáno pro Xetru: 2 € provize + 1 € manipulační poplatek. Core Selection za 1 € platí jen na Tradegate.',
     src: 'https://www.degiro.cz/poplatky', asOf: '2026-10-11',
   },
   {

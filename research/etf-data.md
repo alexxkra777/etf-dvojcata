@@ -138,3 +138,7 @@ A professional client on request (§ 2b(1)(b) of Act 256/2004 Sb., MiFID II Anne
 11. **SEC yield of VT, VEA, VWO, VXUS, VNQ**: the Vanguard API does not provide it, so the TTM from stockanalysis is used instead.
 12. **Xetra-Gold costs**: justETF shows a TER of 0.00%, but a storage fee may be charged in a different way; not checked.
 13. **The number of holdings of BND** differs: Vanguard says 11,421 bonds as of 31.08.2026, stockanalysis says "15,000". I used the Vanguard figure.
+
+## Final issuer check: VT counterpart (11 October 2026)
+
+Vanguard launched an accumulating Irish UCITS counterpart on 18 August 2026, first listed on 20 August: **IE000VAHT5T0**, FTSE Global All-Cap UCITS ETF. TER is **0.07%**; the issuer lists **VGLA on Xetra (EUR)**, **VALU on LSE (USD)** and **VALL on Amsterdam (EUR)**. It follows the FTSE Global All Cap family, including small caps, so the table now places it ahead of the All-World approximations. The UCITS benchmark is net-tax and uses sampling; identical investor returns are not implied. EUR fund size is left unknown because the issuer publishes USD assets without an explicit AUM cut-off. [Vanguard issuer page](https://www.vanguard.co.uk/professional/product/etf/equity/E161/ftse-global-all-cap-ucits-etf-usd-acc).

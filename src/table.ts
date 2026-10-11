@@ -25,7 +25,7 @@ function usd(value: number): string {
   if (value >= 1e12) return `${cz(value / 1e12, 1)} bil. $`;
   return `${cz(value / 1e9, value >= 1e10 ? 0 : 1)} mld. $`;
 }
-const eur = (millions: number) => (millions >= 1000 ? `${cz(millions / 1000, 1)} mld. €` : `${cz(millions)} mil. €`);
+const eur = (millions: number | null) => (millions === null ? 'nezjištěno' : millions >= 1000 ? `${cz(millions / 1000, 1)} mld. €` : `${cz(millions)} mil. €`);
 const tickers = (twin: Twin) => `<span class="tk tk--eu">${esc(twin.ticker)}</span>${twin.alias ? `<span class="tk-alias">${esc(twin.alias)}</span>` : ''}`;
 
 function twinLine(fund: Fund): string {
@@ -63,7 +63,7 @@ function twinDetail(twin: Twin): string {
       <div><dt>Sídlo · ISIN</dt><dd>${twin.domicile ? `${esc(COUNTRY[twin.domicile] ?? twin.domicile)} · ` : ''}${esc(twin.isin)}</dd></div>
     </dl>
     <p class="twin-d__ex">${listings}</p>
-    <p class="twin-d__src"><small>${asOf(twin.asOf)}</small> ${src(twin.src, 'zdroj: justETF')}</p>
+    <p class="twin-d__src"><small>${asOf(twin.asOf)}</small> ${src(twin.src, 'zdroj fondu')}</p>
   </li>`;
 }
 
@@ -103,7 +103,7 @@ export function renderTable(): void {
     const twins = fund.twins.map(isin => twinsByIsin.get(isin)!);
     const ters = [...new Set(twins.map(twin => twin.ter))].sort((a, b) => a - b);
     const ter = ters.length > 1 ? `${cz(ters[0], 2).replace(/0$/, '')}–${pct(ters[ters.length - 1])}` : pct(ters[0]);
-    return `<li><span class="tk tk--us">${fund.ticker}</span> → ${twins.map(twin => `<span class="tk tk--eu">${esc(twin.ticker)}</span>`).join(', ')} <small>(${VERDICT[fund.verdict][0]}, TER ${ter})</small></li>`;
+    return `<li><span class="tk tk--us">${fund.ticker}</span> → ${twins.map(twin => `<span class="tk tk--eu">${esc(twin.ticker)}</span> <small>(UCITS, ISIN ${esc(twin.isin)}${twin.listings.some(item => item.ex === 'Xetra') ? ', Xetra' : ''})</small>`).join(', ')} <small>(${VERDICT[fund.verdict][0]}, TER ${ter})</small></li>`;
   }).join('')}</ul>
   <p class="fineprint">Stav k ${date(data.compiled)}. Zdroje ke každému fondu jsou v PDF průvodci.</p>`;
 

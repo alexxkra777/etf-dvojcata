@@ -27,7 +27,7 @@ function nextSteps(answer: string): string[] {
   switch (answer) {
     case 'xtb': return [`XTB nebere poplatek za nákup (do obratu 100 000 € měsíčně), ale za převod korun na eura si vezme ${fx('xtb')}.`, isinTip, taxTip];
     case 't212': return [`Trading 212 si za převod měny bere ${fx('t212')}, nákup je bez poplatku.`, isinTip, taxTip];
-    case 'degiro': return [`DEGIRO účtuje ${fee('degiro')} € za nákup ETF z výběru Core Selection, mimo něj o 2 € víc. Ověřte si, kam vaše ETF patří.`, `Převod měny přes AutoFX stojí ${fx('degiro')}.`, isinTip];
+    case 'degiro': return [`DEGIRO účtuje ${fee('degiro')} € za nákup ETF na Xetře. Core Selection za 1 € platí jen na Tradegate.`, `Převod měny přes AutoFX stojí ${fx('degiro')}.`, isinTip];
     case 'other': return ['V ceníku svého brokera najděte dva řádky: poplatek za nákup na Xetře a poplatek za převod měny.', 'Porovnejte je s přehledem na straně 5 v PDF.', isinTip];
     default: return ['Otevřete PDF na straně 5: poplatky brokerů v korunách vedle sebe.', 'U malých měsíčních částek rozhoduje pevný poplatek za nákup a převod měny víc než TER fondu.', taxTip];
   }

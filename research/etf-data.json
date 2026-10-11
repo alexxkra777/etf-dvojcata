@@ -1497,6 +1497,38 @@
   ],
   "ucits_twins": [
     {
+      "isin": "IE000VAHT5T0",
+      "name": "Vanguard FTSE Global All-Cap UCITS ETF (USD) Accumulating",
+      "us_counterparts": [
+        "VT"
+      ],
+      "match_quality": "same index family: FTSE Global All Cap; UCITS net-tax benchmark and sampling may produce different returns from US VT",
+      "tickers_by_exchange": [
+        "XETRA EUR VGLA",
+        "London Stock Exchange USD VALU",
+        "London Stock Exchange GBP VALL",
+        "Euronext Amsterdam EUR VALL",
+        "Borsa Italiana EUR VALL",
+        "SIX Swiss Exchange USD VALL"
+      ],
+      "ter_pct": "0.07% p.a.",
+      "fund_size": null,
+      "distribution_policy": "Accumulating",
+      "distribution_frequency": null,
+      "domicile": "Ireland",
+      "replication": "Physical (optimized sampling)",
+      "fund_currency": "USD",
+      "index": "FTSE Global All Cap Net Tax Index USD",
+      "holdings": "6,429 (31 August 2026)",
+      "inception": "18 August 2026",
+      "legal_form": "UCITS ETF",
+      "provider": "Vanguard",
+      "source_url": "https://www.vanguard.co.uk/professional/product/etf/equity/E161/ftse-global-all-cap-ucits-etf-usd-acc",
+      "accessed": "2026-10-11",
+      "as_of": "2026-10-11",
+      "note": "Issuer reports USD 2.51bn share-class assets and USD 2.57bn total assets without an explicit AUM as-of date. EUR size left unknown; no currency conversion is inferred. First listed 20 August 2026."
+    },
+    {
       "isin": "IE00B5BMR087",
       "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
       "us_counterparts": [
