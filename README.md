@@ -19,9 +19,11 @@ The exception is Fio e-Broker (execution-only, ČNB Q&A RS2018-12), but it charg
 
 A page that "compares NYSE ETFs" would promise something the visitor finds out at the broker they can't act on.
 So the NYSE ETFs stay as the **hook** (that's what people hear about) and the **value** is the honest answer:
-*"VOO si u většiny českých brokerů nekoupíte. Jeho evropské dvojče ano."* Every NYSE ETF is paired with the UCITS
-fund that tracks the same index and can be bought from Czechia, and fees are shown in korunas.
-None of the Czech finance ads in the Meta Ad Library used this angle (checked 11 Oct 2026). Full reasoning: [docs/STRATEGY.md](docs/STRATEGY.md).
+*"VOO si u většiny českých brokerů nekoupíte. Jeho evropské dvojče ano."* The table labels exact index matches, approximate UCITS alternatives and funds without an exact twin.
+VT includes the Vanguard Global All Cap UCITS ETF (IE000VAHT5T0, Xetra VGLA), launched on 18 August 2026;
+its EUR fund size is marked unknown rather than inferred from an undated USD value.
+European alternatives can be bought from Czechia, and fees are shown in korunas.
+This angle was not present in the inspected sample of Czech finance ads in the Meta Ad Library (checked 11 Oct 2026). Full reasoning: [docs/STRATEGY.md](docs/STRATEGY.md).
 
 ## What's in the repo
 
@@ -81,8 +83,8 @@ Events carry the variant and UTM tags; `GET /api/stats` (Bearer `STATS_TOKEN`) r
 conversion, split by variant, ad (`utm_content`) and device, plus daily leads and median time to lead. `lead_ok` is
 written by the server, so the lead count doesn't depend on the browser.
 Meta Pixel / GA4 load only if `VITE_META_PIXEL_ID` / `VITE_GA4_ID` are set **and** the visitor accepts; without the IDs
-there's no consent bar at all. Verified on production on 11 Oct 2026 with a real mobile browser session (all 10 event
-types arrived, lead stored, invalid domain rejected, stats endpoint returns 401 without the token).
+there's no consent bar at all. Earlier production smoke checks are recorded in `ai-log/`.
+The final changes were checked locally with mocked lead responses; they have not been redeployed.
 
 ## Privacy and compliance
 
@@ -104,19 +106,19 @@ Broker fees are the one exception: they're in [src/brokers.ts](src/brokers.ts), 
 ```sh
 npm install
 npm run dev          # page + API on localhost; API keeps data in memory unless DATABASE_URL is set
-npm test             # 80 tests: calculator, validation, funnel maths, endpoints
+npm test             # calculator, validation, funnel maths and endpoint tests
 npm run build        # builds data, then the page
 vercel deploy --prod
 ```
 
-Environment: `DATABASE_URL` (Neon Postgres, set by the Vercel integration for preview/production only — local dev never
-touches the production database), `STATS_TOKEN`, optional `LEAD_WEBHOOK_URL` (the hand-off to an ESP such as Ecomail),
+Environment: `DATABASE_URL` (Neon Postgres). Keep it unset or explicitly empty for local testing;
+local dev uses any configured URL, including one loaded from a local environment file. Other settings: `STATS_TOKEN`, optional `LEAD_WEBHOOK_URL` (the hand-off to an ESP such as Ecomail),
 optional `VITE_META_PIXEL_ID`, `VITE_GA4_ID`. Schema: `npm run migrate`.
 
 ## What's missing / would do next
 
 - **Email delivery.** The PDF downloads instantly on the page; the follow-up email sequence needs the client's ESP (webhook is ready). I didn't set up a sending domain for a test task.
-- **A Czech native speaker's pass over the copy.** I'm not one; the copy was checked for typography and tone but not by a native.
+- **Czech copy.** The copy awaits review by a native Czech speaker.
 - **Fee data freshness.** Fio, Portu and XTB changed price lists in 2026; the fees need an owner and a monthly check. IBKR, Lynx, Saxo, Revolut and Portu are left out of the calculator because their cost for this case isn't fully known, and the page says so.
 - **Meta policy re-check** on the day of launch (the policy page rate-limited my last fetch).
 - **Real CPC/CPL for Czech finance** — no public source; replace the planning numbers after 3–5 days of the test.
@@ -142,16 +144,19 @@ figure, write *not found*", "quotes must be copied from the raw page text"), wha
 (counts, weakest records, what couldn't be verified). Full briefs are at the top of each agent's
 log in [ai-log/](ai-log/).
 
-**How the output was checked — I didn't trust reports, I re-ran things.**
-- Every agent report was compared with the actual files and commits (git log, file timestamps,
-  re-running the tests myself).
-- Numbers: automatic quote check against the live page for every value; the claimed number/date
-  must be inside the quote; a rule engine recomputes every decision and lists disagreements.
-- A blind second review by another model on everything that was kept, then adjudication of each
-  disagreement with the evidence re-fetched.
-- A person labels a random stratified sample of claims; that's the accuracy number reported.
-- Before every commit: grep for tool names and AI mentions in code and commit messages, and a look
-  at screenshots for anything visual.
+**How the output was checked.**
+- The 84 passing calculator and API tests cover fee arithmetic, request validation, storage, authorization and funnel counts.
+  The final local review also checked that client events cannot forge `lead_ok` and that step conversions
+  use the intersection of the current and previous audiences while retaining direct hero leads.
+- Source records were reviewed against their linked issuer and broker material. That review corrected
+  DEGIRO’s Xetra fee to €3 (€2 commission + €1 handling), kept the €1 Core Selection rate specific to
+  Tradegate, and added Vanguard’s exact VT index twin. Unknown EUR fund size remains unknown.
+- Browser checks use local desktop and mobile sessions. Lead success and errors are mocked, so those
+  checks verify the form interface and PDF download without writing real leads or sending email.
+- The eight-page PDF and all four ad PNGs are rendered and visually inspected. Ad B’s amount is taken
+  from the calculator defaults, not an independently typed marketing estimate.
+- These are automated and visual checks, not a measured real-traffic conversion result or a human-labelled
+  data-accuracy score. The source caveats in the research and the limitations above remain part of the result.
 
 **Agents in this repo.**
 
