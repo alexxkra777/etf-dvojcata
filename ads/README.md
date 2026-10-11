@@ -31,7 +31,7 @@ calculator tests first, then rebuild with the new numbers. The script renders al
 | Alternative primary 1 | “Znáte VOO? Poznejte CSPX a VUAA. Stejný index S&P 500, evropské fondy. Průvodce zdarma.” |
 | Alternative primary 2 | “Proč VOO často nejde koupit? Vysvětlení i evropská dvojčata najdete v českém průvodci ETF.” |
 
-Final URL: `https://{DOMAIN}/?utm_source=meta&utm_medium=paid_social&utm_campaign=etf_dvojcata_launch&utm_content=voo`
+Final URL: `https://etf-dvojcata.vercel.app/?utm_source=meta&utm_medium=paid_social&utm_campaign=etf_dvojcata_launch&utm_content=voo`
 
 **Promise → first screen:** `utm_content=voo` must repeat the qualified “u většiny brokerů” claim, show VOO → CSPX/VUAA and offer the free PDF in an email-only form. The qualifier matters: Fio's execution-only route is an exception, described in the guide. CSPX is the London USD ticker; VUAA here is Xetra EUR. Both follow S&P 500, but fund ownership, domicile and distribution policy differ from VOO. This is an index comparison, not a recommendation to buy.
 
@@ -46,7 +46,7 @@ Final URL: `https://{DOMAIN}/?utm_source=meta&utm_medium=paid_social&utm_campaig
 | Alternative primary 1 | “Provize, směna měn, úschova. Přepočítali jsme poplatky 4 brokerů na koruny. Zdarma a bez registrace.” |
 | Alternative primary 2 | “15 700 Kč, nebo 63 400 Kč? Stejný fond, jiný broker. Zadejte svou částku do kalkulačky.” |
 
-Final URL: `https://{DOMAIN}/?utm_source=meta&utm_medium=paid_social&utm_campaign=etf_dvojcata_launch&utm_content=fx`
+Final URL: `https://etf-dvojcata.vercel.app/?utm_source=meta&utm_medium=paid_social&utm_campaign=etf_dvojcata_launch&utm_content=fx`
 
 **Promise → first screen:** `utm_content=fx` repeats the same 47 700 Kč amount, identify it as a modeled fee difference, show the 20-year scenario and offer the editable calculator plus the guide. Use the same fund and assumptions across brokers. “Až” must refer to an identified comparison among the listed brokers, not an unlimited claim. The ad number, headline and calculator must be checked together before launch. 
 
@@ -83,6 +83,6 @@ Do not stop early merely because the five-day smoke test cannot reach the 30-lea
 - [ ] No “safe”, “guaranteed” or “best” claims; no headline returns. Both creatives carry “Nejde o investiční doporučení” and a capital-at-risk warning. A disclaimer alone does not remove MAR duties if content actually recommends a trade.
 - [ ] Landing and PDF disclose author [redacted: name], data date, sources, methodology, risks, past-performance warning and absence of affiliate links. Keep facts separate from assumptions and avoid personalized recommendations in comments.
 - [ ] Verify current Meta financial-services requirements and country/category restrictions in Ads Manager, including any authorization request. The research's education exemption is not a blanket approval of this campaign.
-- [ ] Replace `{DOMAIN}` with the final HTTPS hostname, verify message match on mobile, check download and consent behavior, and review every placement crop.
+- [ ] verify message match on mobile, check download and consent behavior, and review every placement crop.
 
 Policy references: [Meta financial services](https://transparency.meta.com/en-gb/policies/ad-standards/restricted-goods-services/financial-services/), [Meta category help](https://www.facebook.com/business/help/298000447747885), [ČNB financial influencer warning](https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/upozorneni/Upozorneni-Ceske-narodni-banky-pro-influencery-v-oblasti-financi/). Checked against repository research dated 11 October 2026. ČNB's page was re-opened during preparation; Meta's policy re-fetch returned HTTP 429, so the live wording and account requirements remain to be verified before launch.
