@@ -1,0 +1,27 @@
+/* Stats dashboard, same tokens as the landing page */
+.stats__main { padding-block: var(--space-6) var(--space-8); }
+.stats__login { max-width: 460px; display: grid; gap: var(--space-2); }
+.stats__login h1 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+.stats__bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-3); border-bottom: 2px solid var(--ink); padding-bottom: var(--space-3); }
+.stats__bar h1 { font-size: var(--text-3xl); }
+.stats__range { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+.stats__range input[type="date"] { min-height: 44px; font: inherit; padding: 0 var(--space-2); border: 1.5px solid var(--ink); border-radius: var(--radius); background: #fff; }
+.stats__range .check { min-height: 0; align-items: center; }
+.stats__meta { color: var(--ink-muted); font-size: var(--text-sm); margin: var(--space-3) 0 var(--space-5); }
+.funnel { list-style: none; display: grid; gap: var(--space-3); margin-bottom: var(--space-7); }
+.fstep { display: grid; grid-template-columns: 1fr auto 4.5em; grid-template-areas: "name num conv" "track track track"; column-gap: var(--space-3); row-gap: 4px; }
+.fstep__name { grid-area: name; font-weight: 600; }
+.fstep__num { grid-area: num; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.fstep__conv { grid-area: conv; font-family: var(--font-mono); color: var(--ink-muted); text-align: right; }
+.fstep .bar__track { grid-area: track; }
+.fstep .bar__fill { background: var(--eu); }
+.stats__grid { display: grid; gap: var(--space-6); }
+.stats__grid h2 { font-size: var(--text-xl); }
+.split { width: 100%; border-collapse: collapse; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.split th, .split td { padding: var(--space-2) var(--space-2) var(--space-2) 0; border-bottom: 1px solid var(--rule); text-align: right; }
+.split th[scope="row"], .split thead th:first-child { text-align: left; font-family: var(--font-mono); font-weight: 500; }
+.split thead th { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--ink-muted); font-weight: 600; }
+.daily { list-style: none; display: grid; gap: var(--space-2); font-size: var(--text-sm); }
+.daily li { display: grid; grid-template-columns: 7.5em 1fr 6em; align-items: center; gap: var(--space-3); }
+.daily .tk { text-align: right; }
+@media (min-width: 720px) { .stats__grid { grid-template-columns: 1fr 1fr; } }

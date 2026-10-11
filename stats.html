@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Statistiky | ETF dvojčata</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="module" src="/src/stats.ts"></script>
+</head>
+<body class="stats">
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <span class="logo">{{logo}}<span>ETF dvojčata</span></span>
+    <p class="topbar__meta">Interní statistiky</p>
+  </div>
+</header>
+<main class="wrap stats__main">
+  <form class="stats__login" id="login">
+    <h1>Statistiky trychtýře</h1>
+    <label class="lead__label" for="token">Přístupový token</label>
+    <div class="lead__row">
+      <input class="lead__input" id="token" type="password" autocomplete="current-password" required>
+      <button class="btn btn--signal" type="submit">Zobrazit</button>
+    </div>
+    <p class="lead__msg" id="login-msg" aria-live="assertive"></p>
+  </form>
+
+  <section id="board" hidden>
+    <div class="stats__bar">
+      <h1>Trychtýř</h1>
+      <form class="stats__range" id="range">
+        <label>Od <input type="date" id="from"></label>
+        <label>Do <input type="date" id="to"></label>
+        <label class="check"><input type="checkbox" id="bots"><span>i boti</span></label>
+        <button class="btn btn--line" type="submit">Načíst</button>
+        <button class="linkish" type="button" id="logout">Odhlásit</button>
+      </form>
+    </div>
+    <p class="stats__meta" id="meta"></p>
+    <ol class="funnel" id="funnel"></ol>
+    <div class="stats__grid">
+      <section><h2>Podle varianty</h2><div id="by-variant"></div></section>
+      <section><h2>Podle reklamy (utm_content)</h2><div id="by-utm"></div></section>
+      <section><h2>Podle zařízení</h2><div id="by-device"></div></section>
+      <section><h2>Leady po dnech</h2><ol class="daily" id="daily"></ol></section>
+    </div>
+  </section>
+</main>
+</body>
+</html>
