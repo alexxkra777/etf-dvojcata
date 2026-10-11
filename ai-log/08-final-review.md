@@ -1,0 +1,19 @@
+# Final review continuation — October 11, 2026
+
+Editorial process summary, not a transcript. This note records the AI-assisted continuation after the original Claude sessions and does not invent dialogue or human experience.
+
+The continuation checked the deployed assignment’s assumptions against source code and official public sources. DEGIRO’s €1 Core Selection price applies to Tradegate, whereas the calculator route represents Xetra. The working-tree correction uses the standard €3 Xetra transaction charge and updates related calculator, guide, and campaign wording. Vanguard’s Morningstar name and index for VTI were confirmed rather than reverted. The matching tickers for US VXUS and the new Irish UCITS VXUS are genuine; the Nasdaq comparison now distinguishes European counterparts with their ISIN and exchange. A newly launched Vanguard FTSE Global All-Cap UCITS ETF was confirmed as an additional direct VT counterpart using official Vanguard and exchange records. The coordinator was adding it to the data during this continuation; this summary does not claim completion of every regenerated artifact.
+
+The funnel review found that browser event ingestion could accept `lead_ok`, allowing a client to inflate successful lead counts. The revised validation reserves that event for successful server-side lead handling. Funnel transitions now count sessions reaching both relevant steps rather than dividing unrelated totals, and statistics include PDF-download and broker-answer events. The working tree includes targeted regression tests; final validation of these revisions was still pending when this note was written. The lead magnet copy was also corrected to promise the immediate PDF download rather than an email that the implementation does not send.
+
+Evidence: `src/brokers.ts`, `src/lead.ts`, `src/table.ts`, `lib/validation.ts`, `lib/funnel.ts`, `lib/stats.ts`, `src/stats.ts`, and `tests/backend.test.ts`. Official fee references: https://www.degiro.cz/poplatky and https://www.degiro.cz/poplatky/etf-core-selection. Fund references are the official Vanguard product pages linked in the research. This note does not certify a new production deployment or advertise the revised package as approved for live paid traffic.
+
+The author reviewed findings; models performed the recorded source-reading and technical checks. The author’s confirmed 60-claim review, 58 correct and two wrong, belongs to assignment A and is not an ETF data accuracy measurement. The shared orchestrator history is preserved in both repositories; it has not been rewritten to imply otherwise.
+
+The review package contains translated, privacy-redacted records and this editorial note. Historical claims remain in the original sequence, even where later review uncovered an error. No raw re-export replaced the translations.
+
+## Final local validation
+
+The revised snapshot passed all 84 tests, TypeScript checking and the production build. Generated data contains 16 US funds and 28 UCITS counterparts, including the direct VT counterpart. Local browser checks covered mobile and desktop layouts, calculator and fund details, form validation, mocked lead responses, optional marketing consent, PDF download, consent persistence, and authenticated statistics. Browser checks used a local environment and mocked lead responses; they do not establish production email delivery. Backend tests separately cover successful lead handling and event protections.
+
+The eight-page A4 PDF was rebuilt and each rendered page inspected, including the table overflow correction. All four advertising PNGs were rebuilt and inspected. README screenshots reflect the revised local build. The author requested a review stop before publication: these revisions are committed locally, with no new GitHub push or production deployment.

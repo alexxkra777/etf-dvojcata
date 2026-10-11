@@ -2,6 +2,7 @@
 
 Claude Code sub-agent log, exported from `agent-a99288b03f7414405.jsonl`.
 Tool outputs longer than 1,500 characters are shortened.
+Russian prose and localized tool output are translated into English; executed tool code is retained.
 
 ## Brief
 
@@ -17,7 +18,7 @@ Produce evidence for these decisions, every claim with source URL + accessed dat
 
 Rules: WebSearch/WebFetch heavily; never invent numbers; if unverifiable say so. No signups/forms/git, don't touch other files.
 
-Output: /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/market-cro.md (English, sections 1–6, tables where useful, with a final "Implications for the page" list of 15 concrete decisions). Create the folder if missing. Final message: 15-line summary + path.
+Output: [redacted: local path] (English, sections 1–6, tables where useful, with a final "Implications for the page" list of 15 concrete decisions). Create the folder if missing. Final message: 15-line summary + path.
 
 → `ToolSearch`
 
@@ -140,7 +141,7 @@ The article does not give figures for:
 - The article does not report a "fears" question. The closest measure is economic expectations.
 - 32% of Czechs expect the economy to worsen over the next two years, and 14% expect it to improve.
 - Hungary is the most optimistic, with 54% expecting improvement. In Slovakia, nearly half expect a worsening.
-- The survey's main finding is that Czechs treat market falls as buying opportunities, despite their 
+- The survey's main finding is that Czechs treat market falls as buying opportunities, despite their
 … [26 more characters]
 ```
 </details>
@@ -166,7 +167,7 @@ The article does not give figures for:
 
 **Information sources (social media):** The page doesn't mention where young people get investment information, including social media.
 
-**Age breakdown:** The article compares only two groups, 16–30 and over 31. It doesn't provide 
+**Age breakdown:** The article compares only two groups, 16–30 and over 31. It doesn't provide
 … [16 more characters]
 ```
 </details>
@@ -355,7 +356,7 @@ ModuleNotFoundError: No module named 'pytrends'
 ```
 Web search results for query: "reddit CzechFinance ETF začátečník jaký broker S&P 500 VOO UCITS"
 
-Links: [{"title":"ve fondech za biliony dolaru uz investuje cely svet jak se k nim muze dostat i cesky investor","url":"https://finex.cz/ve-fondech-za-biliony-dolaru-uz-investuje-cely-svet-jak-se-k-nim-muze-dostat-i-cesky-investor/"},{"title":"czech republic","url":"https://www.digrin.com/stocks/list/country/czech-republic/"},{"title":"czech republic","url":"https://www.digrin.com/stocks/list/country/czech-republic/?page=1"},{"title":"fund-docs.vanguard.com","url":"https://fund-docs.vanguard.com/F0968.pdf"},{"title":"Etf-VOO-Vanguard S&P 500 ETF","url":"https://www.etoro.com/cs-cz/markets/voo"},{"title":"best voo etf alternatives in europe and uk","url":"https://investingintheweb.com/brokers/best-voo-etf-alternatives-in-europe-and-uk/"},{"title":"how to invest in voo","url":"https://investingintheweb.com/blog/how-to-invest-in-voo/"},{"title":"investingintheweb.com","url":"https://investingintheweb.com/?p=55044"},{"title":"Инвестирование для начинающих: Как купить индекс S&P 500 и ETF на S&P 500 в Европе?","url":"https://lilys.ai/notes/ru/sp500-etf-20251125/buy-s-p-500-etf-europe-beginners"}]
+Links: [{"title":"ve fondech za biliony dolaru uz investuje cely svet jak se k nim muze dostat i cesky investor","url":"https://finex.cz/ve-fondech-za-biliony-dolaru-uz-investuje-cely-svet-jak-se-k-nim-muze-dostat-i-cesky-investor/"},{"title":"czech republic","url":"https://www.digrin.com/stocks/list/country/czech-republic/"},{"title":"czech republic","url":"https://www.digrin.com/stocks/list/country/czech-republic/?page=1"},{"title":"fund-docs.vanguard.com","url":"https://fund-docs.vanguard.com/F0968.pdf"},{"title":"Etf-VOO-Vanguard S&P 500 ETF","url":"https://www.etoro.com/cs-cz/markets/voo"},{"title":"best voo etf alternatives in europe and uk","url":"https://investingintheweb.com/brokers/best-voo-etf-alternatives-in-europe-and-uk/"},{"title":"how to invest in voo","url":"https://investingintheweb.com/blog/how-to-invest-in-voo/"},{"title":"investingintheweb.com","url":"https://investingintheweb.com/?p=55044"},{"title":"Investing for beginners: How to buy the S&P 500 index and S&P 500 ETFs in Europe?","url":"https://lilys.ai/notes/ru/sp500-etf-20251125/buy-s-p-500-etf-europe-beginners"}]
 
 The search didn't turn up any Reddit r/CzechFinance threads, so I can't report what that community recommends. The results do cover the core facts a Czech beginner needs.
 
@@ -403,8 +404,8 @@ cd [tmp] && for s in CzechFinance czech; do curl -s -m 20 -A "Mozilla/5.0 resear
 ```
 CzechFinance 403
 czech 403
--rw-r--r--  1 [user]  wheel  189908 11 окт.  01:10 r_czech.json
--rw-r--r--  1 [user]  wheel  189908 11 окт.  01:10 r_CzechFinance.json
+-rw-r--r--  1 [user]  wheel  189908 11 Oct  01:10 r_czech.json
+-rw-r--r--  1 [user]  wheel  189908 11 Oct  01:10 r_CzechFinance.json
 ```
 </details>
 
@@ -869,7 +870,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=XTB&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-06-482Z.yml)
@@ -887,7 +888,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=XTB&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-14-607Z.yml)
@@ -900,7 +901,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 
 ```
 ### Result
-"Библиотека рекламы Meta\nБиблиотека рекламы\nОтчет Библиотеки рекламы\nAd Library API\nБрендированный контент\n​\nЧешская Республика\n​\n​\n​\nВсе объявления\n​\nПоиск по ключевым словам или рекламодателю\n​\n​\nВойти\nБиблиотека рекламы\nОтчет Библиотеки рекламы\nAd Library API\nБрендированный контент\nСтатус системы\nПодписаться на уведомления по электронной почте\nЧасто задаваемые вопросы\nИнформация о рекламе и использовании данных\nКонфиденциальность\nУсловия\nФайлы cookie\nРезультаты: ~250\nРезультаты содержат активные объявления, которые соответствуют вашему запросу по ключевым словам.\nФильтры\nСортировать\n​\nСортировка\nСтатус \"Активно\": Активные объявления\nУдалить\n​\n​\nАктивно\nID Библиотеки: 10007530189292762\nПоказ начат 26 мая 2025 г.\nПлатформы\n​\n​\n​\n​\nУ этой рекламы несколько версий\n​\nЭтот креатив и текст используются в 5 объявлениях\nОткрыть раскрывающееся меню\n​\nСмотреть сводные данные\nXTB Online Trading\nРеклама\nNaučte se investovat do akcií a ETF a sestavte si své vlastní skálopevné portfolio!\n\nPřihlášením do bezplatného kurzu získáte:\n\n✅ 8 videí se zaměřením na akciové a ETF investování\n✅ Celý postup tvorby portfolia – vše, co potřebujete vědět\n✅ Od obecných informací a výběru akcií či ETF, přes samotný nákup titulů, až po následné zabezpečení celého portfolia\n✅ Kurz je vhodný pro úplné začátečníky i pokročilé investory\nXTB.CZ/TVORBA-AKCIOVEHO-PORTFOLIA\nZÍSKEJTE INVESTIČNÍ KURZ ZDARMA\nDownload\n​\nАктивно\nID Библиоте
+"Meta Ad Library\nAd Library\nAd Library Report\nAd Library API\nBranded content\n​\nCzech Republic\n​\n​\n​\nAll ads\n​\nSearch by keyword or advertiser\n​\n​\nLog in\nAd Library\nAd Library Report\nAd Library API\nBranded content\nSystem status\nSubscribe to email notifications\nFrequently asked questions\nInformation about ads and data use\nPrivacy\nTerms\nCookies\nResults: ~250\nResults contain active ads matching your keyword query.\nFilters\nSort\n​\nSorting\nStatus \"Active\": Active ads\nRemove\n​\n​\nActive\nLibrary ID: 10007530189292762\nStarted running 26 May 2025\nPlatforms\n​\n​\n​\n​\nThis ad has multiple versions\n​\nThis creative and copy are used in 5 ads\nOpen dropdown menu\n​\nView summary data\nXTB Online Trading\nAdvertising\nNaučte se investovat do akcií a ETF a sestavte si své vlastní skálopevné portfolio!\n\nPřihlášením do bezplatného kurzu získáte:\n\n✅ 8 videí se zaměřením na akciové a ETF investování\n✅ Celý postup tvorby portfolia – vše, co potřebujete vědět\n✅ Od obecných informací a výběru akcií či ETF, přes samotný nákup titulů, až po následné zabezpečení celého portfolia\n✅ Kurz je vhodný pro úplné začátečníky i pokročilé investory\nXTB.CZ/TVORBA-AKCIOVEHO-PORTFOLIA\nZÍSKEJTE INVESTIČNÍ KURZ ZDARMA\nDownload\n​\nActive\nLibrary ID [truncated]
 … [7004 more characters]
 ```
 </details>
@@ -920,7 +921,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Portu&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-21-641Z.yml)
@@ -940,7 +941,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Portu&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-29-793Z.yml)
@@ -951,7 +952,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 
 ```
 ### Result
-"Результаты: ~110\nРезультаты содержат активные объявления, которые соответствуют вашему запросу по ключевым словам.\nФильтры\nСортировать\nСортировка\nСтатус \"Активно\": Активные объявления\nУдалить\nАктивно\nID Библиотеки: 972272191849232\nПоказ начат 16 мая 2026 г.\nУ этой рекламы несколько версий\nVIBAe\nРеклама\nA New Standard of Ergonomic Footwear. Designed in Finland. Crafted in Portugal.\nVIBAE.COM\nZUMA Linen Pacific Blue\n€145\nShop Now\nАктивно\nID Библиотеки: 575699768894727\nПоказ начат 12 мая 2025 г.\nУ этой рекламы несколько версий\nPort 1560\nРеклама\nAreál historického českokrumlovského pivovaru proměněný v centrum, které pulzuje životem!🤩\nDo Krumlova a do Portu\nVýlet, který stojí za to\nLearn More\nАктивно\nID Библиотеки: 1834853007442631\nПоказ начат 26 сен 2025 г.\nBidCars - USA Car Import\nРеклама\nTransport na terenie Stanów Zjednoczonych w pigułce! Wygrane podczas licytacji pojazdy są transportowane z placów aukcyjnych na terminal, gdzie następuje ich załadunek do kontenera, a w dalszej kolejności dostawa do portu wysyłkowego. \n\nZapraszamy do udziału w licytacjach online na naszej platformie aukcyjnej! Znajdziecie na niej ponad 100,000 pojazdów dostępnych do licytacji na żywo! \n\nPozdrawiamy\nZespół BidCars!\n#bidcars #autazusa #importzusa #samochodyzusa #importsamochodów #amerykacars #brykizameryki #polska\n0:00 / 0:51\nBID.CARS\nBidCars - USA Car Import\nУзнать стоимость\nАктивно\nID Библиотеки: 1441679956882506\nПоказ начат 29 авг 20
+"Results: ~110\nResults contain active ads matching your keyword query.\nFilters\nSort\nSorting\nStatus \"Active\": Active ads\nRemove\nActive\nLibrary ID: 972272191849232\nStarted running 16 May 2026\nThis ad has multiple versions\nVIBAe\nAdvertising\nA New Standard of Ergonomic Footwear. Designed in Finland. Crafted in Portugal.\nVIBAE.COM\nZUMA Linen Pacific Blue\n€145\nShop Now\nActive\nLibrary ID: 575699768894727\nStarted running 12 May 2025\nThis ad has multiple versions\nPort 1560\nAdvertising\nAreál historického českokrumlovského pivovaru proměněný v centrum, které pulzuje životem!🤩\nDo Krumlova a do Portu\nVýlet, který stojí za to\nLearn More\nActive\nLibrary ID: 1834853007442631\nStarted running 26 Sep 2025\nBidCars - USA Car Import\nAdvertising\nTransport na terenie Stanów Zjednoczonych w pigułce! Wygrane podczas licytacji pojazdy są transportowane z placów aukcyjnych na terminal, gdzie następuje ich załadunek do kontenera, a w dalszej kolejności dostawa do portu wysyłkowego. \n\nZapraszamy do udziału w licytacjach online na naszej platformie aukcyjnej! Znajdziecie na niej ponad 100,000 pojazdów dostępnych do licytacji na żywo! \n\nPozdrawiamy\nZespół BidCars!\n#bidcars #autazusa #importzusa #samochodyzusa #importsamochodów #amerykacars #brykizameryki #polska\n0:00 / 0:51\nBID.CARS\nBidCars - USA Car Import\nGet a quote\nActive\nLibrary ID: 1441679956882506\nStarted running 29 Aug 20
 … [3703 more characters]
 ```
 </details>
@@ -971,7 +972,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Fondee&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-37-827Z.yml)
@@ -991,7 +992,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Fondee&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-45-992Z.yml)
@@ -1002,7 +1003,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 
 ```
 ### Result
-"Результаты: ~87\nРезультаты содержат активные объявления, которые соответствуют вашему запросу по ключевым словам.\nФильтры\nСортировать\nСортировка\nСтатус \"Активно\": Активные объявления\nУдалить\nID Библиотеки: 28055100750793947\nПоказ начат 3 авг 2026 г.\nЭтот креатив и текст используются в 3 объявлениях\nDirect Fondee\nРеклама\nSpočítejte si, kolik může mít vaše investice za 10, 20 nebo 30 let. 📈 Neodkládejte investování na později. S Direct Fondee začnete jednoduše, online a na pár kliknutí.\n0:00 / 0:43\nID Библиотеки: 1743693030119483\nПоказ начат 1 авг 2026 г.\nToo.posh.storee\nРеклама\n⚡Doručení cca 10 dní⚡\nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nID Библиотеки: 1417684586198605\nПоказ начат 19 мар 2026 г.\nToo.posh.storee\nРеклама\n‼🤩 Doručení cca 10 dní ‼🤩\nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nV
+"Results: ~87\nResults contain active ads matching your keyword query.\nFilters\nSort\nSorting\nStatus \"Active\": Active ads\nRemove\nLibrary ID: 28055100750793947\nStarted running 3 Aug 2026\nThis creative and copy are used in 3 ads\nDirect Fondee\nAdvertising\nSpočítejte si, kolik může mít vaše investice za 10, 20 nebo 30 let. 📈 Neodkládejte investování na později. S Direct Fondee začnete jednoduše, online a na pár kliknutí.\n0:00 / 0:43\nLibrary ID: 1743693030119483\nStarted running 1 Aug 2026\nToo.posh.storee\nAdvertising\n⚡Doručení cca 10 dní⚡\nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nLibrary ID: 1417684586198605\nStarted running 19 Mar 2026\nToo.posh.storee\nAdvertising\n‼🤩 Doručení cca 10 dní ‼🤩\nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nVisit Instagram Profile\n \nINSTAGRAM.COM\nV
 … [3020 more characters]
 ```
 </details>
@@ -1020,7 +1021,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=%22Trading%20212%22&search_type=keyword_exact_phrase&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-49-374Z.yml)
@@ -1042,7 +1043,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=%22Trading%20212%22&search_type=keyword_exact_phrase&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-12-57-471Z.yml)
@@ -1053,7 +1054,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 
 ```
 ### Result
-"Результаты включают объявления, которые соответствуют вашему запросу по точной фразе.\nФильтры\nСортировать\nСортировка\nСтатус \"Активно\": Активные объявления\nУдалить\nID Библиотеки: 4071667012966167\nПоказ начат 13 сен 2026 г.\nInvestovanie pre Začiatočníkov\nРеклама\n🏦 BANKA ALEBO BROKER? Kde vás poplatky a dane oberajú o najviac peňazí? 📉\n\nMnohí Slováci začínajú investovať cez svoju vlastnú banku. Je to pohodlné – pár klikov v mobilnej aplikácii a je to. Viete však, o koľko peňazí vás ročne pripravia priebežné poplatky a aký obrovský je daňový rozdiel oproti nákupu ETF fondov cez brokera?\n\nV novom videu som si posvietil na reálne čísla a porovnal 3 najčastejšie voľby slovenských investorov:\n🔹 Klasické podielové fondy v banke (VÚB)\n🔹 Investičné plány na XTB\n🔹 Koláče (Pies) na Trading 212\n\nUkážeme si konkrétny modelový príklad (pri vklade 300 € mesačne), skryté náklady aj to, prečo môžete na poplatkoch v banke prísť o tisíce až desaťtisíce eur zo svojho zisku.\n\n🎬 Celé porovnanie a praktické ukážky nájdete vo videu tu:\n\n👉 https://youtu.be/xaoAmXa5a1k\n\n💬 Otázka na vás:\n\nKde máte svoje investície vy? Dávate prednosť pohodliu bankovej aplikácie, alebo už investujete samostatne cez brokerov ako XTB či Trading 212? Napíšte mi svoje skúsenosti do komentára! 👇\n\n(Upozornenie: Investovanie na finančných trhoch zahŕňa riziko straty kapitálu. Obsah videa slúži výhradne na vzdelávacie účely.)\nYOUTUBE.COM\nFondy Banky VUB vs Investičné plány od XTB a Tra
+"Results include ads matching your exact-phrase query.\nFilters\nSort\nSorting\nStatus \"Active\": Active ads\nRemove\nLibrary ID: 4071667012966167\nStarted running 13 Sep 2026\nInvestovanie pre Začiatočníkov\nAdvertising\n🏦 BANKA ALEBO BROKER? Kde vás poplatky a dane oberajú o najviac peňazí? 📉\n\nMnohí Slováci začínajú investovať cez svoju vlastnú banku. Je to pohodlné – pár klikov v mobilnej aplikácii a je to. Viete však, o koľko peňazí vás ročne pripravia priebežné poplatky a aký obrovský je daňový rozdiel oproti nákupu ETF fondov cez brokera?\n\nV novom videu som si posvietil na reálne čísla a porovnal 3 najčastejšie voľby slovenských investorov:\n🔹 Klasické podielové fondy v banke (VÚB)\n🔹 Investičné plány na XTB\n🔹 Koláče (Pies) na Trading 212\n\nUkážeme si konkrétny modelový príklad (pri vklade 300 € mesačne), skryté náklady aj to, prečo môžete na poplatkoch v banke prísť o tisíce až desaťtisíce eur zo svojho zisku.\n\n🎬 Celé porovnanie a praktické ukážky nájdete vo videu tu:\n\n👉 https://youtu.be/xaoAmXa5a1k\n\n💬 Otázka na vás:\n\nKde máte svoje investície vy? Dávate prednosť pohodliu bankovej aplikácie, alebo už investujete samostatne cez brokerov ako XTB či Trading 212? Napíšte mi svoje skúsenosti do komentára! 👇\n\n(Upozornenie: Investovanie na finančných trhoch zahŕňa riziko straty kapitálu. Obsah videa slúži výhradne na vzdelávacie účely.)\nYOUTUBE.COM\nFondy Banky VUB vs Investičné plány od XTB a Tra
 … [643 more characters]
 ```
 </details>
@@ -1073,7 +1074,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=ETF%20zdarma&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-13-04-671Z.yml)
@@ -1093,7 +1094,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=ETF%20zdarma&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-13-12-792Z.yml)
@@ -1104,7 +1105,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 
 ```
 ### Result
-"Результаты: ~44\nРезультаты содержат активные объявления, которые соответствуют вашему запросу по ключевым словам.\nФильтры\nСортировать\nСортировка\nСтатус \"Активно\": Активные объявления\nУдалить\nID Библиотеки: 2299367657147403\nПоказ начат 24 июн 2025 г.\nInvestování pro holky\nРеклама\nPřijď na webinář ZDARMA a zjisti, jak začít investovat tím nejjednodušším způsobem – prostřednictvím indexových ETF! \n\nNapiš „chci investovat“ do komentáře a pošlu ti odkaz na webinář zdarma do zprávy 😊\n\n#jakinvestovat #budujemebohatstvi #investicniwebinar #webinaroinvestovani #investovanijednoduse #webinarzdarma #jakmitvicepenez #budujbohatstvi #bohatstvi #webinar\n0:00 / 0:55\nVZDELAVANI.INVESTOVANIPROHOLKY.CZ\nInvestování pro holky\nСмотреть ещё\nID Библиотеки: 1496566814710793\nПоказ начат 3 июн 2026 г.\nXTB Online Trading\nРеклама\nNaučte se investovat do akcií a ETF a sestavte si své vlastní skálopevné portfolio!\n\nPřihlášením do bezplatného kurzu získáte:\n\n✅ 8 videí se zaměřením na akciové a ETF investování\n✅ Celý postup tvorby portfolia – vše, co potřebujete vědět\n✅ Od obecných informací a výběru akcií či ETF, přes samotný nákup titulů, až po následné zabezpečení celého portfolia\n✅ Kurz je vhodný pro úplné začátečníky i pokročilé investory\n0:00 / 0:37\nID Библиотеки: 4557863711100374\nПоказ начат 16 июл 2026 г.\nКатегории\nInvestiční spoření jednoduše\nРеклама\nRok 2026 přináší jedinečné příležitosti pro investory všech úrovních. 💸\n\n👉 Náš e-book vás proved
+"Results: ~44\nResults contain active ads matching your keyword query.\nFilters\nSort\nSorting\nStatus \"Active\": Active ads\nRemove\nLibrary ID: 2299367657147403\nStarted running 24 Jun 2025\nInvestování pro holky\nAdvertising\nPřijď na webinář ZDARMA a zjisti, jak začít investovat tím nejjednodušším způsobem – prostřednictvím indexových ETF! \n\nNapiš „chci investovat“ do komentáře a pošlu ti odkaz na webinář zdarma do zprávy 😊\n\n#jakinvestovat #budujemebohatstvi #investicniwebinar #webinaroinvestovani #investovanijednoduse #webinarzdarma #jakmitvicepenez #budujbohatstvi #bohatstvi #webinar\n0:00 / 0:55\nVZDELAVANI.INVESTOVANIPROHOLKY.CZ\nInvestování pro holky\nSee more\nLibrary ID: 1496566814710793\nStarted running 3 Jun 2026\nXTB Online Trading\nAdvertising\nNaučte se investovat do akcií a ETF a sestavte si své vlastní skálopevné portfolio!\n\nPřihlášením do bezplatného kurzu získáte:\n\n✅ 8 videí se zaměřením na akciové a ETF investování\n✅ Celý postup tvorby portfolia – vše, co potřebujete vědět\n✅ Od obecných informací a výběru akcií či ETF, přes samotný nákup titulů, až po následné zabezpečení celého portfolia\n✅ Kurz je vhodný pro úplné začátečníky i pokročilé investory\n0:00 / 0:37\nLibrary ID: 4557863711100374\nStarted running 16 Jul 2026\nCategories\nInvestiční spoření jednoduše\nAdvertising\nRok 2026 přináší jedinečné příležitosti pro investory všech úrovních. 💸\n\n👉 Náš e-book vás proved
 … [6947 more characters]
 ```
 </details>
@@ -1122,7 +1123,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Revolut%20investov%C3%A1n%C3%AD&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-13-17-316Z.yml)
@@ -1144,7 +1145,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Revolut%20investov%C3%A1n%C3%AD&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-13-25-399Z.yml)
@@ -1178,7 +1179,7 @@ await page.goto('https://www.facebook.com/ads/library/?active_status=active&ad_t
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Revolut&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-13-32-827Z.yml)
@@ -1198,7 +1199,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=Revolut&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-13-40-993Z.yml)
@@ -1209,7 +1210,7 @@ await new Promise(f => setTimeout(f, 8 * 1000));
 
 ```
 ### Result
-"Результаты: ~160\nРезультаты содержат активные объявления, которые соответствуют вашему запросу по ключевым словам.\nФильтры\nСортировать\nСортировка\nСтатус \"Активно\": Активные объявления\nУдалить\nID Библиотеки: 1915971843145455\nПоказ начат 23 июн 2026 г.\nBearefoot\nРеклама\nAre you tired of stiff, uncomfortable shoes? 🤔 We hear you! Bearefoot shoes embrace the comfort of walking barefoot with still feeling safe. \n\n✅ Wide Toe Box: reduce foot & ankle pain \n✅ Zero-Drop: increase foot strength & mobility \n✅ Thin Sole: comfortable & flexible fit\nBEAREFOOT.COM\nGrab a pair today!\nshop now >>\nShop Now\nID Библиотеки: 3632467593572917\nПоказ начат 10 сен 2026 г.\nRevolut\nРеклама\nPřidejte se k milionům zákazníků po celém světě, kteří s Revolutem platí, posílají a spoří peníze. Stáhněte si aplikaci 💪\nOtevřete si účet během chvilky\nSign Up\nID Библиотеки: 1833770841117722\nПоказ начат 10 сен 2026 г.\nRevolut\nРеклама\nOdemkněte platby ve více měnách, rychlé převody, chytré spoření a další. Stáhněte si aplikaci Revolut ještě dnes ⚡️\nSpravujte peníze po svém\nSign Up\nID Библиотеки: 1149803153571859\nПоказ начат 12 июн 2025 г.\nRevolut Business\nРеклама\nS Revolut Business můžete ušetřit na převodech a platbách. Platí podmínky.\nREVOLUT.COM/CZ/BUSINESS\nPodnikatelský účet online\nSign Up\nID Библиотеки: 1137320558536230\nПоказ начат 13 окт 2025 г.\nRevolut Business\nРеклама\nS Revolut Business můžete ušetřit na převodech a platbách. Platí podmínky.\nREVOLUT
+"Results: ~160\nResults contain active ads matching your keyword query.\nFilters\nSort\nSorting\nStatus \"Active\": Active ads\nRemove\nLibrary ID: 1915971843145455\nStarted running 23 Jun 2026\nBearefoot\nAdvertising\nAre you tired of stiff, uncomfortable shoes? 🤔 We hear you! Bearefoot shoes embrace the comfort of walking barefoot with still feeling safe. \n\n✅ Wide Toe Box: reduce foot & ankle pain \n✅ Zero-Drop: increase foot strength & mobility \n✅ Thin Sole: comfortable & flexible fit\nBEAREFOOT.COM\nGrab a pair today!\nshop now >>\nShop Now\nLibrary ID: 3632467593572917\nStarted running 10 Sep 2026\nRevolut\nAdvertising\nPřidejte se k milionům zákazníků po celém světě, kteří s Revolutem platí, posílají a spoří peníze. Stáhněte si aplikaci 💪\nOtevřete si účet během chvilky\nSign Up\nLibrary ID: 1833770841117722\nStarted running 10 Sep 2026\nRevolut\nAdvertising\nOdemkněte platby ve více měnách, rychlé převody, chytré spoření a další. Stáhněte si aplikaci Revolut ještě dnes ⚡️\nSpravujte peníze po svém\nSign Up\nLibrary ID: 1149803153571859\nStarted running 12 Jun 2025\nRevolut Business\nAdvertising\nS Revolut Business můžete ušetřit na převodech a platbách. Platí podmínky.\nREVOLUT.COM/CZ/BUSINESS\nPodnikatelský účet online\nSign Up\nLibrary ID: 1137320558536230\nStarted running 13 Oct 2025\nRevolut Business\nAdvertising\nS Revolut Business můžete ušetřit na převodech a platbách. Platí podmínky.\nREVOLUT
 … [2288 more characters]
 ```
 </details>
@@ -1318,12 +1319,12 @@ C_trh_260921.pdf 200 application/pdf
 PriceList 200 application/pdf
 tabulka-poplatku-a-provizi.pdf 200 application/pdf
 total 4152
-drwxr-xr-x   6 [user]  wheel      192 11 окт.  01:14 .
-drwx------  20 [user]  wheel      640 11 окт.  01:14 ..
--rw-r--r--   1 [user]  wheel   419885 11 окт.  01:14 C_trh_260921.pdf
--rw-r--r--   1 [user]  wheel   359339 11 окт.  01:14 C_zaklad_260701.pdf
--rw-r--r--   1 [user]  wheel   233788 11 окт.  01:14 PriceList
--rw-r--r--   1 [user]  wheel  1103808 11 окт.  01:14 tabulka-poplatku-a-provizi.pdf
+drwxr-xr-x   6 [user]  wheel      192 11 Oct  01:14 .
+drwx------  20 [user]  wheel      640 11 Oct  01:14 ..
+-rw-r--r--   1 [user]  wheel   419885 11 Oct  01:14 C_trh_260921.pdf
+-rw-r--r--   1 [user]  wheel   359339 11 Oct  01:14 C_zaklad_260701.pdf
+-rw-r--r--   1 [user]  wheel   233788 11 Oct  01:14 PriceList
+-rw-r--r--   1 [user]  wheel  1103808 11 Oct  01:14 tabulka-poplatku-a-provizi.pdf
 ```
 </details>
 
@@ -1335,7 +1336,8 @@ cd [tmp] && for f in C_zaklad_260701.pdf PriceList tabulka-poplatku-a-provizi.pd
 <details><summary>result</summary>
 
 ```
-69:(C)   Trhy cenných papírů v USA (dále jen „USA“)
+69:
+(C)   Trhy cenných papírů v USA (dále jen „USA“)
 90:                      libovolného pokynu s vícedenní platností bude poplatek dle výše uvedené tabulky účtován odděleně
 95: (E) Deusche Börse AG – XETRA (XETR) a Frankfurt (XFRA)
 119:      Upozornění: U pokynu s vícedenní platností bude každý den, kdy došlo k jeho částečnému uspokojení, účtován
@@ -1408,7 +1410,7 @@ Exit code 1
           IN uložené na sběrném účtu pro obchodování na DB XETRA                                         zdarma
                                                                                                    N x 0,05 % p. a.***
           IN uložené na sběrném účtu pro obchodování na trhu GPW
-                                              
+
 … [462 more characters]
 ```
 </details>
@@ -1482,7 +1484,8 @@ Příslušná sazba Poplatku za využívání produktu se vztahuje na všechen i
                                                          4
                WOOD Retail Investments a.s., Jihlavská 1558/21, Michle, 140 00 Praha 4, Česká republika;
     IČ: 178 18 834; Společnost je zapsána v Obchodním rejstříku u Městského soudu v Praze, oddíl B, vložka 27805
-      IV.      Jednotlivé akcie a ETF (Brokerage)
+
+      IV.      Jednotlivé akcie a ETF (Brokerage)
 
 
 Poplatek za realizovaný pokyn
@@ -1500,7 +1503,7 @@ Bronzová                                              0,4 %                    
 Stříbrná                                              0,3 %                                0,15 %
 
 
-Zlatá                                                 0,2 %             
+Zlatá                                                 0,2 %
 … [1014 more characters]
 ```
 </details>
@@ -1643,7 +1646,7 @@ await new Promise(f => setTimeout(f, 5 * 1000));
 ```
 ### Page
 - Page URL: https://www.trading212.com/ru/terms/invest
-- Page Title: Условия торговли для счетов Invest
+- Page Title: Invest account trading terms
 - Console: 4 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-14-51-466Z.yml)
@@ -1656,7 +1659,7 @@ await new Promise(f => setTimeout(f, 5 * 1000));
 
 ```
 ### Result
-"https://www.trading212.com/ru/terms/invest\nУсловия торговли для счетов Invest\nУсловия и комиссии\nТорговая комиссия\nКомиссия за хранение\nFX комиссия\n0,15 %\nПрименяется всегда, когда вы конвертируете средства из одной валюты в другую, а также при торговле, включающей обмен валюты. Мы выполняем обмен по текущему межбанковскому курсу, который используется банками для обмена валют между собой. Никаких дополнительных затрат на обмен валюты. Вы никогда не будете платить больше 0,15 %, даже в выходные. Снизьте или полностью избегайте затрат на обмен валюты с нашей мультивалютной функцией. Узнать больше.\n0,7 %\nTrading 212 не взимает плату за снятие средств. Сторонние банки или процессоры могут взимать собственные комиссии вне нашего контроля.\n3,4 % APY\n2,5 % APY\n3,55 % APY\n0,5 % APY\n0,25 % APY\n2,25 % APY\n3 % APY\nПроцентная ставка по CZK\n3,5 % APY\nКомиссии и сборы эмитента\nКомиссия за американские депозитарные расписки\nТорговля некоторыми иностранными акциями ведется в форме американских депозитарных расписок (ADR). Выпускающая их организация может взимать небольшую комиссию, обычно несколько центов за акцию в год (0,01–0,05 $ за акцию). Trading 212 не взимает никаких дополнительных комиссий. Узнайте подробнее.\n0,5 %\n0,4 %\nКомиссия FINRA\nКомиссия SEC\n0,00206 %\nБез комиссии\nБез комиссии за валютные операции, без наценки на спред, настоящий межбанковский курс.\n1 %\nРегулируется FCA\nКомпания Trading 212 UK Ltd. зарегистрирована в Англии и Уэльсе, 
+"https://www.trading212.com/ru/terms/invest\nInvest account trading terms\nTerms and fees\nTrading commission\nCustody fee\nFX fee\n0,15 %\nApplies whenever you convert funds between currencies, including trades involving currency conversion. We convert at the current interbank rate used by banks to exchange currencies with one another. No additional currency-conversion costs. You never pay more than 0,15 %, even at weekends. Reduce or avoid conversion costs with our multi-currency feature. Learn more.\n0,7 %\nTrading 212 does not charge withdrawal fees. Third-party banks or payment processors may charge their own fees outside our control.\n3,4 % APY\n2,5 % APY\n3,55 % APY\n0,5 % APY\n0,25 % APY\n2,25 % APY\n3 % APY\nCZK interest rate\n3,5 % APY\nIssuer fees and charges\nAmerican depositary receipt fee\nSome foreign stocks trade as American depositary receipts (ADRs). Their issuer may charge a small fee, usually a few cents per share per year (0,01–0,05 $ per share). Trading 212 charges no additional fees. Learn more.\n0,5 %\n0,4 %\nFINRA fee\nSEC fee\n0,00206 %\nNo fee\nNo FX commission, no spread markup, the actual interbank rate.\n1 %\nRegulated by the FCA\nTrading 212 UK Ltd. is registered in England and Wales,
 … [2173 more characters]
 ```
 </details>
@@ -2105,7 +2108,7 @@ await page.evaluate('() => location.href+\'\\n\'+document.title+\'\\n\'+[...new 
 
 ```
 ### Result
-"CS https://www.finax.eu/cs/poplatky#\nInvestovat https://www.finax.eu/cs/poplatky#\nInvestování podle cíle\n                    \n                        \n                                                        \n\n\n\n\n    \n        Pro začátečníky\n    \n                                                    \n                    \n                \n                \n                    \n                        arrow_forward\n                    \n                \n            \n            Nemusíte se trápit výběrem produktu a složením portfolia. Řěkněte nám svůj cíl a o zbytek se postaráme.\n            \n                \n                                        \n\n\n\n\n    \n        Pro začátečníky https://www.finax.eu/cs/poplatky\nInvestiční produkty\n                    \n                        \n                                                        \n\n\n\n\n    \n        Pro zkušenější\n    \n                                                    \n                    \n                \n                \n                    \n                        arrow_forward\n                    \n                \n            \n            Pokud přesně víte, co chcete, a nepotřebujete od nás poradit.\n            \n                \n                                        \n\n\n\n\n    \n        Pro zkušenější https://www.finax.eu/cs/poplatky\nOstatní služby Finaxu\n                    \n                        \n                                                  
+"CS https://www.finax.eu/cs/poplatky#\nInvestovat https://www.finax.eu/cs/poplatky#\nInvestování podle cíle\n                    \n                        \n                                                        \n\n\n\n\n    \n        Pro začátečníky\n    \n                                                    \n                    \n                \n                \n                    \n                        arrow_forward\n                    \n                \n            \n            Nemusíte se trápit výběrem produktu a složením portfolia. Řěkněte nám svůj cíl a o zbytek se postaráme.\n            \n                \n                                        \n\n\n\n\n    \n        Pro začátečníky https://www.finax.eu/cs/poplatky\nInvestiční produkty\n                    \n                        \n                                                        \n\n\n\n\n    \n        Pro zkušenější\n    \n                                                    \n                    \n                \n                \n                    \n                        arrow_forward\n                    \n                \n            \n            Pokud přesně víte, co chcete, a nepotřebujete od nás poradit.\n            \n                \n                                        \n\n\n\n\n    \n        Pro zkušenější https://www.finax.eu/cs/poplatky\nOstatní služby Finaxu\n                    \n                        \n
 … [1700 more characters]
 ```
 </details>
@@ -2154,7 +2157,7 @@ Web search results for query: "Anycoin akcie ETF nabídka 2026"
 
 Links: [{"title":"Analysts Predict Significant Growth for Cryptocurrency ETFs by 2026","url":"https://www.radom.com/insights/analysts-predict-significant-growth-for-cryptocurrency-etfs-by-2026"},{"title":"crypto etfs explode higher 2026","url":"https://regional-front.cointelegraph.com/news/crypto-etfs-explode-higher-2026"},{"title":"crypto etfs explode higher 2026","url":"https://cointelegraph.com/news/crypto-etfs-explode-higher-2026?rand=26097"},{"title":"crypto etfs explode higher 2026","url":"https://cointelegraph.com/news/crypto-etfs-explode-higher-2026"},{"title":"2026 U.S. Crypto Investment Landscape: ETFs, Treasury Firms, and Market Trends","url":"https://www.kucoin.com/news/flash/2026-u-s-crypto-investment-landscape-etfs-treasury-firms-and-market-trends"},{"title":"bitwise zverejnuje 10 predpovedi byci zvitezi na bitcoin altcoiny krypto etf","url":"https://news.bitcoin.com/cs/bitwise-zverejnuje-10-predpovedi-byci-zvitezi-na-bitcoin-altcoiny-krypto-etf/"},{"title":"Crypto ETFs in 2026: What to Expect for Bitcoin, Ethereum, XRP, and Solana","url":"https://finance.yahoo.com/news/crypto-etfs-2026-expect-bitcoin-150626003.html"},{"title":"www.mexc.com","url":"https://www.mexc.com/news/364689"},{"title":"www.mexc.com","url":"https://www.mexc.com/news/352917"}]
 
-The search found nothing specific to Anycoin akcie (Anycoin shares) or an Anycoin ETF offering in 2026. The results cover the broader crypto ETF market 
+The search found nothing specific to Anycoin akcie (Anycoin shares) or an Anycoin ETF offering in 2026. The results cover the broader crypto ETF market
 … [979 more characters]
 ```
 </details>
@@ -2166,7 +2169,7 @@ Web search results for query: "XTB pokuta ČNB 2026"
 
 Links: [{"title":"xtb achieves best quarter yet preliminary net profit and client base hit all time highs","url":"https://www.khaleejtimes.com/business/xtb-achieves-best-quarter-yet-preliminary-net-profit-and-client-base-hit-all-time-highs?amp=1"},{"title":"váš průvodce finančním světem","url":"https://www.mesec.cz/n/investice/?pi=3"},{"title":"XTB preliminary H1 2026 results: all-time high consolidated net profit and record client base growth","url":"https://ir.xtb.com/en/xtb-preliminary-h1-2026-results-all-time-high-consolidated-net-profit-and-record-client-base-growth/"},{"title":"XTB preliminary H1 2026 results: all-time high consolidated net profit and record client base growth","url":"https://ir.xtb.com/?p=5841"},{"title":"16:14 · 26. marca 2025","url":"https://www.xtb.com/sk/trhove-analyzy/spravy-z-trhov/komentar-xtb-nazivo-cnb-rozhoduje-o-sadzbach"},{"title":"recenze xtb","url":"https://www.arecenze.cz/clanky/recenze-xtb/"},{"title":"XTB achieves best quarter yet: preliminary net profit and client base hit all-time highs","url":"https://ir.xtb.com/?p=5583"},{"title":"Investors Wave Off Record KNF Fine, Push XTB to New All-Time High","url":"https://www.financemagnates.com/forex/brokers/investors-wave-off-record-knf-fine-push-xtb-to-new-all-time-high/"},{"title":"XTB (XTB) Q1 2026 TU earnings summary","url":"https://quartr.com/events/xtb-sa-xtb-q1-2026-tu_FPmo3DWg"}]
 
-I found no reports of a Czech National Bank (ČNB) 
+I found no reports of a Czech National Bank (ČNB)
 … [1129 more characters]
 ```
 </details>
@@ -2180,7 +2183,7 @@ Links: [{"title":"Poplatky za investice: Srovnání brokerů a investičních pl
 
 Search results confirm the basic fee terms, but none tie the fee specifically to XTB's Czech branch or to the KNF/ČNB supervisory split you asked about.
 
-- **Fee amount and trigger:** Several 
+- **Fee amount and trigger:** Several
 … [1380 more characters]
 ```
 </details>
@@ -2203,14 +2206,14 @@ Call log:
 
 ```
 ### Result
-"chrome-error://chromewebdata/\nОшибка нарушения конфиденциальности\nFORMS:\n\nLABELS:\nПомогите сделать Интернет безопаснее для всех, разрешив Chrome отправлять в Google URL и содержимое некоторых посещенных страниц, а также ограниченную\nЧтобы браузер Chrome стал максимально безопасным, включите режим \"Улучшенная защита\".\nTEXT:\nПодключение не защищено\n\nВозможно, злоумышленники пытаются похитить вашу информацию с сайта www.xtb.cz, например пароли, сообщения и данные кредитных карт. Подробнее об этом предупреждении…\n\nNET::ERR_CERT_COMMON_NAME_INVALID\nЧтобы браузер Chrome стал максимально безопасным, включите режим \"Улучшенная защита\".\nВернуться к безопасной странице\nДополнительные настройки"
+"chrome-error://chromewebdata/\nPrivacy error\nFORMS:\n\nLABELS:\nHelp make the internet safer by allowing Chrome to send Google URLs and content from some visited pages, as well as limited [truncated]\nTo make Chrome as secure as possible, enable \"Enhanced protection\".\nTEXT:\nYour connection is not private\n\nAttackers may be trying to steal your information from www.xtb.cz, including passwords, messages and credit-card details. Learn more about this warning…\n\nNET::ERR_CERT_COMMON_NAME_INVALID\nTo make Chrome as secure as possible, enable \"Enhanced protection\".\nBack to safety\nAdvanced settings"
 ### Ran Playwright code
 ```js
 await page.evaluate('() => { const f=[...document.querySelectorAll(\'form\')].map(f=>[...f.querySelectorAll(\'input,select,textarea,button\')].filter(e=>e.type!==\'hidden\').map(e=>(e.tagName+\':\'+(e.type||\'\')+\':\'+(e.name||\'\')+\':\'+(e.placeholder||e.textContent||\'\').trim().slice(0,60))).join(\' | \')); const labels=[...document.querySelectorAll(\'label\')].map(l=>l.textContent.trim().slice(0,150)); return location.href+\'\\n\'+document.title+\'\\nFORMS:\\n\'+f.join(\'\\n\')+\'\\nLABELS:\\n\'+labels.join(\'\\n\')+\'\\nTEXT:\\n\'+document.body.innerText.slice(0,2500); }');
 ```
 ### Page
 - Page URL: chrome-error://chromewebdata/
-- Page Title: Ошибка нарушения конфиденциальности
+- Page Title: Privacy error
 ```
 </details>
 
@@ -2466,7 +2469,7 @@ await page.goto('https://www.fondee.cz/');
 
 ```
 ### Result
-"Investování, kterému rozumíte | Direct Fondee\nH: Investování,Investování,kterému rozumítekterému rozumíte || S lidmi, kterým\nmůžete věřit || Investování,\nInvestování,\nkterému rozumíte\nkterému rozumíte || S lidmi, kterým\nmůžete věřit || Finanční svět je\nFinanční svět je\nnepřehledný\nnepřehledný || Investování má být\nInvestování má být\nsrozumitelné\nsrozumitelné\nFORMS: \nBTN: O investování / Naše účty / O Fondee / Podpora / Přihlásit se / Začít / CZ / Začít investovat / Investiční kalkulačka / Začít registraci / Jdu do toho / Jak na to / Chci pro děti víc / Začít řešit důchod / Celá recenze / Musím rozumět investování? / blogu / Kolik peněz potřebuji na investování? / Co když budu peníze potřebovat? / Jsou moje peníze v bezpečí? / Jaké jsou poplatky? / Vyplnit dotazník / Jak funguje investování / Zajistit děti / Připravit se na důchod / Poplatky / Blog / Dokumenty / Psali o nás / info@fondee.cz\nTOP: O investování\nNaše účty\nO Fondee\nPodpora\nPřihlásit se\nZačít\nCZ\nInvestování,\nInvestování,\nkterému rozumíte\nkterému rozumíte\nČNB\ndohled\n27 000+\nklientů\naž 11,7 %\nprůměrný roční výnos za 10 let\nPomůžeme vám investovat jednoduše, srozumitelně a z pohodlí gauče. Začít můžete už od 500 Kč.\nZačít investovat\nInvestiční kalkulačka\nS lidmi, kterým\nmůžete věřit\nFinanční svět je\nFinanční svět je\nnepřehledný\nnepřehledný\nInvestování má být\nInvestování má být\nsrozumitelné\nsrozumitelné\nTřetina Čechů neví, jak s investováním začít.\nPřitom stačí,
+"Investování, kterému rozumíte | Direct Fondee\nH: Investování,Investování,kterému rozumítekterému rozumíte || S lidmi, kterým\nmůžete věřit || Investování,\nInvestování,\nkterému rozumíte\nkterému rozumíte || S lidmi, kterým\nmůžete věřit || Finanční svět je\nFinanční svět je\nnepřehledný\nnepřehledný || Investování má být\nInvestování má být\nsrozumitelné\nsrozumitelné\nFORMS: \nBTN: O investování / Naše účty / O Fondee / Podpora / Přihlásit se / Začít / CZ / Začít investovat / Investiční kalkulačka / Začít registraci / Jdu do toho / Jak na to / Chci pro děti víc / Začít řešit důchod / Celá recenze / Musím rozumět investování? / blogu / Kolik peněz potřebuji na investování? / Co když budu peníze potřebovat? / Jsou moje peníze v bezpečí? / Jaké jsou poplatky? / Vyplnit dotazník / Jak funguje investování / Zajistit děti / Připravit se na důchod / Poplatky / Blog / Dokumenty / Psali o nás / [redacted: email address]\nTOP: O investování\nNaše účty\nO Fondee\nPodpora\nPřihlásit se\nZačít\nCZ\nInvestování,\nInvestování,\nkterému rozumíte\nkterému rozumíte\nČNB\ndohled\n27 000+\nklientů\naž 11,7 %\nprůměrný roční výnos za 10 let\nPomůžeme vám investovat jednoduše, srozumitelně a z pohodlí gauče. Začít můžete už od 500 Kč.\nZačít investovat\nInvestiční kalkulačka\nS lidmi, kterým\nmůžete věřit\nFinanční svět je\nFinanční svět je\nnepřehledný\nnepřehledný\nInvestování má být\nInvestování má být\nsrozumitelné\nsrozumitelné\nTřetina Čechů neví, jak s investováním začít.\nPřitom stačí,
 … [1328 more characters]
 ```
 </details>
@@ -2543,7 +2546,7 @@ Web search results for query: "multi-step form conversion rate increase study Ve
 
 Links: [{"title":"inbound marketing convert forms","url":"https://whitehat-seo.co.uk/blog/inbound-marketing-convert-forms"},{"title":"Divide forms into steps and design them comprehensively","url":"https://blog.fuerstvonmartin.de/en/knowledge/divide-forms-into-steps-and-design-them-comprehensively"},{"title":"multi step form drop off rates how to reduce them","url":"https://www.reform.app/blog/multi-step-form-drop-off-rates-how-to-reduce-them"},{"title":"how to create a form in hubspot","url":"https://avidlyagency.com/blog/how-to-create-a-form-in-hubspot"},{"title":"- Knowledge Base","url":"https://knowledge.hubspot.com/forms/increase-form-conversion-rates"},{"title":"- Knowledge Base","url":"https://knowledge.hubspot.com/forms/increase-form-conversion-rates?so=1"},{"title":"- Knowledge Base","url":"https://knowledge.hubspot.com/forms/increase-form-conversion-rates?rd=1"},{"title":"- Knowledge Base","url":"https://knowledge.hubspot.com/forms/increase-form-conversion-rates?cId=cj"},{"title":"- Knowledge Base","url":"https://knowledge.hubspot.com/forms/increase-form-conversion-rates?data=data"},{"title":"single page vs multi step forms which converts better","url":"https://reform.app/blog/single-page-vs-multi-step-forms-which-converts-better"}]
 
-The search turned up the Venture Harbour figures, but only through secondary blogs. I didn't find the 
+The search turned up the Venture Harbour figures, but only through secondary blogs. I didn't find the
 … [1818 more characters]
 ```
 </details>
@@ -2722,7 +2725,7 @@ await page.goto('https://www.wordstream.com/blog/facebook-ads-benchmarks-2025');
 
 ```
 ### Result
-"his year’s annual Facebook ads benchmarks report, analyzing data from over 1,000 campaigns to provide you with industry-specific KPIs including average cost per click (CPC), click-through rate (CTR), conversion rate (CVR), and cost per lead (CPL) for two core Facebook ads campaign objectives: traffic and leads. Contents Key Facebook ad trends: The big picture Facebook ads benchmarks: Traffic campaigns Average click-through rate Average cost per click Facebook ads benchmarks: Leads campaigns Ave\n...\npicture Facebook ads benchmarks: Traffic campaigns Average click-through rate Average cost per click Facebook ads benchmarks: Leads campaigns Average click-through rate Average cost per click Average conversion rate Average cost per lead How to improve your Facebook ad results Want the latest data delivere right to your inbox? Download our free 2026 Facebook ads benchmarks report here! Key trends: The big picture Facebook ads with a traffic objective saw strong improvement year over year, wi\n...\nook ads with a traffic objective saw strong improvement year over year, with both higher CTR and lower CPC compared to 2024. Facebook leads campaigns saw performance declines, with a 20% increase in CPL. However, CPC and CPL for this ad type are still significantly lower than comparable ads on Google. Despite rising advertising costs and economic challenges, Facebook Lead Ads maintain a cost advantage over Google Ads. This means that social ads are the perfect complement to 
+"his year’s annual Facebook ads benchmarks report, analyzing data from over 1,000 campaigns to provide you with industry-specific KPIs including average cost per click (CPC), click-through rate (CTR), conversion rate (CVR), and cost per lead (CPL) for two core Facebook ads campaign objectives: traffic and leads. Contents Key Facebook ad trends: The big picture Facebook ads benchmarks: Traffic campaigns Average click-through rate Average cost per click Facebook ads benchmarks: Leads campaigns Ave\n...\npicture Facebook ads benchmarks: Traffic campaigns Average click-through rate Average cost per click Facebook ads benchmarks: Leads campaigns Average click-through rate Average cost per click Average conversion rate Average cost per lead How to improve your Facebook ad results Want the latest data delivere right to your inbox? Download our free 2026 Facebook ads benchmarks report here! Key trends: The big picture Facebook ads with a traffic objective saw strong improvement year over year, wi\n...\nook ads with a traffic objective saw strong improvement year over year, with both higher CTR and lower CPC compared to 2024. Facebook leads campaigns saw performance declines, with a 20% increase in CPL. However, CPC and CPL for this ad type are still significantly lower than comparable ads on Google. Despite rising advertising costs and economic challenges, Facebook Lead Ads maintain a cost advantage over Google Ads. This means that social ads are the perfect complement to
 … [3920 more characters]
 ```
 </details>
@@ -2999,7 +3002,7 @@ await page.goto('https://transparency.meta.com/en-gb/policies/ad-standards/restr
 ### Open tabs
 - 0: (current) [Financial and insurance products and services | Transparency Centre](https://transparency.meta.com/en-gb/policies/ad-standards/restricted-goods-services/financial-services/)
 - 1: [](https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=897831460&timestamp=1791674300483)
-- 2: [Новая вкладка](chrome://new-tab-page/)
+- 2: [New tab](chrome://new-tab-page/)
 ### Page
 - Page URL: https://transparency.meta.com/en-gb/policies/ad-standards/restricted-goods-services/financial-services/
 - Page Title: Financial and insurance products and services | Transparency Centre
@@ -3032,12 +3035,12 @@ await page.goto('https://transparency.meta.com/en-gb/policies/ad-standards/restr
 await page.goto('https://www.facebook.com/business/help/298000447747885');
 ```
 ### Open tabs
-- 0: (current) [Как выбрать особую категорию рекламы? | Справочный центр Meta для бизнеса](https://www.facebook.com/business/help/298000447747885)
+- 0: (current) [How do I choose a special ad category? | Meta Business Help Center](https://www.facebook.com/business/help/298000447747885)
 - 1: [](https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=897831460&timestamp=1791674300483)
-- 2: [Новая вкладка](chrome://new-tab-page/)
+- 2: [New tab](chrome://new-tab-page/)
 ### Page
 - Page URL: https://www.facebook.com/business/help/298000447747885
-- Page Title: Как выбрать особую категорию рекламы? | Справочный центр Meta для бизнеса
+- Page Title: How do I choose a special ad category? | Meta Business Help Center
 - Console: 5 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-19-36-372Z.yml)
@@ -3050,15 +3053,15 @@ await page.goto('https://www.facebook.com/business/help/298000447747885');
 
 ```
 ### Result
-"Как выбрать особую категорию рекламы? | Справочный центр Meta для бизнеса\n"
+"How do I choose a special ad category? | Meta Business Help Center\n"
 ### Ran Playwright code
 ```js
 await page.evaluate('() => { const t=document.body.innerText; const out=[]; const re=/(Financial products|financial products|Europe|European|United States|Canada|investment)/g; let m; while((m=re.exec(t)) && out.length<12){ out.push(t.slice(Math.max(0,m.index-250), m.index+350).replace(/\\s+/g,\' \')); re.lastIndex=m.index+350;} return document.title+\'\\n\'+out.join(\'\\n...\\n\'); }');
 ```
 ### Open tabs
-- 0: (current) [Как выбрать особую категорию рекламы? | Справочный центр Meta для бизнеса](https://www.facebook.com/business/help/298000447747885)
+- 0: (current) [How do I choose a special ad category? | Meta Business Help Center](https://www.facebook.com/business/help/298000447747885)
 - 1: [](https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=897831460&timestamp=1791674300483)
-- 2: [Новая вкладка](chrome://new-tab-page/)
+- 2: [New tab](chrome://new-tab-page/)
 - 3: [Authorize Vercel](https://github.com/login/oauth/authorize?client_id=Iv1.9d7d662ea00b8481&scope=read%3Auser%2Cuser%3Aemail&state=8a9a283fd848f8e5d990662fc71fdb22cec1851ae6e49ab25f8b9498126b5865053a3c7c9f3ff1d82439dec77efb118dd3fd0fef546088cd8f2e2f6288657b23f1b4ba68295dec02517bf048d5d5b2be6006058ef20c5c02a85a7be8d9ac6a92450e85cb3f4fb1e389f5095fdb5ef541d1decb1b8f6ee765545b1d8ef557109217d3023c968dd6dc250ecbc90cfe966b13b9ddadb28d80af579455186d1dc3a1ef633b97266bcb08377601416626ff3e17b54eda26b19d252d15692fc374dcad2858534aae1610ce5874991f8048ce244bcbc55042832562a70242812f838863b3d84dd8b83c9ac87406fc945d36287f0858be8a32e203668453edbc6d1
 … [206 more characters]
 ```
@@ -3078,12 +3081,12 @@ Waited for 3 seconds
 await new Promise(f => setTimeout(f, 3 * 1000));
 ```
 ### Open tabs
-- 0: (current) [Как выбрать особую категорию рекламы? | Справочный центр Meta для бизнеса](https://www.facebook.com/business/help/298000447747885)
+- 0: (current) [How do I choose a special ad category? | Meta Business Help Center](https://www.facebook.com/business/help/298000447747885)
 - 1: [](https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=897831460&timestamp=1791674300483)
-- 2: [Новая вкладка](chrome://new-tab-page/)
+- 2: [New tab](chrome://new-tab-page/)
 ### Page
 - Page URL: https://www.facebook.com/business/help/298000447747885
-- Page Title: Как выбрать особую категорию рекламы? | Справочный центр Meta для бизнеса
+- Page Title: How do I choose a special ad category? | Meta Business Help Center
 - Console: 5 errors, 0 warnings
 ### Snapshot
 - [Snapshot](.playwright-mcp/page-2026-10-10T23-19-45-187Z.yml)
@@ -3094,7 +3097,7 @@ await new Promise(f => setTimeout(f, 3 * 1000));
 
 ```
 ### Result
-"7923\nНачать\nРеклама\nОбучение\nПоддержка\nНачать\nСправочный центр для бизнеса\nПолучить поддержку\nКак выбрать особую категорию рекламы?\nМы постоянно работаем над обеспечением справедливости на нашей рекламной платформе. В рамках этой деятельности мы представили новую особую категорию рекламы \"Финансовые продукты и услуги\" для рекламодателей, продвигающих финансовые продукты и услуги. С 21 января 2025 года использование этой категории обязательно для кампаний по продвижению финансовых продуктов и услуг, проводимых рекламодателями или таргетированных на аудитории в США. При выборе несоответствующей категории реклама может быть отклонена. Подробнее об изменениях.\n\nВыбор правильной категории для рекламной кампании — важный этап соблюдения Норм рекламной деятельности Meta. При создании кампании необходимо указать, показываете ли вы рекламу особой категории.\n\nОсобая категория рекламы применяется к объявлениям, в отношении которых установлены определенные требования, например:\n\nПолучение разрешения на показ рекламы, связанной с вопросами общественной значимости, выборами или политикой, и добавление заявлений об источнике финансирования с отметкой \"Кем оплачено\".\nОграничения на использование инструментов для рекламы трудоустройства, жилья, а также финансовых продуктов и услуг для того, чтобы защитить пользователей наших платформ от противозаконной дискриминации.\n\nПримечание. Использование особой категории может ограничить возможности выбора аудитории в п
+"7923\nGet started\nAdvertising\nLearn\nSupport\nGet started\nBusiness Help Center\nGet support\nHow do I choose a special ad category?\nWe continuously work to ensure fairness on our advertising platform. As part of this work, we introduced a new special ad category \"Financial products and services\" for advertisers promoting financial products and services. From 21 January 2025, this category is mandatory for campaigns promoting financial products and services run by advertisers in, or targeting audiences in, the US. Choosing the wrong category may result in ad rejection. Learn more about the changes.\n\nChoosing the correct campaign category is an important part of complying with Meta Advertising Standards. When creating a campaign, indicate whether your ads fall into a special ad category.\n\nSpecial ad categories apply to ads with specific requirements, for example:\n\nObtaining authorization to run ads about social issues, elections or politics and adding funding-source disclaimers labelled \"Paid for by\".\nRestrictions on advertising tools for employment, housing and financial products and services to protect platform users from unlawful discrimination.\n\nNote: a special category may limit audience selection in [truncated]
 … [1544 more characters]
 ```
 </details>
@@ -3154,7 +3157,7 @@ The search did not find the specific AKAT / Perfect Crowd survey you d
 ```
 Web search results for query: "ČNB finanční aktiva domácností podílové fondy akcie 2025 objem miliard statistika"
 
-Links: [{"title":"Růst nebankovních finančních institucí a investic domácností: trendy a rizika","url":"https://www.cnb.cz/cs/o_cnb/cnblog/Rust-nebankovnich-financnich-instituci-a-investic-domacnosti-trendy-a-rizika"},{"title":"2026 07 15 Strucne shrnuti Zprava o vyvoji financniho trhu v roce 2025","url":"https://mf.gov.cz/assets/attachments/2026-07-15_Strucne-shrnuti-Zprava-o-vyvoji-financniho-trhu-v-roce-2025.pdf"},{"title":"2025 06 18 Strucne shrnuti Zprava o vyvoji financniho trhu v roce 2024","url":"https://mfcr.cz/assets/attachments/2025-06-18_Strucne-shrnuti-Zprava-o-vyvoji-financniho-trhu-v-roce-2024.pdf"},{"title":"monetika vyrocni zprava 2025 final","url":"https://www.investika.cz/files/monetika-vyrocni-zprava-2025-final.pdf"},{"title":"2026 07 15 Zprava o vyvoji financniho trhu v roce 2025","url":"https://mf.gov.cz/assets/attachments/2026-07-15_Zprava-o-vyvoji-financniho-trhu-v-roce-2025.pdf"},{"title":"cnb.cz (ČNB)","url":"https://zpravy.kurzy.cz/851752-nejvetsi-polozku-aktiv-tvori-poskytnute-pujcky-v-celkove-hodnote-436-7-mld-kc-z-toho-bylo-429/"},{"title":"2026 04 30 D Zprava o stavu a vyvoji statnich financnich aktiv a statnich zaruk","url":"https://mf.gov.cz/assets/attachments/2026-04-30_D-Zprava-o-stavu-a-vyvoji-statnich-financnich-aktiv-a-statnich-zaruk.pdf"},{"title":"867454 objem prostredku umistenych na financnim trhu se zvysil o 10 4  na 12 
+Links: [{"title":"Růst nebankovních finančních institucí a investic domácností: trendy a rizika","url":"https://www.cnb.cz/cs/o_cnb/cnblog/Rust-nebankovnich-financnich-instituci-a-investic-domacnosti-trendy-a-rizika"},{"title":"2026 07 15 Strucne shrnuti Zprava o vyvoji financniho trhu v roce 2025","url":"https://mf.gov.cz/assets/attachments/2026-07-15_Strucne-shrnuti-Zprava-o-vyvoji-financniho-trhu-v-roce-2025.pdf"},{"title":"2025 06 18 Strucne shrnuti Zprava o vyvoji financniho trhu v roce 2024","url":"https://mfcr.cz/assets/attachments/2025-06-18_Strucne-shrnuti-Zprava-o-vyvoji-financniho-trhu-v-roce-2024.pdf"},{"title":"monetika vyrocni zprava 2025 final","url":"https://www.investika.cz/files/monetika-vyrocni-zprava-2025-final.pdf"},{"title":"2026 07 15 Zprava o vyvoji financniho trhu v roce 2025","url":"https://mf.gov.cz/assets/attachments/2026-07-15_Zprava-o-vyvoji-financniho-trhu-v-roce-2025.pdf"},{"title":"cnb.cz (ČNB)","url":"https://zpravy.kurzy.cz/851752-nejvetsi-polozku-aktiv-tvori-poskytnute-pujcky-v-celkove-hodnote-436-7-mld-kc-z-toho-bylo-429/"},{"title":"2026 04 30 D Zprava o stavu a vyvoji statnich financnich aktiv a statnich zaruk","url":"https://mf.gov.cz/assets/attachments/2026-04-30_D-Zprava-o-stavu-a-vyvoji-statnich-financnich-aktiv-a-statnich-zaruk.pdf"},{"title":"867454 objem prostredku umistenych na financnim trhu se zvysil o 10 4  na 12
 … [1793 more characters]
 ```
 </details>
@@ -3296,7 +3299,7 @@ await page.goto('https://www.xtb.com/cz');
 ### Open tabs
 - 0: (current) [XTB – Investice, úspory, trading | XTB](https://www.xtb.com/cz)
 - 1: [](https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=897831460&timestamp=1791674300483)
-- 2: [Новая вкладка](chrome://new-tab-page/)
+- 2: [New tab](chrome://new-tab-page/)
 ### Page
 - Page URL: https://www.xtb.com/cz
 - Page Title: XTB – Investice, úspory, trading | XTB
@@ -3335,20 +3338,20 @@ await page.close()
 
 → `Bash` — Locate Playwright snapshot output folder
 ```sh
-for d in [redacted: private assistant config] /Users/[redacted] /Users/[redacted]/.claude; do ls -d "$d/.playwright-mcp" 2>/dev/null && ls "$d/.playwright-mcp" | wc -l && ls -la "$d/.playwright-mcp" | head -5; done
+for d in [redacted: private assistant config] [redacted: local path] [redacted: local path] do ls -d "$d/.playwright-mcp" 2>/dev/null && ls "$d/.playwright-mcp" | wc -l && ls -la "$d/.playwright-mcp" | head -5; done
 ```
 
 <details><summary>result</summary>
 
 ```
 Exit code 1
-/Users/[redacted]/.playwright-mcp
+[redacted: local path]
     1356
 total 67464
-drwxr-xr-x  1358 [user]  staff   43456 11 окт.  01:21 .
-drwxr-x---+   59 [user]  staff    1888 11 окт.  01:21 ..
--rw-r--r--     1 [user]  staff     294 24 сент. 13:02 console-2026-09-24T11-02-18-098Z.log
--rw-r--r--     1 [user]  staff     136 24 сент. 13:02 console-2026-09-24T11-02-52-010Z.log
+drwxr-xr-x  1358 [user]  staff   43456 11 Oct  01:21 .
+drwxr-x---+   59 [user]  staff    1888 11 Oct  01:21 ..
+-rw-r--r--     1 [user]  staff     294 24 Sep 13:02 console-2026-09-24T11-02-18-098Z.log
+-rw-r--r--     1 [user]  staff     136 24 Sep 13:02 console-2026-09-24T11-02-52-010Z.log
 ```
 </details>
 
@@ -3426,32 +3429,32 @@ June 2008                                                (773) 275-9144         
 
 → `Bash` — Create research output folder
 ```sh
-mkdir -p /Users/[redacted]/homeW/ai-dev-test/etf-landing/research && ls -la /Users/[redacted]/homeW/ai-dev-test/etf-landing/ /Users/[redacted]/homeW/ai-dev-test/etf-landing/research
+mkdir -p [redacted: local path] && ls -la [redacted: local path] [redacted: local path]
 ```
 
 <details><summary>result</summary>
 
 ```
-/Users/[redacted]/homeW/ai-dev-test/etf-landing/:
+[redacted: local path]
 total 0
-drwxr-xr-x   4 [user]  staff  128 11 окт.  01:23 .
-drwxr-xr-x   4 [user]  staff  128 11 окт.  01:07 ..
-drwxr-xr-x  10 [user]  staff  320 11 окт.  01:22 .git
-drwxr-xr-x   2 [user]  staff   64 11 окт.  01:23 research
+drwxr-xr-x   4 [user]  staff  128 11 Oct  01:23 .
+drwxr-xr-x   4 [user]  staff  128 11 Oct  01:07 ..
+drwxr-xr-x  10 [user]  staff  320 11 Oct  01:22 .git
+drwxr-xr-x   2 [user]  staff   64 11 Oct  01:23 research
 
-/Users/[redacted]/homeW/ai-dev-test/etf-landing/research:
+[redacted: local path]
 total 0
-drwxr-xr-x  2 [user]  staff   64 11 окт.  01:23 .
-drwxr-xr-x  4 [user]  staff  128 11 окт.  01:23 ..
+drwxr-xr-x  2 [user]  staff   64 11 Oct  01:23 .
+drwxr-xr-x  4 [user]  staff  128 11 Oct  01:23 ..
 ```
 </details>
 
-→ `Write` /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/market-cro.md
+→ `Write` [redacted: local path]
 
 <details><summary>result</summary>
 
 ```
-File created successfully at: /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/market-cro.md (file state is current in your context — no need to Read it back)
+File created successfully at: [redacted: local path] (file state is current in your context — no need to Read it back)
 ```
 </details>
 
@@ -3459,23 +3462,23 @@ File created successfully at: /Users/[redacted]/homeW/ai-dev-test/etf-landing/re
 
 [redacted: name]
 
-1. Запускать рекламу завтра в таком виде нельзя. Чешский розничный инвестор не может купить американские ETF с NYSE (VOO, SPY, QQQ): у них нет обязательного в ЕС документа KID. Saxo прямо пишет, что такие ETF доступны только профессиональным клиентам. У IBKR то же самое, но эту базу знаний я видел только в выдаче поиска.
-2. Поэтому страницу надо переделать в «ETF на американские индексы, которые в Чехии реально купить (формат UCITS)». Это совпадает со спросом: в Google Trends по Чехии самый частый связанный запрос к «ETF» — «ucits etf».
-3. Спрос в целом: «ETF» в среднем 61 против 3 у «VOO» и 0 у «nejlepší ETF». Пик интереса — январь, провал летом. Рядом часто ищут «DIP» (льготный чешский долгосрочный счёт). Абсолютные объёмы запросов бесплатно не получить, Keyword Planner и Sklik требуют входа в рекламный аккаунт.
-4. Аудитория: активно инвестируют 55% чехов, сбережения так или иначе вкладывают 82% (опрос Česká spořitelna и Ipsos, 2026). Цифровой клиент в среднем на 35 лет моложе… точнее, ему в среднем 35 лет, клиенту отделения — 59. Среди 16–30 лет сами покупают акции, ETF и крипту 36%.
-5. Размер рынка: в фондах у домохозяйств около 1,7 трлн Kč, это 22,2% их сбережений (Минфин, итоги 2025). Отдельного объёма именно по ETF нигде не публикуют.
-6. Клиенты платформ: Portu — 280 тыс. на конец 2025 и 344 тыс. в рекламе за сентябрь 2026; Fondee — больше 27 тыс.; Revolut в Чехии — больше 1 млн. Чешских цифр XTB и Trading 212 нет.
-7. Главные страхи новичков — потерять деньги, не понимать, с чего начать, нарваться на мошенников. Добавляются вопросы «почему не покупается VOO» и про налоги: освобождение после трёх лет владения и до 100 000 Kč продаж в год.
-8. Reddit (403 и капча) и группы Facebook (нужен вход) посмотреть не удалось. Темы вопросов я собрал из опросов, Google Trends и СМИ.
-9. Таблица брокеров собрана по официальным прайсам с датами: XTB, Trading 212, IBKR, DEGIRO, Fio, Revolut, Saxo, Lynx, Portu, Fondee, Finax; Anycoin исключён — ETF у него не нашлось. Главная скрытая разница — комиссия за обмен валюты: от 0,15% (Trading 212) до 0,5% (XTB).
-10. Конкуренты: 5 хороших и 5 плохих приёмов. Хорошие: калькулятор Portu без формы, форма только с email, отдельная галочка согласия на рассылку. Плохие: телефон в обязательных полях у XTB, «безопасно и доходно», доходность в процентах на первом экране.
-11. Ориентиры конверсии (Unbounce 2024): финансы в целом — медиана 8,3%, подкатегория «инвестиции» — 3,9%. В финансах телефон конвертирует 11,5% против 9% у компьютера.
-12. Стоимость рекламы в Meta для финансов (WordStream, данные в основном по США): клик $1,22, CTR 0,98%. По Чехии публичных данных по клику и лиду нет. Моя примерная оценка цены лида — $15–31.
-13. Право: согласие на рекламную рассылку по §7 закона 480/2004, согласие на cookies до запуска пикселя (в Чехии с 2022), предупреждение ČNB «это не инвестиционный совет», раскрытия по MAR и конфликт интересов при партнёрских выплатах от брокеров.
-14. Площадки: Meta пускает образовательную рекламу без лицензии, но запрещает CFD. Google вводит проверку финансовых рекламодателей во всём ЕС, дата для Чехии не подтверждена — поэтому начинать с Meta.
-15. Рекламы конкурентов в Meta: XTB — бесплатный курс, «нулевые комиссии», «счёт за 15 минут»; Portu — «не надо быть экспертом» и число клиентов; Fondee — калькулятор. Ход «почему не купить VOO и что вместо него» и сравнение валютных комиссий никто не занял. В конце файла — 15 решений для страницы.
+1. Ads cannot launch tomorrow in this form. Czech retail investors cannot buy US NYSE ETFs (VOO, SPY, QQQ): they lack the EU-required KID. Saxo explicitly says these ETFs are available only to professional clients. IBKR has the same rule, but I saw its knowledge-base entry only in search results.
+2. The page should therefore become “ETFs tracking US indices that can actually be bought in Czechia (UCITS).” This matches demand: the most frequent related Czech Google Trends query for “ETF” is “ucits etf”.
+3. Overall demand: “ETF” averages 61 versus 3 for “VOO” and 0 for “nejlepší ETF”. Interest peaks in January and drops in summer. “DIP” (a Czech tax-advantaged long-term investment account) is frequently searched alongside it. Absolute search volumes are not available for free; Keyword Planner and Sklik require an advertising-account login.
+4. Audience: 55% of Czechs actively invest; 82% invest their savings in some form (Česká spořitelna and Ipsos, 2026). The digital client is on average 35 years younger… correction: their average age is 35, versus 59 for branch clients. Among people aged 16–30, 36% buy stocks, ETFs and crypto themselves.
+5. Market size: households hold about 1.7 trillion Kč in funds, representing 22.2% of their savings (Ministry of Finance, 2025 results). No separate ETF-only figure is published.
+6. Platform clients: Portu had 280,000 at the end of 2025 and advertised 344,000 in September 2026; Fondee has more than 27,000; Revolut has more than 1 million in Czechia. Czech figures for XTB and Trading 212 are unavailable.
+7. Beginners mainly fear losing money, not knowing where to start and encountering fraud. Other questions concern why VOO cannot be bought and taxes: exemptions after 3 years of holding or for annual sales up to 100,000 Kč.
+8. Reddit (403 and CAPTCHA) and Facebook groups (login required) could not be reviewed. I collected the question themes from surveys, Google Trends and media coverage.
+9. The broker table uses dated official price lists: XTB, Trading 212, IBKR, DEGIRO, Fio, Revolut, Saxo, Lynx, Portu, Fondee and Finax. Anycoin was excluded because I found no ETFs there. The main hidden difference is currency conversion: 0.15% at Trading 212 to 0.5% at XTB.
+10. Competitors: 5 good and 5 poor practices. Good: Portu’s ungated calculator, email-only forms and a separate newsletter-consent checkbox. Poor: XTB’s required phone number, “safe and profitable” claims and return percentages on the first screen.
+11. Conversion benchmarks (Unbounce 2024): finance overall has an 8.3% median; the investing subcategory has 3.9%. Finance converts at 11.5% on mobile versus 9% on desktop.
+12. Meta finance-ad costs (WordStream, mostly US data): $1.22 CPC and 0.98% CTR. No public Czech CPC or CPL data was found. My illustrative CPL estimate is $15–31.
+13. Law: newsletter consent under §7 of Act 480/2004, cookie consent before loading the pixel (in Czechia since 2022), ČNB’s “not investment advice” warning, MAR disclosures and conflicts of interest from broker affiliate payments.
+14. Platforms: Meta allows educational ads without a licence but bans CFDs. Google is introducing financial-advertiser verification across the EU; the Czech date is unconfirmed, so start with Meta.
+15. Competitor Meta ads: XTB uses a free course, “zero commissions” and “an account in 15 minutes”; Portu uses “no need to be an expert” and client counts; Fondee uses a calculator. Nobody occupied the “why you cannot buy VOO and what to buy instead” or FX-fee comparison angles. The file ends with 15 page decisions.
 
-Браузер Playwright я закрыл. Журналы снимков страниц остались в общей папке `~/.playwright-mcp`. В git ничего не коммитил.
+I closed the Playwright browser. Page-snapshot logs remain in the shared `~/.playwright-mcp` directory. I made no Git commits.
 
-Файл: /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/market-cro.md
+File: [redacted: local path]
 

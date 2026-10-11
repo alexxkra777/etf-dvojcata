@@ -2,6 +2,7 @@
 
 Claude Code sub-agent log, exported from `agent-ad49f16eba715c969.jsonl`.
 Tool outputs longer than 1,500 characters are shortened.
+Russian prose and localized tool output are translated into English; executed tool code is retained.
 
 ## Brief
 
@@ -17,7 +18,7 @@ Collect:
 
 Rules: Use WebSearch/WebFetch heavily. Never invent numbers; if a page doesn't load, try another source and say which. Keep the "as of" dates the source shows. No signups, no forms, no git, don't touch other files.
 
-Output: /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.json (structured: etfs[], ucits_twins[], tax_notes[], assumptions[], each fact with source_url, accessed, as_of) and /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.md (human-readable tables + caveats, and a section "facts I could not verify"). Create the folder. Final message: 15-line summary + the path.
+Output: [redacted: local path] (structured: etfs[], ucits_twins[], tax_notes[], assumptions[], each fact with source_url, accessed, as_of) and [redacted: local path] (human-readable tables + caveats, and a section "facts I could not verify"). Create the folder. Final message: 15-line summary + the path.
 
 → `ToolSearch`
 
@@ -579,15 +580,15 @@ longName : Vanguard Morningstar Total Stock Market ETF
 cusip : 922908769
 IOVTicker : VTI.IV
 inceptionDate : 2001-05-24T00:00:00-04:00
-newspaperAbbreviation : VangdVipersTot      
+newspaperAbbreviation : VangdVipersTot
 style : Stock Funds
 type : Domestic Stock - General
 category : Large Blend
 customizedStyle : Stock - Large-Cap Blend
 equityInvestmentStyleId : 2
 equityInvestmentStyleName : Large-cap blend
-secDesignation : 
-maximumYearlyInvestment : 
+secDesignation :
+maximumYearlyInvestment :
 expenseRatio : 0.0300
 expenseRatioAsOfDate : 2026-04-28T00:00:00-04:00
 isInternalFund : True
@@ -681,10 +682,10 @@ EOF
 ```
  2981608 ish/ivv.html
 Net Assets of Fund => Net Assets of Fund $896,439,871,787 as of Oct 09, 2026 Closing Price $781.97 as of Oct 09, 2026 Daily Volume 3,080,452.00 as of Oct 09, 2026 Exchange NYSE Arca Benchmark Index S&P 500 Index Shares Outstanding 1,146,500,0
-Expense Ratio => Expense Ratio: Fees as stated in the prospectus 0.03% Morningstar Rating 4 stars Morningstar Medalist Rating NAV as of Oct 09, 2026 $ $ 781.89 52 WK: 634.80 - 782.52 1 Day NAV Change as of Oct 09, 2026 Increase $ $ 4.71 
+Expense Ratio => Expense Ratio: Fees as stated in the prospectus 0.03% Morningstar Rating 4 stars Morningstar Medalist Rating NAV as of Oct 09, 2026 $ $ 781.89 52 WK: 634.80 - 782.52 1 Day NAV Change as of Oct 09, 2026 Increase $ $ 4.71
 Number of Holdings => Number of Holdings 504 as of Oct 08, 2026 30 Day SEC Yield 0.94% as of Aug 31, 2026 12m Trailing Yield 1.06% as of Aug 31, 2026 Standard Deviation (3y) 12.94% as of Aug 31, 2026 P/B Ratio 5.70 as of Oct 08, 2026 Equity B
-30 Day SEC Yield => 30 Day SEC Yield as of Aug 31, 2026 0.94% 12m Trailing Yield as of Aug 31, 2026 1.06% Expense Ratio: Fees as stated in the prospectus 0.03% Morningstar Rating 4 stars Morningstar Medalist Rating NAV as of Oct 09, 2026 $ 
-12m Trailing Yield => 12m Trailing Yield as of Aug 31, 2026 1.06% Expense Ratio: Fees as stated in the prospectus 0.03% Morningstar Rating 4 stars Morningstar Medalist Rating NAV as of Oct 09, 2026 $ $ 781.89 52 WK: 634.80 - 782.52 1 Day NAV 
+30 Day SEC Yield => 30 Day SEC Yield as of Aug 31, 2026 0.94% 12m Trailing Yield as of Aug 31, 2026 1.06% Expense Ratio: Fees as stated in the prospectus 0.03% Morningstar Rating 4 stars Morningstar Medalist Rating NAV as of Oct 09, 2026 $
+12m Trailing Yield => 12m Trailing Yield as of Aug 31, 2026 1.06% Expense Ratio: Fees as stated in the prospectus 0.03% Morningstar Rating 4 stars Morningstar Medalist Rating NAV as of Oct 09, 2026 $ $ 781.89 52 WK: 634.80 - 782.52 1 Day NAV
 Distribution Frequency => Distribution Frequency Quarterly CUSIP 464287200 30 Day Avg. Volume 8,301,147.00 as of Oct 09, 2026 Portfolio Characteristics Number of Holdings 504 as of Oct 08, 2026 30 Day SEC Yield 0.94% as of Aug 31, 2026 12m Traili
 Exchange => Exchange NY
 … [924 more characters]
@@ -741,7 +742,7 @@ EOF
 ```
   237322 ss/spy.html
 Gross Expense Ratio => Gross Expense Ratio</strong></p><p>The fund's total annual operating expense ratio. It is gross of any fee waivers or expense reimbursements. It can be found in the fund's most recent prospectus.</p>","originalValue":"0.0945"},"nav":{"label":"NAV","v
-Gross Expense Ratio => Gross Expense Ratio ﻿Gross Expense Ratio The fund's total annual operating expense ratio. It is gross of any fee waivers or expense reimbursements. It can be found in the fund's most recent prospectus. 0.0945% Overall Morningstar Rating as of Sep 30 
+Gross Expense Ratio => Gross Expense Ratio ﻿Gross Expense Ratio The fund's total annual operating expense ratio. It is gross of any fee waivers or expense reimbursements. It can be found in the fund's most recent prospectus. 0.0945% Overall Morningstar Rating as of Sep 30
 Assets Under Management => Assets Under Management","value":"$817,200.17 M","asOfDate":"as of Oct 08 2026","asOfDateSimple":"Oct 08 2026","originalValue":"817200168620.38"},"listing-date":{"label":"Listing Date","value":"Jan 22 1993","originalValue":"22-Jan-1993"},"nav-date":{
 Assets Under Management => Assets Under Management $817,200.17 M as of Oct 08 2026 Gross Expense Ratio ﻿Gross Expense Ratio The fund's total annual operating expense ratio. It is gross of any fee waivers or expense reimbursements. It can be found in the fund's most recent pros
 Number of Holdings => Number of Holdings 504 Price/Book Ratio ﻿Price/Book Ratio The weighted harmonic average of closing market price divided by the most recent reported book value for each security in the fund's portfolio as calculated for the last twelve months. 5.39 Pr
@@ -813,7 +814,7 @@ cd [tmp] && cat sw/schd.html; echo; curl -s -m 40 -L -A "Mozilla/5.0 (Macintosh;
 <TITLE>Access Denied</TITLE>
 </HEAD><BODY>
 <H1>Access Denied</H1>
- 
+
 You don't have permission to access "http&#58;&#47;&#47;www&#46;schwabassetmanagement&#46;com&#47;products&#47;schd" on this server.<P>
 Reference&#32;&#35;18&#46;3f0dd717&#46;1791673904&#46;18dc979c
 <P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;3f0dd717&#46;1791673904&#46;18dc979c</P>
@@ -894,7 +895,7 @@ await page.evaluate('() => { const t = document.body.innerText.replace(/\\s+/g,\
 ```
 ### Page
 - Page URL: https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CZ&is_targeted_country=false&media_type=all&q=XTB&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc
-- Page Title: Библиотека рекламы
+- Page Title: Ad Library
 - Console: 1 errors, 0 warnings
 ### Events
 - New console entries: .playwright-mcp/console-2026-10-10T23-12-04-880Z.log#L1-L9
@@ -924,7 +925,7 @@ import json;d=json.load(open('vg/SCHD_performance.json'));me=d.get('monthEndAvgA
 
 ```
 2026-09-30T00:00:00-04:00 {'asOfDate': '2026-09-30T00:00:00-04:00', 'id': 'X943', 'name': 'Schwab U.S. Dividend Equity ETF         ', 'calendarYTDPct': '21.46', 'prevMonthPct': '-5.99', 'threeMonthPct': '3.41', 'oneYrPct': '23.36', 'threeYrPct': '15.44', 'fiveYrPct': '9.48', 'tenYrPct': '12.44', 'sinceInceptionPct': '13.11', 'isLastMonthEndPerformanceDataAvailable': False}
-S&P 500 (TR) (1970)                               
+S&P 500 (TR) (1970)
 {"moneyMarketCharacteristic":{},"fundCharacteristic":{},"fixedIncomeCharacteristic":{},"equityCharacteristic":{"asOfDate":"2026-08-29T00:00:00-04:00","shortName":"Schwab U.S. Dividend Equity ETF         ","fund":{"earningsGrowthRate":"-1.5","earningsGrowthRateDate":"2026-08-29T00:00:00-04:00","medianMarketCap":"$117.9 billion","medianMarketCapDate":"2026-08-29T00:00:00-04:00","numberOfStocks":"99","numberOfStocksDate":"2026-08-29T00:00:00-04:00","foreignHolding":"0.3","foreignHoldingDate":"2026-08-29T00:00:00-04:00","priceBookRatio":"3.7x","priceBookRatioDate":"2026-08-29T00:00:00-04:00","priceEarningsRatio":"19.3x","priceEarningsRatioDate":"2026-08-29T00:00:00-04:00","returnOnEquity":"31.0"
 {"currentPrice":{"yield":{"hasDisclaimer":false},"dailyPrice":{"regular":{"asOfDate":"2026-10-09T00:00:00-04:00","price":"33.04","priceChangeAmount":"-0.11","priceChangePct":"-0.33","currOrPrmlFlag":" "},"market":{"asOfDate":"2026-10-09T00:00:00-04:00","currOrPrmlFlag":" "}},"highLow":{}},"historicalPrice":{"isMultiYears":false,"nav":[{"item":[{}]}],"marketPrice":[{"ite
 … [80 more characters]
@@ -939,14 +940,14 @@ cd [tmp] && for t in VOO VTI VT 3369 VYM BND VNQ VEA VWO; do echo -n "$t: "; gre
 <details><summary>result</summary>
 
 ```
-VOO: 
-VTI: 
-VT: 
-3369: 
-VYM: 
-BND: 
-VNQ: 
-VEA: 
+VOO:
+VTI:
+VT:
+3369:
+VYM:
+BND:
+VNQ:
+VEA:
 VWO:
 ```
 </details>
@@ -972,7 +973,7 @@ Links: [{"title":"VANGUARD BOND INDEX FUNDS - Form 497 - FY2018","url":"https://
 ```
 Web search results for query: "Interactive Brokers US ETF PRIIPs KID EU retail clients restriction professional client options exercise"
 
-Links: [{"title":"PRIIPs Regulation","url":"https://ibkb.interactivebrokers.com/es/node/2993"},{"title":"Informazioni in regime di MiFIR richieste ai titolari di conto non aventi obblighi di segnalazione","url":"https://ibkb.interactivebrokers.com/it/tag/regulatory-agencies?page=4"},{"title":"PRIIPs Regulation","url":"https://ibkb.interactivebrokers.com/de/node/2993"},{"title":"Aperçu sur le PRIIP","url":"https://ibkb.interactivebrokers.com/fr/tag/rejection-messages"},{"title":"Erforderliche MiFIR-Informationen von Kontoinhabern, die keiner Berichtspflicht unterliegen","url":"https://ibkb.interactivebrokers.com/de/tag/regulatory-agencies?page=4"},{"title":"www.quantconnect.com","url":"https://www.quantconnect.com/forum/discussion/4153"},{"title":"ВВОДНАЯ ИНФОРМАЦИЯ","url":"https://ibkb.interactivebrokers.com/ru/tag/regulatory-agencies?page=3"},{"title":"uk retail investors","url":"https://www.quantconnect.com/forum/discussion/4153/uk-retail-investors/"},{"title":"ibkb.interactivebrokers.com","url":"https://ibkb.interactivebrokers.com/node/2993"},{"title":"PRIIPs Overview","url":"https://ibkb.interactivebrokers.com/de/node/3324"}]
+Links: [{"title":"PRIIPs Regulation","url":"https://ibkb.interactivebrokers.com/es/node/2993"},{"title":"Informazioni in regime di MiFIR richieste ai titolari di conto non aventi obblighi di segnalazione","url":"https://ibkb.interactivebrokers.com/it/tag/regulatory-agencies?page=4"},{"title":"PRIIPs Regulation","url":"https://ibkb.interactivebrokers.com/de/node/2993"},{"title":"Aperçu sur le PRIIP","url":"https://ibkb.interactivebrokers.com/fr/tag/rejection-messages"},{"title":"Erforderliche MiFIR-Informationen von Kontoinhabern, die keiner Berichtspflicht unterliegen","url":"https://ibkb.interactivebrokers.com/de/tag/regulatory-agencies?page=4"},{"title":"www.quantconnect.com","url":"https://www.quantconnect.com/forum/discussion/4153"},{"title":"INTRODUCTION","url":"https://ibkb.interactivebrokers.com/ru/tag/regulatory-agencies?page=3"},{"title":"uk retail investors","url":"https://www.quantconnect.com/forum/discussion/4153/uk-retail-investors/"},{"title":"ibkb.interactivebrokers.com","url":"https://ibkb.interactivebrokers.com/node/2993"},{"title":"PRIIPs Overview","url":"https://ibkb.interactivebrokers.com/de/node/3324"}]
 
 The search turned up Interactive Brokers' own knowledge base on this, plus one user forum thread. Nothing in the results addresses options exercise for professional clients directly.
 
@@ -1108,7 +1109,7 @@ cd [tmp] && wc -c ibkr3324.html; head -c 1500 ibkr3324.html
 <head>
 <meta charset="utf-8">
 <title>Search | Interactive Brokers LLC</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <meta name="description" content="Interactive Brokers Search">
 <meta name="keywords" content="search">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -1241,7 +1242,7 @@ Web search results for query: "PRIIPs regulation 1286/2014 applies from 1 Januar
 
 Links: [{"title":"PRIIPs : end of UCITS exemption on 31 December 2022","url":"https://elvingerhoss.lu/publications/priips-end-ucits-exemption-31-december-2022"},{"title":"priips   packaged retail and insurance based investment products","url":"https://financialmarketstoolkit.cliffordchance.com/en/topic-guides/priips---packaged-retail-and-insurance-based-investment-products.html"},{"title":"European Parliament","url":"https://my.slaughterandmay.com/insights/financial-regulation-weekly-bulletin/asset-management_49"},{"title":"eu priips transitional exemption extension agreed until 31 december 2022","url":"https://financialregulation.linklaters.com/post/102han4/eu-priips-transitional-exemption-extension-agreed-until-31-december-2022"},{"title":"oeil.europarl.europa.eu","url":"https://oeil.europarl.europa.eu/oeil/en/procedure-document-summary/pdf?id=1680837"},{"title":"This document is an excerpt from the EUR-Lex website","url":"https://eur-lex.europa.eu/eli/reg/2021/2259/oj"},{"title":"PRIIPs KID: update","url":"https://elvingerhoss.lu/publications/priips-kid-update"},{"title":"PRIIPs developments in the EU: an update","url":"https://www.simmons-simmons.com/en/publications/ckrnpvmg21igs0a88bzksyykq/priips-developments-in-the-eu-an-update"},{"title":"securities.cib.bnpparibas","url":"https://securities.cib.bnpparibas/?p=20027"}]
 
-The search confirms 
+The search confirms
 … [2080 more characters]
 ```
 </details>
@@ -1266,7 +1267,7 @@ Web search results for query: ""carried out transactions, in significant size, o
 
 Links: [{"title":"www.esma.europa.eu","url":"https://www.esma.europa.eu/print/pdf/node/204228"},{"title":"M&A Quarterly Activity Report: Q2 2024","url":"https://www.kaufmanhall.com/search?page=44"},{"title":"Statistic of yearly trading volume of large market transactions","url":"https://data.gov.tw/en/datasets/11758"},{"title":"Article 2 Average frequency of trades","url":"https://handbook.fca.org.uk/techstandards/MIFID-MIFIR/2016/reg_del_2016_2020_oj/006.html"},{"title":"ccs co","url":"https://ccs-co.com/?p=4025"},{"title":"Article 3 Average daily number of transactions for shares and depositary receipts","url":"https://service.betterregulation.com/document/367567"},{"title":"service.betterregulation.com","url":"https://service.betterregulation.com/document/253195"},{"title":"betterregulation.com","url":"https://service.betterregulation.com/document/273849"},{"title":"Article 2Average frequency of trades","url":"https://www.legislation.gov.uk/eur/2016/2020/article/2/data.html"},{"title":"trade frequency","url":"https://docs.amberdata.io/data-dictionary/analytics/spot/trade-frequency"}]
 
-The exact phrase didn't turn up in the results. The closest match is an ESMA Q&A on MiFID II client categorisation. It asks how a firm should judge whether a private investor's transactions are of "significant size" under Annex II, Section II.1 of 
+The exact phrase didn't turn up in the results. The closest match is an ESMA Q&A on MiFID II client categorisation. It asks how a firm should judge whether a private investor's transactions are of "significant size" under Annex II, Section II.1 of
 … [683 more characters]
 ```
 </details>
@@ -1533,7 +1534,7 @@ EOF
   489930 je/IE00B5BMR087.html
 -- Fund size => Fund size EUR 141,385 m Inception Date 19 May 2010 Holdings 503 Advertisement Overview Chart Basics Holdings Savings plan Order fees Performance Risk Stock exchange Overview Quote Price alerts Price alerts × Price alerts You can set up price alerts i
 -- Total expense ratio => Total expense ratio 0.07% p.a. Replication Physical ( Full replication ) Legal structure ETF Investment approach Long-only Sustainability No Fund currency USD Currency risk Currency unhedged Volatility 1 year (in EUR) 12.42% Inception/ Listing Date 1
--- Replication => Replication Physical Fund size EUR 141,385 m Inception Date 19 May 2010 Holdings 503 Advertisement Overview Chart Basics Holdings Savings plan Order fees Performance Risk Stock exchange Overview Quote Price alerts Price alerts × Price alerts You can 
+-- Replication => Replication Physical Fund size EUR 141,385 m Inception Date 19 May 2010 Holdings 503 Advertisement Overview Chart Basics Holdings Savings plan Order fees Performance Risk Stock exchange Overview Quote Price alerts Price alerts × Price alerts You can
 -- Distribution policy => Distribution policy Accumulating Replication Physical Fund size EUR 141,385 m Inception Date 19 May 2010 Holdings 503 Advertisement Overview Chart Basics Holdings Savings plan Order fees Performance Risk Stock exchange Overview Quote Price alerts Pri
 -- Fund domicile => Fund domicile Ireland Fund Provider iShares Legal structure Fund Structure Open-ended Investment Company (OEIC) UCITS compliance Yes Administrator BNY MELLON FUND SERVICES (IRELAND) Investment Advisor Custodian Bank State Street Custodial Services (I
 -- Fund currency => Fund currency USD Currency risk Currency unhedged Volatility 1 year (in EUR) 12.42% I
@@ -1579,7 +1580,7 @@ The search didn't turn up a justETF pa
 ```
 Web search results for query: "UCITS ETF "Dow Jones U.S. Dividend 100" index SCHD equivalent Europe ISIN"
 
-Links: [{"title":"schd europe uk alternatives","url":"https://investingintheweb.com/blog/schd-europe-uk-alternatives"},{"title":"www.trackinsight.com","url":"https://www.trackinsight.com/en/fund/SCHD"},{"title":"investingintheweb.com","url":"https://investingintheweb.com/?p=55950"},{"title":"Hoppa till huvudinnehållet","url":"https://www.nordnet.se/etf/lista/schwab-us-dividend-equity-schd-xnas"},{"title":"Hinweis-Modus ist eingeschaltet Ausschalten","url":"https://cbonds.de/etf/355/"},{"title":"Hint mode is switched on Switch off","url":"https://cbonds.com/etf/355/"},{"title":"Ви перебуваєте в режимі підказок Вимкнути","url":"https://cbonds.com.ua/etf/355/"},{"title":"您使用提示模式 关闭","url":"https://cbonds.hk/etf/355/"},{"title":"İpucu modu açıktır Kapat","url":"https://cbonds.com.tr/etf/355/"}]
+Links: [{"title":"schd europe uk alternatives","url":"https://investingintheweb.com/blog/schd-europe-uk-alternatives"},{"title":"www.trackinsight.com","url":"https://www.trackinsight.com/en/fund/SCHD"},{"title":"investingintheweb.com","url":"https://investingintheweb.com/?p=55950"},{"title":"Hoppa till huvudinnehållet","url":"https://www.nordnet.se/etf/lista/schwab-us-dividend-equity-schd-xnas"},{"title":"Hinweis-Modus ist eingeschaltet Ausschalten","url":"https://cbonds.de/etf/355/"},{"title":"Hint mode is switched on Switch off","url":"https://cbonds.com/etf/355/"},{"title":"Hint mode is enabled; turn off","url":"https://cbonds.com.ua/etf/355/"},{"title":"您使用提示模式 关闭","url":"https://cbonds.hk/etf/355/"},{"title":"İpucu modu açıktır Kapat","url":"https://cbonds.com.tr/etf/355/"}]
 
 I found no UCITS ETF that tracks the Dow Jones U.S. Dividend 100 Index itself, so the closest Europe-available options are dividend-strategy funds. One guide says as far as we know, there is no UCITS ETF in Europe or the UK that tracks the exact index behind SCHD. That same guide suggests buying a UCITS ETF that tracks a similar dividend strategy.
 
@@ -1735,7 +1736,7 @@ t=open('je/IE00BFMXXD54.txt').read()
 import re
 for kw in ['Stock exchange Trade currency','Listing','Investment strategy','The S&P 500','tracks the','As of 31/08/2026','Description']:
     for m in list(re.finditer(re.escape(kw),t))[:3]:
-        print('--',kw,'@',m.start(),':',t[m.start()-80:m.start()+400]); 
+        print('--',kw,'@',m.start(),':',t[m.start()-80:m.start()+400]);
 EOF
 ```
 
@@ -1754,7 +1755,7 @@ EOF
 cd [tmp] && python3 - <<'EOF'
 s=open('je.py').read()
 s=s.replace("""      index=g(r'Index (?:Description|Methodology)?\\s*The (.{0,160}?) (?:tracks|offers|provides|includes|is)'),""","""      index=g(r'seeks to track the (.{0,120}?) index\\.'),""")
-s=s.replace("""    m=t.find('Listing Stock exchange'); 
+s=s.replace("""    m=t.find('Listing Stock exchange');
     if m<0: m=t.find('Stock exchange Trade currency')
     d['listings_raw']=t[m:m+900] if m>=0 else None""","""    m=t.find('Reuters Market Maker')
     seg=t[m:m+3000] if m>=0 else ''
@@ -1829,7 +1830,7 @@ Web search results for query: "UCITS ETF US total market small mid large "MSCI U
 
 Links: [{"title":"Baffled by ETFs? Chat with Selma to see what fits you best. 🤔","url":"https://app.selma.com/funds/spdr-russell-3000-us-total-market-ucits-etf-ie"},{"title":"iShares MSCI USA UCITS ETFiShares MSCI USA UCITS ETFiShares MSCI USA UCITS ETF","url":"https://www.tradingview.com/symbols/BMV-CSUS/N"},{"title":"Verwirrt vor lauter ETFs? Chatte mit Selma und finde heraus welche zu dir passen. 🤔","url":"https://app.selma.com/de/funds/spdr-russell-3000-us-total-market-ucits-etf-ie"},{"title":"23f1fc4e 2c27 4378 a8ba a8de015f5df0","url":"https://etf.dws.com/download/asset/23f1fc4e-2c27-4378-a8ba-a8de015f5df0"},{"title":"Top MSCI USA ETFs","url":"https://www.justetf.com/fr/how-to/msci-usa-etfs.html"},{"title":"1dab8815 684c 49b6 83c3 8653bf0e5fc9","url":"https://etf.dws.com/download/asset/1dab8815-684c-49b6-83c3-8653bf0e5fc9"},{"title":"www.tipranks.com","url":"https://www.tipranks.com/etf/ismcf"},{"title":"Baffled by ETFs? Chat with Selma to see what fits you best. 🤔","url":"https://app.selma.com/funds/ishares-msci-usa-ucits-etf"},{"title":"iShares MSCI USA UCITS ETFiShares MSCI USA UCITS ETFiShares MSCI USA UCITS ETF","url":"https://www.tradingview.com/symbols/BIVA-CSUS%2FN"},{"title":"www.tipranks.com","url":"https://www.tipranks.com/etf/nl:csus"}]
 
-The search found UCITS funds tracking the Russell 3000 and MSCI USA, but nothing 
+The search found UCITS funds tracking the Russell 3000 and MSCI USA, but nothing
 … [1519 more characters]
 ```
 </details>
@@ -1918,7 +1919,7 @@ Links: [{"title":"iShares US Aggregate Bond UCITS ETF","url":"https://www.roic.a
 The ticker IUAG is listed under ISIN **IE00B44CGS96**, not "IUAG," which is the exchange ticker. "IUAG" is not an ISIN.
 
 - **Fund:** iShares US Aggregate Bond UCITS ETF USD (Dist) (IUAG.L) is an exchange-traded fund that seeks to track the investment performance of the Bloomberg US Aggregate Bond Index before fees and expenses.
-- **Holdings and domicile:** The fund is domiciled in 
+- **Holdings and domicile:** The fund is domiciled in
 … [848 more characters]
 ```
 </details>
@@ -2095,9 +2096,9 @@ EOF
 ```
 ===== doba mezi nabytím a převodem 0
 ===== 3 roky 6
-   ... lifikovaným zaměstnavatelem kvalifikovanému zaměstnanci, b) který je poskytnutý na základě písemné smlouvy, který opravňuje kvalifikovaného zaměstnance nabýt kvalifikovaný obchodní podíl za sjednanou opční cenu, c) jehož poskytnutí bude oznámeno správci daně podle odstavce 8, d) podle kterého může být kvalifikovaný obchodní podíl nabyt nejdříve za 3 roky od data poskytnutí příslibu kvalifikovanému zaměstnanci nebo za dobu kratší, pokud k uplatnění nebo finančnímu vypořádání kvalifikované opce dochází v přímé souvislosti s převodem nebo přechodem nejméně 67 % podílu na základním kapitálu kvalifikovaného zaměstnavatele nebo přímo ovládající osoby kvalifikovaného zaměstnavatele mající na něm k 
+   ... lifikovaným zaměstnavatelem kvalifikovanému zaměstnanci, b) který je poskytnutý na základě písemné smlouvy, který opravňuje kvalifikovaného zaměstnance nabýt kvalifikovaný obchodní podíl za sjednanou opční cenu, c) jehož poskytnutí bude oznámeno správci daně podle odstavce 8, d) podle kterého může být kvalifikovaný obchodní podíl nabyt nejdříve za 3 roky od data poskytnutí příslibu kvalifikovanému zaměstnanci nebo za dobu kratší, pokud k uplatnění nebo finančnímu vypořádání kvalifikované opce dochází v přímé souvislosti s převodem nebo přechodem nejméně 67 % podílu na základním kapitálu kvalifikovaného zaměstnavatele nebo přímo ovládající osoby kvalifikovaného zaměstnavatele mající na něm k
    ... splnění technických funkcí a povinností stanovených zvláštními právními předpisy pro užívání. § 27 Hmotným majetkem vyloučeným z odpisování je a) bezúplatně převedený majetek podle smlouvy o finančním leasingu, pokud výdaje (náklady) související s jeho pořízením nepřevýší 80 000 Kč, b) pěstitelský celek trvalých porostů s dobou plodnosti delší než 3 roky, jež nedosáhl plodonosného stáří, c) hydromeliorace do 2 let po jejím dokončení, d) umělecké dílo, které je hmotným majetkem a není součástí stavby a budovy, předměty muzejní a galerijní hodnoty, popřípadě jejich soubory v muzeích a památkových objektech, stálé výstavní soubory a knihovní fondy knihoven jednotné soustavy, popřípadě jiné fond
-   ... bí nebo v období, za něž 
+   ... bí nebo v období, za něž
 … [2897 more characters]
 ```
 </details>
@@ -2288,7 +2289,7 @@ cd [tmp] && curl -s -m 60 -L -A "Mozilla/5.0" "https://www.irs.gov/instructions/
 import re,html
 s=open('i706.html',errors='ignore').read()
 t=re.sub(r'<script.*?</script>|<style.*?</style>','',s,flags=re.S);t=html.unescape(re.sub(r'<[^>]+>',' ',t));t=re.sub(r'\s+',' ',t)
-i=t.find('Table A'); 
+i=t.find('Table A');
 for m in list(re.finditer('Unified Rate Schedule',t))[:3]: print(t[m.start():m.start()+900]); print('----')
 m=re.search(r'Page Last Reviewed or Updated: [^ ]+',t); print(m.group(0) if m else '')
 m=re.search(r'Revised: [^ ]+ ?[^ ]*',t); print(m.group(0) if m else '')
@@ -2331,9 +2332,9 @@ import subprocess;print(subprocess.run(['pdftotext','-v'],capture_output=True,te
 ```
 200 application/pdf
 total 224
-drwxr-xr-x   3 [user]  wheel      96 11 окт.  01:20 .
-drwx------  35 [user]  wheel    1120 11 окт.  01:20 ..
--rw-r--r--   1 [user]  wheel  111454 11 окт.  01:20 ireland.pdf
+drwxr-xr-x   3 [user]  wheel      96 11 Oct  01:20 .
+drwx------  35 [user]  wheel    1120 11 Oct  01:20 ..
+-rw-r--r--   1 [user]  wheel  111454 11 Oct  01:20 ireland.pdf
 pdftotext version 26.09.0
 Copyright 2005-2026 The
 ```
@@ -2421,7 +2422,7 @@ EOF
 
 ```
 200
--- Updated : | | | | $ | | 21,025.41 | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | Updated: January 5, 2026 | | | | | | | | | | | | | | | | | 
+-- Updated : | | | | $ | | 21,025.41 | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | Updated: January 5, 2026 | | | | | | | | | | | | | | | | |
 -- 2025 : | | | $ | | 7,159.45 | | | | $ | | 50,440.38 | | | | $ | | 5,538.74 | | | | $ | | 12,649.47 | | | | 2025 | | 17.78% | | 16.53% | | 4.21% | | 7.80% | | 6.96% | | 1.58% | | 66.22% | | | | $ | | 1,157,598.95 | | | | $ | | 6,462,598.52 | | | | $ | | 2,578.30 | | | | $ | | 7,752.88 | | | | $ | | 53,952.41 | | | | $ | | 5,626.02 | | | | $ | | 21,025.41 | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | Updated: January 5, 2026 | | | | | | | | | | | | | | | | |
 ```
 </details>
@@ -2449,7 +2450,7 @@ EOF
 <details><summary>result</summary>
 
 ```
-HEADER:  | | | | | | | | | | | | | Historical Returns on Stocks, Bonds and Bills: 1928-2024 | | | Data Used | : Multiple data services | | | Data | : Historical Returns for the US | | | Date | : January 2026 | | | Download as an excel file instead | : | https://www.stern.nyu.edu/~adamodar/pc/datasets/histretSP.xls | | | | | | | | | | | | | | | | | | | Update: | I have replaced the end-of-the-period T.Bill rates that I used to report in this table, with the average T.Bill rate during the year, since it better measures what you would have earned on that investment during the year. | | | | | | | | | | | | | | | | | | | | Annual Returns on Investments in | | Value of $100 invested at start of 1928 in | | | | Year | | S&P 500 (includes dividends) | | US Small cap (bottom decile) | | 3-month T.Bill | | US T. Bond (10-year) | | | | Baa Corporate Bond | | Real Estate | | Gold* | | S&P 500 (includes dividends)3 | | US Small cap (bottom decile) Cum Value | | 3-month T.Bill4 | | US T. Bond5 | | | | Baa Corporate Bond2 | | Real Estate2 | | Gold2 | | | | 
+HEADER:  | | | | | | | | | | | | | Historical Returns on Stocks, Bonds and Bills: 1928-2024 | | | Data Used | : Multiple data services | | | Data | : Historical Returns for the US | | | Date | : January 2026 | | | Download as an excel file instead | : | https://www.stern.nyu.edu/~adamodar/pc/datasets/histretSP.xls | | | | | | | | | | | | | | | | | | | Update: | I have replaced the end-of-the-period T.Bill rates that I used to report in this table, with the average T.Bill rate during the year, since it better measures what you would have earned on that investment during the year. | | | | | | | | | | | | | | | | | | | | Annual Returns on Investments in | | Value of $100 invested at start of 1928 in | | | | Year | | S&P 500 (includes dividends) | | US Small cap (bottom decile) | | 3-month T.Bill | | US T. Bond (10-year) | | | | Baa Corporate Bond | | Real Estate | | Gold* | | S&P 500 (includes dividends)3 | | US Small cap (bottom decile) Cum Value | | 3-month T.Bill4 | | US T. Bond5 | | | | Baa Corporate Bond2 | | Real Estate2 | | Gold2 | | | |
 98 1928 2025
 1928 -2025 geo 10.02% arith 11.86%
 1976 -2025 geo 11.93% arith 13.17%
@@ -2566,7 +2567,7 @@ Web search results for query: "SPIVA U.S. Year-End 2025 scorecard percentage lar
 
 Links: [{"title":"IN THIS LIST","url":"https://www.spglobal.com/spdji/en/spiva/article/spiva-us-year-end-2025/"},{"title":"IN THIS LIST","url":"https://spglobal.com/spdji/en/spiva/article/spiva-us"},{"title":"spiva institutional scorecard year end 2025","url":"https://www.spglobal.com/spdji/en/documents/spiva/spiva-institutional-scorecard-year-end-2025.pdf"},{"title":"IN THIS LIST","url":"https://www.spglobal.com/spdji/en/spiva/article/us-persistence-scorecard/"},{"title":"www.etftrends.com","url":"https://www.etftrends.com/?p=637470"},{"title":"NJxXm6FK VOO vs Active Management What 25 Years of Data Actually Shows","url":"https://www.tradingview.com/chart/VOO/NJxXm6FK-VOO-vs-Active-Management-What-25-Years-of-Data-Actually-Shows/"},{"title":"ETFdb Logo","url":"https://etfdb.com/fixed-income-content-hub/new-spiva-report-shows-active-etfs-underperform/"},{"title":"new spiva report shows active etfs struggle outperform","url":"https://www.etftrends.com/fixed-income-content-hub/new-spiva-report-shows-active-etfs-struggle-outperform/"},{"title":"IN THIS LIST","url":"https://spglobal.com/spdji/en/index-tv/article/the-market-measure-march-2025"},{"title":"IN THIS LIST","url":"https://www.spglobal.com/spdji/en/spiva/article/spiva-us-mid-year-2025"}]
 
-The official S&P Global figure for 2025 is 79%, but the search didn't return an official 15-year or 
+The official S&P Global figure for 2025 is 79%, but the search didn't return an official 15-year or
 … [1371 more characters]
 ```
 </details>
@@ -2610,7 +2611,7 @@ Datum|1 AUD|1 BGN|1 BRL|1 CAD|1 CHF|1 CNY|1 DKK|1 EUR|1 GBP|1 HKD|100 HUF|1000 I
 ```
 Web search results for query: "jednotný kurz 2025 pokyn GFŘ D- USD EUR financnisprava.cz"
 
-Links: [{"title":"Jednotný kurz za rok 2025","url":"https://www.behounek.eu/l/jednotny-kurs/"},{"title":"Blog Money / Rychlé zprávy / Pokyn GFŘ-D-75 ke stanovení jednotných kurzů za zdaňovací období 2025","url":"https://money.cz/novinky-a-tipy/?p=18520"},{"title":"Blog Money / Rychlé zprávy / Pokyn GFŘ-D-75 ke stanovení jednotných kurzů za zdaňovací období 2025","url":"https://money.cz/novinky-a-tipy/rychle-zpravy/pokyn-gfr-d-75-ke-stanoveni-jednotnych-kurzu-za-zdanovaci-obdobi-2025/"},{"title":"Váš nákupní košík:  prázdný Přihlášení obchod@sagit.cz","url":"https://sagit.cz/info/fz26003"},{"title":"2026 01 14 Financni zpravodaj cislo 2 2026","url":"https://www.mfcr.cz/assets/attachments/2026-01-14_Financni-zpravodaj-cislo-2-2026.pdf"},{"title":"gfr d 75","url":"https://www.dauc.cz/predpisy/6389/gfr-d-75"},{"title":"Ministerstvo financí: Finanční zpravodaj číslo 2/2026","url":"https://www.dauc.cz/aktuality/1727/ministerstvo-financi-financni-zpravodaj-cislo-2-2026"},{"title":"Ministerstvo financí: Finanční zpravodaj číslo 3/2025","url":"https://www.dauc.cz/aktuality/1389/ministerstvo-financi-financni-zpravodaj-cislo-3-2025"},{"title":"Ministerstvo financí: Finanční zpravodaj číslo 4/2025","url":"https://www.dauc.cz/aktuality/1391/ministerstvo-financi-financni-zpravodaj-cislo-4-2025"},{"title":"Jednotný kurz - Jednotné účetní měnové kurzy MFČR","url":"https://www.kurzy.cz/kurzy-men/jednotn
+Links: [{"title":"Jednotný kurz za rok 2025","url":"https://www.behounek.eu/l/jednotny-kurs/"},{"title":"Blog Money / Rychlé zprávy / Pokyn GFŘ-D-75 ke stanovení jednotných kurzů za zdaňovací období 2025","url":"https://money.cz/novinky-a-tipy/?p=18520"},{"title":"Blog Money / Rychlé zprávy / Pokyn GFŘ-D-75 ke stanovení jednotných kurzů za zdaňovací období 2025","url":"https://money.cz/novinky-a-tipy/rychle-zpravy/pokyn-gfr-d-75-ke-stanoveni-jednotnych-kurzu-za-zdanovaci-obdobi-2025/"},{"title":"Váš nákupní košík:  prázdný Přihlášení [redacted: email address]","url":"https://sagit.cz/info/fz26003"},{"title":"2026 01 14 Financni zpravodaj cislo 2 2026","url":"https://www.mfcr.cz/assets/attachments/2026-01-14_Financni-zpravodaj-cislo-2-2026.pdf"},{"title":"gfr d 75","url":"https://www.dauc.cz/predpisy/6389/gfr-d-75"},{"title":"Ministerstvo financí: Finanční zpravodaj číslo 2/2026","url":"https://www.dauc.cz/aktuality/1727/ministerstvo-financi-financni-zpravodaj-cislo-2-2026"},{"title":"Ministerstvo financí: Finanční zpravodaj číslo 3/2025","url":"https://www.dauc.cz/aktuality/1389/ministerstvo-financi-financni-zpravodaj-cislo-3-2025"},{"title":"Ministerstvo financí: Finanční zpravodaj číslo 4/2025","url":"https://www.dauc.cz/aktuality/1391/ministerstvo-financi-financni-zpravodaj-cislo-4-2025"},{"title":"Jednotný kurz - Jednotné účetní měnové kurzy MFČR","url":"https://www.kurzy.cz/kurzy-men/jednotn
 … [1254 more characters]
 ```
 </details>
@@ -2658,7 +2659,7 @@ Links: [{"title":"I Strategie provadeni pokynu 150112","url":"https://fio.cz/doc
 
 Hledání nenašlo konkrétní výklad ČNB, který by se týkal obchodování amerických ETF u Fia na sekundárním trhu v režimu execution only. Našel jsem jen obecnější materiály.
 
-- **Praxe brokerů:** Jeden blog o obcházení PRIIPs uvádí, že Fio 
+- **Praxe brokerů:** Jeden blog o obcházení PRIIPs uvádí, že Fio
 … [1247 more characters]
 ```
 </details>
@@ -2698,7 +2699,7 @@ EOF
 <details><summary>result</summary>
 
 ```
-obstarává nákup investičních nástrojů na pokyn zákazníka (tzv. „execution-only“) na základě rámcové smlouvy, přičemž tyto nástroje sám aktivně nenabízí, resp. neprodává, ani k nim neposkytuje investiční poradenství? Podle čl. 5 odst. 1 nařízení PRIIPs má tvůrce produktu povinnost vypracovat KID a uveřejnit ho na internetových stránkách. Tvůrcem produktu se na základě čl. 4 odst. 4 rozumí osoba, která produkt vytvoří, anebo která ho jakýmkoliv způsobem pozmění nebo individualizuje. Není-li tedy obchodník s cennými papíry schopen nebo oprávněn měnit nebo individualizovat podmínky produktu, nepovažuje se za tvůrce produktu ve smyslu čl. 4 odst. 4 nařízení PRIIPs a nevztahuje se na něj povinnost vypracovat KID. Odpovědnost za vypracování KID v takovém případě zůstává tvůrci produktu. Podle čl. 13 nařízení PRIIPs má osoba, která k produktu poskytuje poradenství, nebo takový produkt sama prodává, povinnost poskytnout retailovým investorům KID. Osobou, která prodává PRIIP, se podle čl. 4 odst. 5 nařízení PRIIPs rozumí osoba, která investorovi produkt nabízí, nebo která s ním uzavírá smlouvu o produktu s investiční složkou. Na základě bodu 26 preambule nařízení PRIIPs lze dovozovat, že mezi osoby, které PRIIP prodávají, patří i „zprostředkovatelé“ produktů. Nicméně určujícím kritériem pro to, zda „zprostředkovatel“ má povinnost poskytnout KID je to, zda daný produkt „prodává“, tj. ve smyslu čl. 4 odst. 5 nařízení PRIIPs aktivně nabízí, resp. ohledně PRIIP uzavírá smlouvu s klientem. 
+obstarává nákup investičních nástrojů na pokyn zákazníka (tzv. „execution-only“) na základě rámcové smlouvy, přičemž tyto nástroje sám aktivně nenabízí, resp. neprodává, ani k nim neposkytuje investiční poradenství? Podle čl. 5 odst. 1 nařízení PRIIPs má tvůrce produktu povinnost vypracovat KID a uveřejnit ho na internetových stránkách. Tvůrcem produktu se na základě čl. 4 odst. 4 rozumí osoba, která produkt vytvoří, anebo která ho jakýmkoliv způsobem pozmění nebo individualizuje. Není-li tedy obchodník s cennými papíry schopen nebo oprávněn měnit nebo individualizovat podmínky produktu, nepovažuje se za tvůrce produktu ve smyslu čl. 4 odst. 4 nařízení PRIIPs a nevztahuje se na něj povinnost vypracovat KID. Odpovědnost za vypracování KID v takovém případě zůstává tvůrci produktu. Podle čl. 13 nařízení PRIIPs má osoba, která k produktu poskytuje poradenství, nebo takový produkt sama prodává, povinnost poskytnout retailovým investorům KID. Osobou, která prodává PRIIP, se podle čl. 4 odst. 5 nařízení PRIIPs rozumí osoba, která investorovi produkt nabízí, nebo která s ním uzavírá smlouvu o produktu s investiční složkou. Na základě bodu 26 preambule nařízení PRIIPs lze dovozovat, že mezi osoby, které PRIIP prodávají, patří i „zprostředkovatelé“ produktů. Nicméně určujícím kritériem pro to, zda „zprostředkovatel“ má povinnost poskytnout KID je to, zda daný produkt „prodává“, tj. ve smyslu čl. 4 odst. 5 nařízení PRIIPs aktivně nabízí, resp. ohledně PRIIP uzavírá smlouvu s klientem.
 … [1500 more characters]
 ```
 </details>
@@ -2725,48 +2726,48 @@ obstarává nákup investičních nástrojů na pokyn zákazníka (tzv. „execu
 
 → `Bash` — Locate Playwright snapshot files I may have created
 ```sh
-ls -la [redacted: private assistant config] 2>/dev/null | tail -5; find /Users/[redacted] -maxdepth 4 -name "page-2026-10-10T23-12-03-470Z.yml" -path "*playwright-mcp*" 2>/dev/null | head
+ls -la [redacted: private assistant config] 2>/dev/null | tail -5; find [redacted: local path] -maxdepth 4 -name "page-2026-10-10T23-12-03-470Z.yml" -path "*playwright-mcp*" 2>/dev/null | head
 ```
 
 <details><summary>result</summary>
 
 ```
-/Users/[redacted]/.playwright-mcp/page-2026-10-10T23-12-03-470Z.yml
+[redacted: local path]
 ```
 </details>
 
 → `Bash` — List Playwright artifacts from my time window
 ```sh
-ls -la /Users/[redacted]/.playwright-mcp | grep "2026-10-10T23-1[0-3]"
+ls -la [redacted: local path] | grep "2026-10-10T23-1[0-3]"
 ```
 
 <details><summary>result</summary>
 
 ```
--rw-r--r--     1 [user]  staff     678 11 окт.  01:11 console-2026-10-10T23-11-12-560Z.log
--rw-r--r--     1 [user]  staff     678 11 окт.  01:11 console-2026-10-10T23-11-23-842Z.log
--rw-r--r--     1 [user]  staff     530 11 окт.  01:11 console-2026-10-10T23-11-34-749Z.log
--rw-r--r--     1 [user]  staff    7364 11 окт.  01:11 console-2026-10-10T23-11-43-997Z.log
--rw-r--r--     1 [user]  staff     356 11 окт.  01:12 console-2026-10-10T23-12-00-448Z.log
--rw-r--r--     1 [user]  staff    2008 11 окт.  01:12 console-2026-10-10T23-12-04-880Z.log
--rw-r--r--     1 [user]  staff    1780 11 окт.  01:12 console-2026-10-10T23-12-17-204Z.log
--rw-r--r--     1 [user]  staff    1780 11 окт.  01:12 console-2026-10-10T23-12-32-952Z.log
--rw-r--r--     1 [user]  staff    1780 11 окт.  01:12 console-2026-10-10T23-12-48-872Z.log
--rw-r--r--     1 [user]  staff    1780 11 окт.  01:13 console-2026-10-10T23-13-00-170Z.log
--rw-r--r--     1 [user]  staff    1780 11 окт.  01:13 console-2026-10-10T23-13-16-845Z.log
--rw-r--r--     1 [user]  staff    1780 11 окт.  01:13 console-2026-10-10T23-13-27-592Z.log
--rw-r--r--     1 [user]  staff    1202 11 окт.  01:11 page-2026-10-10T23-11-10-270Z.yml
--rw-r--r--     1 [user]  staff    3911 11 окт.  01:11 page-2026-10-10T23-11-13-408Z.yml
--rw-r--r--     1 [user]  staff   47277 11 окт.  01:11 page-2026-10-10T23-11-19-538Z.yml
--rw-r--r--     1 [user]  staff    3948 11 окт.  01:11 page-2026-10-10T23-11-24-166Z.yml
--rw-r--r--     1 [user]  staff   46817 11 окт.  01:11 page-2026-10-10T23-
+-rw-r--r--     1 [user]  staff     678 11 Oct  01:11 console-2026-10-10T23-11-12-560Z.log
+-rw-r--r--     1 [user]  staff     678 11 Oct  01:11 console-2026-10-10T23-11-23-842Z.log
+-rw-r--r--     1 [user]  staff     530 11 Oct  01:11 console-2026-10-10T23-11-34-749Z.log
+-rw-r--r--     1 [user]  staff    7364 11 Oct  01:11 console-2026-10-10T23-11-43-997Z.log
+-rw-r--r--     1 [user]  staff     356 11 Oct  01:12 console-2026-10-10T23-12-00-448Z.log
+-rw-r--r--     1 [user]  staff    2008 11 Oct  01:12 console-2026-10-10T23-12-04-880Z.log
+-rw-r--r--     1 [user]  staff    1780 11 Oct  01:12 console-2026-10-10T23-12-17-204Z.log
+-rw-r--r--     1 [user]  staff    1780 11 Oct  01:12 console-2026-10-10T23-12-32-952Z.log
+-rw-r--r--     1 [user]  staff    1780 11 Oct  01:12 console-2026-10-10T23-12-48-872Z.log
+-rw-r--r--     1 [user]  staff    1780 11 Oct  01:13 console-2026-10-10T23-13-00-170Z.log
+-rw-r--r--     1 [user]  staff    1780 11 Oct  01:13 console-2026-10-10T23-13-16-845Z.log
+-rw-r--r--     1 [user]  staff    1780 11 Oct  01:13 console-2026-10-10T23-13-27-592Z.log
+-rw-r--r--     1 [user]  staff    1202 11 Oct  01:11 page-2026-10-10T23-11-10-270Z.yml
+-rw-r--r--     1 [user]  staff    3911 11 Oct  01:11 page-2026-10-10T23-11-13-408Z.yml
+-rw-r--r--     1 [user]  staff   47277 11 Oct  01:11 page-2026-10-10T23-11-19-538Z.yml
+-rw-r--r--     1 [user]  staff    3948 11 Oct  01:11 page-2026-10-10T23-11-24-166Z.yml
+-rw-r--r--     1 [user]  staff   46817 11 Oct  01:11 page-2026-10-10T23-
 … [1841 more characters]
 ```
 </details>
 
 → `Bash` — Check whether snapshot files belong to my Schwab visit
 ```sh
-cd /Users/[redacted]/.playwright-mcp && head -c 300 page-2026-10-10T23-12-03-470Z.yml; echo; cat console-2026-10-10T23-12-00-448Z.log | head -5
+cd [redacted: local path] && head -c 300 page-2026-10-10T23-12-03-470Z.yml; echo; cat console-2026-10-10T23-12-00-448Z.log | head -5
 ```
 
 <details><summary>result</summary>
@@ -2781,7 +2782,7 @@ cd /Users/[redacted]/.playwright-mcp && head -c 300 page-2026-10-10T23-12-03-470
         - /url: /
         - generic [ref=f27e12]:
           - img "Home" [ref=f27e14]
-      
+
 [    2775ms] [LOG] OneTrust initial consent: ,C_ESS, @ https://tags.tiqcdn.com/utag/schwab/no-target/prod/utag.js:74
 [    2974ms] [WARNING] Highcharts warning #15: www.highcharts.com/errors/15/ @ https://code.highcharts.com/highcharts.js:9
 [    3194ms] [LOG] OneTrust Config Updated: ,C_ESS, @ https://tags.tiqcdn.com/utag/schwab/no-target/prod/utag.js:74
@@ -2790,7 +2791,7 @@ cd /Users/[redacted]/.playwright-mcp && head -c 300 page-2026-10-10T23-12-03-470
 
 → `Bash` — Search Schwab snapshot for fund data
 ```sh
-cd /Users/[redacted]/.playwright-mcp && grep -n -i "expense\|net assets\|holdings\|SEC yield\|inception\|as of\|NAV\|1 Year\|Since\|Distribution" page-2026-10-10T23-12-03-470Z.yml | head -60
+cd [redacted: local path] && grep -n -i "expense\|net assets\|holdings\|SEC yield\|inception\|as of\|NAV\|1 Year\|Since\|Distribution" page-2026-10-10T23-12-03-470Z.yml | head -60
 ```
 
 <details><summary>result</summary>
@@ -2818,7 +2819,7 @@ cd /Users/[redacted]/.playwright-mcp && grep -n -i "expense\|net assets\|holding
 
 → `Bash` — Print Schwab snapshot key-facts table
 ```sh
-cd /Users/[redacted]/.playwright-mcp && sed -n 150,245p page-2026-10-10T23-12-03-470Z.yml | grep -v "^\s*- /url" | sed 's/\[ref=[^]]*\]//g' | grep -v "^\s*$"
+cd [redacted: local path] && sed -n 150,245p page-2026-10-10T23-12-03-470Z.yml | grep -v "^\s*- /url" | sed 's/\[ref=[^]]*\]//g' | grep -v "^\s*$"
 ```
 
 <details><summary>result</summary>
@@ -2837,38 +2838,38 @@ cd /Users/[redacted]/.playwright-mcp && sed -n 150,245p page-2026-10-10T23-12-03
                   - generic : 0.03%
                   - generic : As of 10/09/2026
             - generic :
-              - heading "Fund Profile" [level=3] 
+              - heading "Fund Profile" [level=3]
               - table :
                 - rowgroup :
                   - row :
-                    - columnheader 
-                    - columnheader 
-                    - columnheader 
+                    - columnheader
+                    - columnheader
+                    - columnheader
                 - rowgroup :
                   - row :
                     - rowheader :
                       - strong : Fund Inception
-                    - cell "10/20/2011" 
+                    - cell "10/20/2011"
                   - row :
                     - rowheader "Total Net Assets As of 10/09/2026" :
                       - strong : Total Net Assets
                       - generic : As of 10/09/2026
-                    - cell "$110,315,371,812.80" 
+                    - cell "$110,315,371,812.80"
                   - row :
                     - rowheader :
                       - strong : Total Expense Ratio
-                    - cell "0.060%" 
+                    - cell "0.060%"
                   - row :
                     - rowheader :
                       - strong : Index Name
-                    - cell "Dow Jones U.S. Dividend 100 Index" 
+                    - cell "Dow Jones U.S. Dividend 100 Index"
 … [2400 more characters]
 ```
 </details>
 
 → `Bash` — Check Schwab snapshot for performance section
 ```sh
-cd /Users/[redacted]/.playwright-mcp && grep -n -i "perform\|annual\|10 Year\|5 Year" page-2026-10-10T23-12-03-470Z.yml | head -20
+cd [redacted: local path] && grep -n -i "perform\|annual\|10 Year\|5 Year" page-2026-10-10T23-12-03-470Z.yml | head -20
 ```
 
 <details><summary>result</summary>
@@ -2889,7 +2890,7 @@ cd /Users/[redacted]/.playwright-mcp && grep -n -i "perform\|annual\|10 Year\|5 
 386:          - paragraph [ref=f27e233]: NAV (Net Asset Value) is a per share valuation of the securities in an ETF officially calculated once per day. NAV price performance is primarily used to evaluate the fund and its managers and may not reflect the actual return for the investor.
 387:          - paragraph [ref=f27e235]: Dividend focused funds may underperform funds that do not limit their investment to dividend paying stocks. Stocks held by the fund may reduce or stop paying dividends, affecting the fund’s ability to generate income.
 390:            - strong [ref=f27e240]: Past performance is no guarantee of future results.
-395:           
+395:
 … [141 more characters]
 ```
 </details>
@@ -2913,7 +2914,7 @@ IE00B4ND3602 No iShares Physical Gold ETC | A1KWPQ | IE00B4ND3602
 DE000A0S9GB0 No Xetra-Gold | A0S9GB | DE000A0S9GB0
 IE00BKY7WX37 Yes SPDR Russell 3000 US Total Market UCITS ETF | A112AU | IE00BKY7WX37
 30
-Legal structure ETC Investment approach Long-only Sustainability No Fund currency USD Currency 
+Legal structure ETC Investment approach Long-only Sustainability No Fund currency USD Currency
 Legal structure Fund Structure - UCITS compliance No Administrator Invesco UK Services Ltd Inve
 ```
 </details>
@@ -2947,32 +2948,32 @@ Links: [{"title":"Aktualizováno: Zdanění ETF v roce 2026: Jak správně přiz
 
 **100k value test:** The article describes it as: "celkové roční příjmy (nikoli tedy pouze zisk) za rok 2025 nepřesáhly 100 tisíc korun." Total annual income is measured, not just the gain.
 
-**40M cap / its abolition:** Not mentioned. The article instead cites a reporting obligation 
+**40M cap / its abolition:** Not mentioned. The article instead cites a reporting obligation
 … [241 more characters]
 ```
 </details>
 
 → `Bash` — Create research output folder
 ```sh
-ls -la /Users/[redacted]/homeW/ai-dev-test/etf-landing/ 2>&1 | head; mkdir -p /Users/[redacted]/homeW/ai-dev-test/etf-landing/research && ls -la /Users/[redacted]/homeW/ai-dev-test/etf-landing/research; cp /Users/[redacted]/.playwright-mcp/page-2026-10-10T23-12-03-470Z.yml [tmp]
+ls -la [redacted: local path] 2>&1 | head; mkdir -p [redacted: local path] && ls -la [redacted: local path] cp [redacted: local path] [tmp]
 ```
 
 <details><summary>result</summary>
 
 ```
 total 280
-drwxr-xr-x   15 [user]  staff     480 11 окт.  01:24 .
-drwxr-xr-x    4 [user]  staff     128 11 окт.  01:07 ..
--rw-r--r--    1 [user]  staff      45 11 окт.  01:23 .env.example
-drwxr-xr-x   13 [user]  staff     416 11 окт.  01:25 .git
--rw-r--r--    1 [user]  staff      49 11 окт.  01:23 .gitignore
-drwxr-xr-x    4 [user]  staff     128 11 окт.  01:25 api
-drwxr-xr-x    3 [user]  staff      96 11 окт.  01:23 db
-drwxr-xr-x    7 [user]  staff     224 11 окт.  01:25 lib
-drwxr-xr-x  151 [user]  staff    4832 11 окт.  01:24 node_modules
+drwxr-xr-x   15 [user]  staff     480 11 Oct  01:24 .
+drwxr-xr-x    4 [user]  staff     128 11 Oct  01:07 ..
+-rw-r--r--    1 [user]  staff      45 11 Oct  01:23 .env.example
+drwxr-xr-x   13 [user]  staff     416 11 Oct  01:25 .git
+-rw-r--r--    1 [user]  staff      49 11 Oct  01:23 .gitignore
+drwxr-xr-x    4 [user]  staff     128 11 Oct  01:25 api
+drwxr-xr-x    3 [user]  staff      96 11 Oct  01:23 db
+drwxr-xr-x    7 [user]  staff     224 11 Oct  01:25 lib
+drwxr-xr-x  151 [user]  staff    4832 11 Oct  01:24 node_modules
 total 0
-drwxr-xr-x   2 [user]  staff   64 11 окт.  01:23 .
-drwxr-xr-x  15 [user]  staff  480 11 окт.  01:24 ..
+drwxr-xr-x   2 [user]  staff   64 11 Oct  01:23 .
+drwxr-xr-x  15 [user]  staff  480 11 Oct  01:24 ..
 ```
 </details>
 
@@ -2988,7 +2989,7 @@ File created successfully at: [tmp] (file state is current in your context — n
 → `Bash` — Build JSON and sanity-check its contents
 ```sh
 cd [tmp] && python3 build.py && python3 -c "
-import json;d=json.load(open('/Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.json'))
+import json;d=json.load(open('[redacted: local path]'))
 for e in d['etfs']: print(e['ticker'],e['in_nyse_list'],e['primary_listing_exchange']['value'],e['expense_ratio_pct']['value'],e['returns_nav_annualized_pct']['10y'])
 for u in d['ucits_twins']: print(u['isin'],u['tickers_by_exchange'][:3],u['ter_pct'],u['fund_size'])
 "
@@ -3026,27 +3027,27 @@ IE00B3YLTY66 ['Borsa Italiana EUR IMIE', 'Euronext Paris EUR IMIE', 'London Stoc
 ```
 </details>
 
-→ `Write` /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.md
+→ `Write` [redacted: local path]
 
 <details><summary>result</summary>
 
 ```
-File created successfully at: /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.md (file state is current in your context — no need to Read it back)
+File created successfully at: [redacted: local path] (file state is current in your context — no need to Read it back)
 ```
 </details>
 
-→ `Edit` /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.md
+→ `Edit` [redacted: local path]
 
 <details><summary>result</summary>
 
 ```
-The file /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.md has been updated successfully. (file state is current in your context — no need to Read it back)
+The file [redacted: local path] has been updated successfully. (file state is current in your context — no need to Read it back)
 ```
 </details>
 
 → `Bash` — Validate JSON and list output files
 ```sh
-python3 -c "import json;json.load(open('/Users/[redacted]/homeW/ai-dev-test/etf-landing/research/etf-data.json'));print('json ok')"; ls -la /Users/[redacted]/homeW/ai-dev-test/etf-landing/research/
+python3 -c "import json;json.load(open('[redacted: local path]'));print('json ok')"; ls -la [redacted: local path]
 ```
 
 <details><summary>result</summary>
@@ -3054,11 +3055,11 @@ python3 -c "import json;json.load(open('/Users/[redacted]/homeW/ai-dev-test/etf-
 ```
 json ok
 total 352
-drwxr-xr-x   5 [user]  staff     160 11 окт.  01:29 .
-drwxr-xr-x  20 [user]  staff     640 11 окт.  01:27 ..
--rw-r--r--   1 [user]  staff  109552 11 окт.  01:27 etf-data.json
--rw-r--r--   1 [user]  staff   23136 11 окт.  01:29 etf-data.md
--rw-r--r--   1 [user]  staff   44632 11 окт.  01:26 market-cro.md
+drwxr-xr-x   5 [user]  staff     160 11 Oct  01:29 .
+drwxr-xr-x  20 [user]  staff     640 11 Oct  01:27 ..
+-rw-r--r--   1 [user]  staff  109552 11 Oct  01:27 etf-data.json
+-rw-r--r--   1 [user]  staff   23136 11 Oct  01:29 etf-data.md
+-rw-r--r--   1 [user]  staff   44632 11 Oct  01:26 market-cro.md
 ```
 </details>
 
@@ -3066,23 +3067,23 @@ drwxr-xr-x  20 [user]  staff     640 11 окт.  01:27 ..
 
 [redacted: name]
 
-Собрал данные для лендинга: 13 ETF с NYSE Arca, 3 с Nasdaq для справки, 27 UCITS-двойников, налоги, доступ у брокеров и допущения для калькулятора. У каждого факта в JSON есть источник, дата обращения и дата «as of».
+Collected the landing-page data: 13 NYSE Arca ETFs, 3 Nasdaq ETFs for reference, 27 UCITS twins, taxes, broker access and calculator assumptions. Every fact in the JSON has a source, access date and as-of date.
 
-1. **Список с NYSE Arca:** SPY, VOO, IVV, VTI, VT, VEA, VWO, SCHD, VYM, AGG, GLD, VNQ, IWM. QQQ, VXUS и BND торгуются на Nasdaq: BND перевели туда в 2018 году. Они вынесены в отдельный блок «о них спросят», в основной список не входят.
-2. **Откуда цифры:** TER, активы, число бумаг, SEC-доходность и доходности за 1/3/5/10 лет по NAV на 30.09.2026 взяты со страниц эмитентов (SSGA, iShares, Schwab, Vanguard через его JSON API). Stockanalysis — только как второй источник.
-3. **VTI переименован:** в 2026 году Vanguard сменил индекс с CRSP на Morningstar, фонд теперь Vanguard Morningstar Total Stock Market ETF.
-4. **Главное для страницы:** большинство брокеров не продают американские ETF рознице — у них нет KID, которого требует PRIIPs. Но ČNB в разъяснении RS2018-12 (2018) считает, что брокер, который только исполняет поручение клиента, KID выдавать не обязан. Поэтому **Fio e-Broker** официально пишет, что у него можно торговать американскими ETF.
-5. **Остальные брокеры:** у XTB, Trading 212, IBKR/Lynx, DEGIRO и Saxo американских ETF для розницы нет. Варианты — статус профессионального клиента (2 из 3 критериев, § 2b закона 256/2004 Sb.) или CFD. Путь через исполнение опционов описан только в блогах, официально не подтверждён.
-6. **Двойники:** у S&P 500, Nasdaq-100, Russell 2000 и US Aggregate есть UCITS-фонды на тот же индекс. Для VT, VWO и VXUS — близкие аналоги; для VXUS это новый фонд Vanguard с августа 2026 года, пока маленький (€110 млн). Для SCHD точной копии нет.
-7. **Золото:** у GLD в Европе есть только ETC (долговые бумаги, обеспеченные металлом), а не фонды UCITS.
-8. **Налоги — сверено с текстом закона (редакция 01.08–31.12.2026):** časový test 3 года и порог 100 000 Kč по валовой выручке за год работают. **Лимит 40 млн Kč с 01.01.2026 для ценных бумаг отменён** (закон 360/2025 Sb.), он остался только для криптоактивов. Об освобождённом доходе выше 5 млн Kč нужно сообщить в налоговую.
-9. **Дивиденды и наследство:** по договору ČR–USA с W-8BEN удерживают 15 %, причём статья 10(3) прямо касается фондов вроде ETF; без W-8BEN — 30 %. Налог США на наследство: декларация при американских активах свыше $60 000, ставка до 40 %. Договора о таком налоге у Чехии с США нет.
-10. **Для калькулятора:** S&P 500 за 1928–2025 даёт 10,02 % в год (считал сам по данным Damodaran). Прогноз Vanguard на 10 лет: акции США 4,2–6,2 %. Курсы ČNB на 09.10.2026: EUR 24,365, USD 21,745 Kč. Единый курс за 2025 год: 24,66 / 21,84 Kč. Ставку по умолчанию 7 % предложил я сам, это не источник.
-11. **Не проверено, раздел 8 в md:** доходности SCHD (сайт Schwab закрыт, взял сторонние данные с сайта Vanguard), Revolut, Portu и Fondee. По XTB, DEGIRO, Saxo и Trading 212 источники старые или с форумов. Реальная мировая доходность из ежегодника UBS (UBS Yearbook) не получена, SPIVA за 15 и 20 лет — тоже.
-12. **Что было с браузером:** браузером Playwright в это же время пользовалась другая сессия. Я один раз открыл страницу Schwab и снял ключевые факты SCHD, после этого вкладка вернулась к той сессии. Браузер я не закрывал — он не мой.
-13. **Уборка:** новых фоновых процессов нет. Черновые файлы лежат только в scratchpad, лежащий рядом `market-cro.md` я не трогал.
+1. **NYSE Arca list:** SPY, VOO, IVV, VTI, VT, VEA, VWO, SCHD, VYM, AGG, GLD, VNQ, IWM. QQQ, VXUS and BND trade on Nasdaq: BND moved there in 2018. They are in a separate “people will ask about these” section, outside the main list.
+2. **Sources:** TER, assets, holdings count, SEC yield and 1/3/5/10-year NAV returns as of 30.09.2026 come from issuers (SSGA, iShares, Schwab and Vanguard through its JSON API). Stockanalysis is only a secondary source.
+3. **VTI renamed:** in 2026 Vanguard changed the index from CRSP to Morningstar; the fund is now Vanguard Morningstar Total Stock Market ETF.
+4. **Main point for the page:** most brokers do not sell US ETFs to retail investors because they lack the KID required by PRIIPs. However, ČNB guidance RS2018-12 (2018) says a broker that only executes client orders does not have to supply a KID. **Fio e-Broker** therefore officially states that US ETFs can be traded there.
+5. **Other brokers:** XTB, Trading 212, IBKR/Lynx, DEGIRO and Saxo do not offer US ETFs to retail clients. Alternatives are professional-client status (2 of 3 criteria, § 2b of Act 256/2004 Sb.) or CFDs. The options-exercise route is described only in blogs and is not officially verified.
+6. **Twins:** UCITS funds tracking the same index exist for the S&P 500, Nasdaq-100, Russell 2000 and US Aggregate. VT, VWO and VXUS have close alternatives; for VXUS, this is a new Vanguard fund launched in August 2026, still small (€110 million). SCHD has no exact equivalent.
+7. **Gold:** European equivalents of GLD are ETCs (metal-backed debt securities), not UCITS funds.
+8. **Taxes, checked against the legislation effective 01.08–31.12.2026:** the 3-year holding test and 100,000 Kč annual gross-proceeds threshold apply. **The 40 million Kč cap for securities was abolished from 01.01.2026** (Act 360/2025 Sb.); it remains only for cryptoassets. Exempt income above 5 million Kč must be reported to the tax office.
+9. **Dividends and estate tax:** under the Czech–US treaty, W-8BEN gives 15% withholding; Article 10(3) explicitly covers funds such as ETFs. Without W-8BEN it is 30%. US estate tax: a return is required for US assets above $60,000, with rates up to 40%. Czechia has no estate-tax treaty with the US.
+10. **Calculator:** the S&P 500 returned 10.02% annually over 1928–2025 (I calculated this from Damodaran’s data). Vanguard’s 10-year US-equity forecast is 4.2–6.2%. ČNB rates for 09.10.2026: EUR 24.365 and USD 21.745 Kč. The 2025 uniform rates are 24.66 / 21.84 Kč. I proposed the default 7% assumption myself; it is not a sourced figure.
+11. **Unverified, section 8 of the Markdown file:** SCHD returns (the Schwab site was blocked; I used third-party data on Vanguard’s site), Revolut, Portu and Fondee. XTB, DEGIRO, Saxo and Trading 212 sources are old or from forums. Real global returns from the UBS Yearbook and 15/20-year SPIVA figures were not obtained.
+12. **Browser:** another session was using the Playwright browser at the same time. I opened Schwab once and captured the key SCHD facts; then the tab returned to that session. I did not close the browser because it was not mine.
+13. **Cleanup:** no new background processes. Drafts are only in the scratchpad; I did not modify the adjacent `market-cro.md`.
 
-Файлы в `/Users/[redacted]/homeW/ai-dev-test/etf-landing/research/`:
+Files in `[redacted: local path]`:
 - etf-data.json
 - etf-data.md
 

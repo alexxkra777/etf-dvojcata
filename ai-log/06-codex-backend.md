@@ -2,12 +2,13 @@
 
 Codex CLI session log (main thread and its helper threads), exported from `rollout-2026-10-11T01-22-45-01a12820-43cc-79a1-b87b-3531aac3b7c1.jsonl`, `rollout-2026-10-11T01-24-28-01a12821-d411-7323-ae05-dcebfce7b657.jsonl`.
 Tool outputs longer than 1,500 characters are shortened; model reasoning is not stored in readable form by Codex and is left out.
+Russian prose and localized tool output are translated into English; executed tool code is retained.
 
 ## Thread `2026-10-11T01-22-45`
 
 **Brief / message:**
 
-You are working in the git repo /Users/[redacted]/homeW/ai-dev-test/etf-landing (currently empty apart from a research/ folder written by others — do not edit research/).
+You are working in the git repo [redacted: local path] (currently empty apart from a research/ folder written by others — do not edit research/).
 
 Project: a mobile-first lead-magnet landing page for Czech retail investors (ETF comparison + fee calculator). Another developer builds the frontend (Vite + vanilla TypeScript, static, in src/ and index.html). YOUR job is ONLY the backend + tooling for Vercel.
 
@@ -37,7 +38,7 @@ At the end print a short summary: files created, how to run, test results, anyth
 **Codex:**
 
 [redacted: name]
-Сделаю серверные функции, схему БД и настройку Vercel. Сначала проверю репозиторий и локальные инструкции; `research/` трогать не буду.
+I will implement the server functions, database schema and Vercel configuration. First I will inspect the repository and local instructions; I will not modify `research/`.
 
 
 → `exec` [redacted: reads the author's private assistant notes]
@@ -54,7 +55,7 @@ text(await tools.exec_command({cmd:"git remote -v; git branch --show-current; no
 <details><summary>result</summary>
 
 ```
-[{"type": "input_text", "text": "Script completed\nWall time 1.9 seconds\nOutput:\n"}, {"type": "input_text", "text": "Internal Error ()\nciteturn0view0 [wordlim: 200] Source: open({\"ref_id\":\"https://neon.com/docs/serverless/serverless-driver\",\"lineno\":null}); Total lines: 1\nL0: Failed to fetch https://neon.com/docs/serverless/serverless-driver: (400) Unsupported content-type: text/markdown\n--------------------------------------------------------------------------------\n@vercel/functions API Reference (Node.js) (https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package)\nciteturn0view1 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({\"ref_id\":\"https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package\",\"lineno\":null}); Total lines: 1113\nL0: cite0†Skip to content L1: \nL2: cite1†Docs L3: \nL4: Build\nL5: \nL6: Build with AI\nL7: \nL8:   * cite2†AI Gateway L9:   * cite3†AI SDK L10:   * cite4†Sandbox L11:   * cite5†Container Registry L12:   * cite6†Workflow L13:   * cite7†Vercel Agent L14:   * cite8†v0↗†v0.app L15:   * cite9†Vercel MCP L16:   * cite10†AI Integrations L17: \nL18: Deploy & scale\nL19: \nL20:   * cite11†Deployments L21:   * cite12†CLI L22:   * cite13†Functions L23:   * cite14†Delivery Network L24:   * cite15†Storage L25:   * cite16†Integrations L26:   * cite17†Microfrontends L27:   * cite18†Domains L28: \nL29: Operate 
+[{"type": "input_text", "text": "Script completed\nWall time 1.9 seconds\nOutput:\n"}, {"type": "input_text", "text": "Internal Error ()\nciteturn0view0 [wordlim: 200] Source: open({\"ref_id\":\"https://neon.com/docs/serverless/serverless-driver\",\"lineno\":null}); Total lines: 1\nL0: Failed to fetch https://neon.com/docs/serverless/serverless-driver: (400) Unsupported content-type: text/markdown\n--------------------------------------------------------------------------------\n@vercel/functions API Reference (Node.js) (https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package)\nciteturn0view1 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({\"ref_id\":\"https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package\",\"lineno\":null}); Total lines: 1113\nL0: cite0†Skip to content L1: \nL2: cite1†Docs L3: \nL4: Build\nL5: \nL6: Build with AI\nL7: \nL8:   * cite2†AI Gateway L9:   * cite3†AI SDK L10:   * cite4†Sandbox L11:   * cite5†Container Registry L12:   * cite6†Workflow L13:   * cite7†Vercel Agent L14:   * cite8†v0↗†v0.app L15:   * cite9†Vercel MCP L16:   * cite10†AI Integrations L17: \nL18: Deploy & scale\nL19: \nL20:   * cite11†Deployments L21:   * cite12†CLI L22:   * cite13†Functions L23:   * cite14†Delivery Network L24:   * cite15†Storage L25:   * cite16†Integrations L26:   * cite17†Microfrontends L27:   * cite18†Domains L28: \nL29: Operate
 … [11346 more characters]
 ```
 </details>
@@ -75,12 +76,12 @@ text(await tools.exec_command({cmd:"mkdir -p api lib db scripts tests\ncat > pac
 **Codex:**
 
 [redacted: name]
-Добавил валидацию и схему БД. Лимит событий сделаю атомарным, чтобы параллельные запросы не обходили ограничение в 300 событий. Для согласий сохраняю историю версий и дат, а для вебхука использую фоновую задачу Vercel с таймаутом.
+Added validation and the database schema. I will make the event limit atomic so concurrent requests cannot bypass the 300-event cap. Consent records retain a history of versions and dates; the webhook uses a Vercel background task with a timeout.
 
 
 → `exec`
 ```
-text(await tools.exec_command({cmd:"cat > lib/store.ts <<'EOF'\nimport { neon } from '@neondatabase/serverless';\nimport { HttpError, type LeadInput, type StoredEvent } from './validation.js';\n\nexport interface StoredLead extends LeadInput {\n  created_at: string;\n  last_seen_at: string;\n  consent_at: string;\n  sids: string[];\n  consent_history: { at: string; version: string; sid: string }[];\n}\nexport const memory = { events: [] as StoredEvent[], leads: new Map<string, StoredLead>() };\nexport function database() {\n  return process.env.DATABASE_URL ? neon(process.env.DATABASE_URL) : null;\n}\nexport async function saveEvents(events: StoredEvent[]): Promise<void> {\n  const counts = new Map<string, number>();\n  for (const event of events) counts.set(event.sid, (counts.get(event.sid) ?? 0) + 1);\n  const sql = database();\n  if (!sql) {\n    for (const [sid, count] of counts) {\n      if (memory.events.filter(event => event.sid === sid).length + count > 300) throw new HttpError(429, 'session_limit');\n    }\n    memory.events.push(...events);\n    console.log('Events stored in memory', { count: events.length });\n    return;\n  }\n  try {\n    await sql.transaction([\n     
+text(await tools.exec_command({cmd:"cat > lib/store.ts <<'EOF'\nimport { neon } from '@neondatabase/serverless';\nimport { HttpError, type LeadInput, type StoredEvent } from './validation.js';\n\nexport interface StoredLead extends LeadInput {\n  created_at: string;\n  last_seen_at: string;\n  consent_at: string;\n  sids: string[];\n  consent_history: { at: string; version: string; sid: string }[];\n}\nexport const memory = { events: [] as StoredEvent[], leads: new Map<string, StoredLead>() };\nexport function database() {\n  return process.env.DATABASE_URL ? neon(process.env.DATABASE_URL) : null;\n}\nexport async function saveEvents(events: StoredEvent[]): Promise<void> {\n  const counts = new Map<string, number>();\n  for (const event of events) counts.set(event.sid, (counts.get(event.sid) ?? 0) + 1);\n  const sql = database();\n  if (!sql) {\n    for (const [sid, count] of counts) {\n      if (memory.events.filter(event => event.sid === sid).length + count > 300) throw new HttpError(429, 'session_limit');\n    }\n    memory.events.push(...events);\n    console.log('Events stored in memory', { count: events.length });\n    return;\n  }\n  try {\n    await sql.transaction([\n
 … [3414 more characters]
 ```
 
@@ -176,7 +177,7 @@ text(await tools.exec_command({cmd:"cat > lib/funnel.ts <<'EOF'\nimport type { S
 **Codex:**
 
 [redacted: name]
-Готовы все три API. Статистика считает уникальные сессии, разбивает воронку по варианту, рекламе и устройству; по умолчанию исключает ботов. Сохранение лида и события `lead_ok` объединил в одну транзакцию. Сейчас проверяю тесты и подключаю API к локальному `npm run dev`.
+All three APIs are ready. Statistics count unique sessions, split the funnel by variant, ad and device, and exclude bots by default. Lead saving and the `lead_ok` event now share one transaction. I am testing and connecting the API to local `npm run dev`.
 
 
 → `exec`
@@ -282,7 +283,7 @@ text(await tools.exec_command({cmd:"python3 - <<'PY'\np='lib/http.ts'\ns=open(p)
 **Codex:**
 
 [redacted: name]
-59 тестов уже проходят, проверка типов и сборка тоже. При проверке обработки тела запроса нашёл важный нюанс: парсер Vercel может скрыть исходный размер JSON. Исправил чтение сырых байтов и добавляю проверки этого случая. Затем проверю SQL и локальные API по HTTP.
+59 tests pass, as do typechecking and the build. While reviewing request-body handling, I found that Vercel’s parser can hide the original JSON size. I changed it to read raw bytes and am adding regression checks. Then I will verify SQL and the local APIs over HTTP.
 
 
 → `exec`
@@ -358,7 +359,7 @@ text(await tools.write_stdin({session_id:41179,chars:"\u0003","yield_time_ms":10
 **Codex:**
 
 [redacted: name]
-Теперь проходят 70 тестов, включая сырые тела запросов и вебхук. По HTTP проверил локальные API. SQL проверил во временном PostgreSQL-совместимом движке: повторное применение схемы, upsert лидов, откат при превышении лимита и совпадение статистики с расчётом в памяти. К живой Neon БД не подключался. Осталось повторить финальные проверки и убрать временные файлы.
+70 tests now pass, including raw request bodies and the webhook. I checked local APIs over HTTP. SQL was verified in a temporary PostgreSQL-compatible engine: repeated schema application, lead upserts, rollback when the limit is exceeded and agreement between SQL and in-memory statistics. I did not connect to the live Neon database. Final checks and temporary-file cleanup remain.
 
 
 → `exec`
@@ -391,7 +392,7 @@ text(await tools.exec_command({cmd:"git status --short; git diff --check; git lo
 <details><summary>result</summary>
 
 ```
-[{"type": "input_text", "text": "Script completed\nWall time 1.9 seconds\nOutput:\n"}, {"type": "input_text", "text": "{\"check\":0,\"status\":\"fulfilled\",\"value\":{\"chunk_id\":\"c759c9\",\"wall_time_seconds\":0.701409917,\"exit_code\":0,\"original_token_count\":67,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v4.1.11 /Users/[redacted]/homeW/ai-dev-test/etf-landing\\n\\n\\n Test Files  1 passed (1)\\n      Tests  70 passed (70)\\n   Start at  01:28:50\\n   Duration  314ms (transform 78ms, setup 0ms, import 108ms, tests 43ms, environment 0ms)\\n\\n\"}}"}, {"type": "input_text", "text": "{\"check\":1,\"status\":\"fulfilled\",\"value\":{\"chunk_id\":\"844267\",\"wall_time_seconds\":0.817950084,\"exit_code\":0,\"original_token_count\":12,\"output\":\"\\n> etf-landing@0.1.0 typecheck\\n> tsc --noEmit\\n\\n\"}}"}, {"type": "input_text", "text": "{\"check\":2,\"status\":\"fulfilled\",\"value\":{\"chunk_id\":\"4dd061\",\"wall_time_seconds\":0.333573792,\"exit_code\":0,\"original_token_count\":57,\"output\":\"\\n> etf-landing@0.1.0 build\\n> vite build\\n\\nvite v6.4.4 building for production...\\ntransforming...\\n✓ 1 modules transformed.\\nrendering chunks...\\ncomputing gzip size...\\ndist/index.html  0.25 kB │ gzip: 0.19 kB\\n✓ built in 48ms\\n\"}}"}, {"type": "input_text", "text": "{\"chunk_id\":\"c4070e\",\"wall_time_seconds\":0.603266542,\"exit_code\":0,\"original_token_count\":11,\"output\":\"Final schema applied twice successfully.\\n\"}"}, {"type": "in
+[{"type": "input_text", "text": "Script completed\nWall time 1.9 seconds\nOutput:\n"}, {"type": "input_text", "text": "{\"check\":0,\"status\":\"fulfilled\",\"value\":{\"chunk_id\":\"c759c9\",\"wall_time_seconds\":0.701409917,\"exit_code\":0,\"original_token_count\":67,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v4.1.11 [redacted: local path] Test Files  1 passed (1)\\n      Tests  70 passed (70)\\n   Start at  01:28:50\\n   Duration  314ms (transform 78ms, setup 0ms, import 108ms, tests 43ms, environment 0ms)\\n\\n\"}}"}, {"type": "input_text", "text": "{\"check\":1,\"status\":\"fulfilled\",\"value\":{\"chunk_id\":\"844267\",\"wall_time_seconds\":0.817950084,\"exit_code\":0,\"original_token_count\":12,\"output\":\"\\n> etf-landing@0.1.0 typecheck\\n> tsc --noEmit\\n\\n\"}}"}, {"type": "input_text", "text": "{\"check\":2,\"status\":\"fulfilled\",\"value\":{\"chunk_id\":\"4dd061\",\"wall_time_seconds\":0.333573792,\"exit_code\":0,\"original_token_count\":57,\"output\":\"\\n> etf-landing@0.1.0 build\\n> vite build\\n\\nvite v6.4.4 building for production...\\ntransforming...\\n✓ 1 modules transformed.\\nrendering chunks...\\ncomputing gzip size...\\ndist/index.html  0.25 kB │ gzip: 0.19 kB\\n✓ built in 48ms\\n\"}}"}, {"type": "input_text", "text": "{\"chunk_id\":\"c4070e\",\"wall_time_seconds\":0.603266542,\"exit_code\":0,\"original_token_count\":11,\"output\":\"Final schema applied twice successfully.\\n\"}"}, {"type": "in
 … [459 more characters]
 ```
 </details>
@@ -399,23 +400,23 @@ text(await tools.exec_command({cmd:"git status --short; git diff --check; git lo
 **Codex:**
 
 [redacted: name]
-Готово, сделал 6 локальных коммитов.
+Done; made 6 local commits.
 
-Созданы API `event`, `lead`, `stats`, модули `lib/`, схема БД, миграция, 70 тестов, конфиги npm/TypeScript/Vite/Vercel, `.env.example`, `.gitignore` и временный `index.html`.
+Created the `event`, `lead` and `stats` APIs, `lib/` modules, database schema, migration, 70 tests, npm/TypeScript/Vite/Vercel configuration, `.env.example`, `.gitignore` and a temporary `index.html`.
 
-Запуск: `npm run dev`. Для БД — задать `DATABASE_URL` и выполнить `npm run migrate`.
+Run with `npm run dev`. For the database, set `DATABASE_URL` and run `npm run migrate`.
 
-Проверки прошли: `npm install`, 70/70 тестов, `typecheck`, `build`, локальные HTTP-запросы и SQL.
+Checks passed: `npm install`, 70/70 tests, `typecheck`, `build`, local HTTP requests and SQL.
 
-Открыто: проверка на живой Neon БД и добавление PDF. `npm audit` сообщает 11 уязвимостей в dev-зависимостях; в production-зависимостях — 0.
+Outstanding: verification against live Neon and adding the PDF. `npm audit` reports 11 vulnerabilities in development dependencies and 0 in production dependencies.
 
-`research/` не трогал. Сервер остановлен, временные файлы удалены. Деплоя и push не было.
+Did not modify `research/`. Stopped the server and removed temporary files. No deployment or push.
 
 ## Thread `2026-10-11T01-24-28`
 
 **Brief / message:**
 
-You are working in the git repo /Users/[redacted]/homeW/ai-dev-test/etf-landing (currently empty apart from a research/ folder written by others — do not edit research/).
+You are working in the git repo [redacted: local path] (currently empty apart from a research/ folder written by others — do not edit research/).
 
 Project: a mobile-first lead-magnet landing page for Czech retail investors (ETF comparison + fee calculator). Another developer builds the frontend (Vite + vanilla TypeScript, static, in src/ and index.html). YOUR job is ONLY the backend + tooling for Vercel.
 
@@ -451,7 +452,7 @@ text(await tools.exec_command({cmd:"pwd && rg --files lib api tests package.json
 <details><summary>result</summary>
 
 ```
-[{"type": "input_text", "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"}, {"type": "input_text", "text": "{\"chunk_id\":\"8d3fc8\",\"wall_time_seconds\":0.000003416,\"exit_code\":0,\"original_token_count\":28,\"output\":\"/Users/[redacted]/homeW/ai-dev-test/etf-landing\\npackage.json\\napi/event.ts\\nlib/store.ts\\nlib/http.ts\\nlib/validation.ts\\n\"}"}]
+[{"type": "input_text", "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"}, {"type": "input_text", "text": "{\"chunk_id\":\"8d3fc8\",\"wall_time_seconds\":0.000003416,\"exit_code\":0,\"original_token_count\":28,\"output\":\"[redacted: local path]"}"}]
 ```
 </details>
 
@@ -510,7 +511,7 @@ text(await tools.exec_command({cmd:"cat tsconfig.json","max_output_tokens":2000}
 → `exec`
 ```
 text(await tools.exec_command({cmd:"mkdir -p tests","max_output_tokens":1000}));
-text(await tools.apply_patch("*** Begin Patch\n*** Add File: /Users/[redacted]/homeW/ai-dev-test/etf-landing/tests/backend.test.ts\n+import type { VercelRequest, VercelResponse } from '@vercel/node';\n+import { beforeEach, describe, expect, it, vi } from 'vitest';\n+import eventHandler from '../api/event.js';\n+import leadHandler from '../api/lead.js';\n+import statsHandler from '../api/stats.js';\n+import { checkDomain } from '../lib/dns.js';\n+import { computeStats } from '../lib/funnel.js';\n+import { readBody } from '../lib/http.js';\n+import { memory, saveEvents, saveLead } from '../lib/store.js';\n+import { enrich, parseEvents, parseLead, type EventType, type StoredEvent } from '../lib/validation.js';\n+\n+vi.mock('../lib/dns.js', () => ({ checkDomain: vi.fn() }));\n+vi.mock('@vercel/functions', () => ({ waitUntil: vi.fn() }));\n+\n+const SID = '12345678-1234-4234-8234-123456789abc';\n+const SID2 = '22345678-1234-4234-8234-123456789abc';\n+const SID3 = '32345678-1234-4234-8234-123456789abc';\n+const baseEvent = { sid: SID, variant: 'a', type: 'page_view', ts: 1000 };\n+const baseLead = {\n+  email: ' 
+text(await tools.apply_patch("*** Begin Patch\n*** Add File: [redacted: local path] type { VercelRequest, VercelResponse } from '@vercel/node';\n+import { beforeEach, describe, expect, it, vi } from 'vitest';\n+import eventHandler from '../api/event.js';\n+import leadHandler from '../api/lead.js';\n+import statsHandler from '../api/stats.js';\n+import { checkDomain } from '../lib/dns.js';\n+import { computeStats } from '../lib/funnel.js';\n+import { readBody } from '../lib/http.js';\n+import { memory, saveEvents, saveLead } from '../lib/store.js';\n+import { enrich, parseEvents, parseLead, type EventType, type StoredEvent } from '../lib/validation.js';\n+\n+vi.mock('../lib/dns.js', () => ({ checkDomain: vi.fn() }));\n+vi.mock('@vercel/functions', () => ({ waitUntil: vi.fn() }));\n+\n+const SID = '12345678-1234-4234-8234-123456789abc';\n+const SID2 = '22345678-1234-4234-8234-123456789abc';\n+const SID3 = '32345678-1234-4234-8234-123456789abc';\n+const baseEvent = { sid: SID, variant: 'a', type: 'page_view', ts: 1000 };\n+const baseLead = {\n+  email: '
 … [12973 more characters]
 ```
 
@@ -562,7 +563,7 @@ text(await tools.exec_command({cmd:"cat api/lead.ts lib/dns.ts lib/webhook.ts","
 
 → `exec`
 ```
-text(await tools.apply_patch("*** Begin Patch\n*** Update File: /Users/[redacted]/homeW/ai-dev-test/etf-landing/tests/backend.test.ts\n@@\n import type { VercelRequest, VercelResponse } from '@vercel/node';\n-import { beforeEach, describe, expect, it, vi } from 'vitest';\n+import { resolveMx, resolve4 } from 'node:dns/promises';\n+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\n@@\n vi.mock('@vercel/functions', () => ({ waitUntil: vi.fn() }));\n+vi.mock('node:dns/promises', () => ({ resolveMx: vi.fn(), resolve4: vi.fn() }));\n+const actualDns = await vi.importActual<typeof import('../lib/dns.js')>('../lib/dns.js');\n@@\n beforeEach(() => {\n+  vi.restoreAllMocks();\n@@\n   vi.spyOn(console, 'log').mockImplementation(() => {});\n });\n+\n+afterEach(() => { vi.useRealTimers(); });\n@@\n describe('lead endpoint', () => {\n@@\n });\n+\n+describe('email domain lookup', () => {\n+  const missing = () => Object.assign(new Error('Domain missing'), { code: 'ENOTFOUND' });\n+\n+  it('accepts a domain with an MX record', async () => {\n+    vi.mocked(resolveMx).mockResolvedValue([{ exchange: 'mail.example.cz', priority: 10 }]);\n+    vi.mocked(resolve4).mockRejectedValue
+text(await tools.apply_patch("*** Begin Patch\n*** Update File: [redacted: local path] import type { VercelRequest, VercelResponse } from '@vercel/node';\n-import { beforeEach, describe, expect, it, vi } from 'vitest';\n+import { resolveMx, resolve4 } from 'node:dns/promises';\n+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';\n@@\n vi.mock('@vercel/functions', () => ({ waitUntil: vi.fn() }));\n+vi.mock('node:dns/promises', () => ({ resolveMx: vi.fn(), resolve4: vi.fn() }));\n+const actualDns = await vi.importActual<typeof import('../lib/dns.js')>('../lib/dns.js');\n@@\n beforeEach(() => {\n+  vi.restoreAllMocks();\n@@\n   vi.spyOn(console, 'log').mockImplementation(() => {});\n });\n+\n+afterEach(() => { vi.useRealTimers(); });\n@@\n describe('lead endpoint', () => {\n@@\n });\n+\n+describe('email domain lookup', () => {\n+  const missing = () => Object.assign(new Error('Domain missing'), { code: 'ENOTFOUND' });\n+\n+  it('accepts a domain with an MX record', async () => {\n+    vi.mocked(resolveMx).mockResolvedValue([{ exchange: 'mail.example.cz', priority: 10 }]);\n+    vi.mocked(resolve4).mockRejectedValue
 … [1479 more characters]
 ```
 
@@ -589,14 +590,14 @@ text(await tools.exec_command({cmd:"cat lib/funnel.ts api/stats.ts lib/store.ts"
 
 → `exec`
 ```
-text(await tools.apply_patch("*** Begin Patch\n*** Update File: /Users/[redacted]/homeW/ai-dev-test/etf-landing/tests/backend.test.ts\n@@\n function event(type: EventType, sid = SID, ts = 1000, extra: Partial<StoredEvent> = {}): StoredEvent {\n-  return { ...enrich(parseEvents({ ...baseEvent, type, sid, ts })[0], '', new Date('2026-10-10T12:00:00Z')), ...extra };\n+  const receivedAt = new Date(Date.parse('2026-10-10T12:00:00Z') + ts - 1000);\n+  return { ...enrich(parseEvents({ ...baseEvent, type, sid, ts })[0], '', receivedAt), ...extra };\n@@\n   it('requires consent', async () => {\n@@\n     expect(memory.leads.size).toBe(0);\n   });\n+\n+  it('does not store a lead when its success event exceeds the session limit', async () => {\n+    await saveEvents(Array.from({ length: 300 }, () => event('page_view')));\n+    const { res, result } = response();\n+    await leadHandler(request(baseLead), res);\n+    expect(result.statusCode).toBe(429);\n+    expect(memory.leads.size).toBe(0);\n+    expect(memory.events).toHaveLength(300);\n+    expect(memory.events.every(item => item.type === 'page_view')).toBe(true);\n+  });\n@@\n   it('handles empty data without NaN conversion or duration', () 
+text(await tools.apply_patch("*** Begin Patch\n*** Update File: [redacted: local path] function event(type: EventType, sid = SID, ts = 1000, extra: Partial<StoredEvent> = {}): StoredEvent {\n-  return { ...enrich(parseEvents({ ...baseEvent, type, sid, ts })[0], '', new Date('2026-10-10T12:00:00Z')), ...extra };\n+  const receivedAt = new Date(Date.parse('2026-10-10T12:00:00Z') + ts - 1000);\n+  return { ...enrich(parseEvents({ ...baseEvent, type, sid, ts })[0], '', receivedAt), ...extra };\n@@\n   it('requires consent', async () => {\n@@\n     expect(memory.leads.size).toBe(0);\n   });\n+\n+  it('does not store a lead when its success event exceeds the session limit', async () => {\n+    await saveEvents(Array.from({ length: 300 }, () => event('page_view')));\n+    const { res, result } = response();\n+    await leadHandler(request(baseLead), res);\n+    expect(result.statusCode).toBe(429);\n+    expect(memory.leads.size).toBe(0);\n+    expect(memory.events).toHaveLength(300);\n+    expect(memory.events.every(item => item.type === 'page_view')).toBe(true);\n+  });\n@@\n   it('handles empty data without NaN conversion or duration', ()
 … [1392 more characters]
 ```
 
 <details><summary>result</summary>
 
 ```
-[{"type": "input_text", "text": "Script completed\nWall time 1.6 seconds\nOutput:\n"}, {"type": "input_text", "text": "{}"}, {"type": "input_text", "text": "{\"chunk_id\":\"7a351c\",\"wall_time_seconds\":0.907590958,\"exit_code\":0,\"original_token_count\":81,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v3.2.7 /Users/[redacted]/homeW/ai-dev-test/etf-landing\\n\\n ✓ tests/backend.test.ts (59 tests) 14ms\\n\\n Test Files  1 passed (1)\\n      Tests  59 passed (59)\\n   Start at  01:26:22\\n   Duration  300ms (transform 71ms, setup 0ms, collect 83ms, tests 14ms, environment 0ms, prepare 33ms)\\n\\n\"}"}, {"type": "input_text", "text": "{\"chunk_id\":\"fa831c\",\"wall_time_seconds\":0.421142333,\"exit_code\":0,\"original_token_count\":12,\"output\":\"\\n> etf-landing@0.1.0 typecheck\\n> tsc --noEmit\\n\\n\"}"}]
+[{"type": "input_text", "text": "Script completed\nWall time 1.6 seconds\nOutput:\n"}, {"type": "input_text", "text": "{}"}, {"type": "input_text", "text": "{\"chunk_id\":\"7a351c\",\"wall_time_seconds\":0.907590958,\"exit_code\":0,\"original_token_count\":81,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v3.2.7 [redacted: local path] ✓ tests/backend.test.ts (59 tests) 14ms\\n\\n Test Files  1 passed (1)\\n      Tests  59 passed (59)\\n   Start at  01:26:22\\n   Duration  300ms (transform 71ms, setup 0ms, collect 83ms, tests 14ms, environment 0ms, prepare 33ms)\\n\\n\"}"}, {"type": "input_text", "text": "{\"chunk_id\":\"fa831c\",\"wall_time_seconds\":0.421142333,\"exit_code\":0,\"original_token_count\":12,\"output\":\"\\n> etf-landing@0.1.0 typecheck\\n> tsc --noEmit\\n\\n\"}"}]
 ```
 </details>
 
@@ -615,9 +616,9 @@ text(await tools.apply_patch("*** Begin Patch\n*** Update File: /Users/[redacted
 **Codex:**
 
 [redacted: name]
-Создал только `tests/backend.test.ts`: 59 тестов API, валидации, DNS, лимитов, авторизации, хранения и воронки.
+Created only `tests/backend.test.ts`: 59 tests covering APIs, validation, DNS, limits, authorization, storage and the funnel.
 
-Проверки: `npm test` — 59/59; `npm run typecheck` — успешно. Коммитов и фоновых процессов нет.
+Checks: `npm test` — 59/59; `npm run typecheck` — passed. No commits or background processes.
 
 → `exec`
 ```
@@ -635,21 +636,21 @@ text(await tools.exec_command({cmd:"cat lib/http.ts lib/stats.ts lib/webhook.ts"
 
 → `exec`
 ```
-text(await tools.apply_patch("*** Begin Patch\n*** Update File: /Users/[redacted]/homeW/ai-dev-test/etf-landing/tests/backend.test.ts\n@@\n import { resolveMx, resolve4 } from 'node:dns/promises';\n+import { Readable } from 'node:stream';\n+import { waitUntil } from '@vercel/functions';\n@@\n function request(body: unknown, method = 'POST', headers: Record<string, string> = {}, query: Record<string, string> = {}) {\n@@\n }\n+\n+function streamRequest(chunks: Buffer[]) {\n+  const req = Object.assign(Readable.from(chunks), {\n+    method: 'POST', headers: { 'content-type': 'application/json' }, query: {},\n+  });\n+  const bodyGetter = vi.fn(() => { throw new Error('Body getter accessed'); });\n+  Object.defineProperty(req, 'body', { get: bodyGetter });\n+  return { req: req as unknown as VercelRequest, bodyGetter };\n+}\n@@\n   it('checks declared body length before parsing', async () => {\n@@\n       .rejects.toMatchObject({ status: 413 });\n   });\n+\n+  it('counts raw JSON whitespace before a lazy body getter', async () => {\n+    const { req, bodyGetter } = streamRequest([Buffer.from(JSON.stringify(baseEvent) + ' '.repeat(4096))]);\n+    const { res, result } = response();\n+    awa
+text(await tools.apply_patch("*** Begin Patch\n*** Update File: [redacted: local path] import { resolveMx, resolve4 } from 'node:dns/promises';\n+import { Readable } from 'node:stream';\n+import { waitUntil } from '@vercel/functions';\n@@\n function request(body: unknown, method = 'POST', headers: Record<string, string> = {}, query: Record<string, string> = {}) {\n@@\n }\n+\n+function streamRequest(chunks: Buffer[]) {\n+  const req = Object.assign(Readable.from(chunks), {\n+    method: 'POST', headers: { 'content-type': 'application/json' }, query: {},\n+  });\n+  const bodyGetter = vi.fn(() => { throw new Error('Body getter accessed'); });\n+  Object.defineProperty(req, 'body', { get: bodyGetter });\n+  return { req: req as unknown as VercelRequest, bodyGetter };\n+}\n@@\n   it('checks declared body length before parsing', async () => {\n@@\n       .rejects.toMatchObject({ status: 413 });\n   });\n+\n+  it('counts raw JSON whitespace before a lazy body getter', async () => {\n+    const { req, bodyGetter } = streamRequest([Buffer.from(JSON.stringify(baseEvent) + ' '.repeat(4096))]);\n+    const { res, result } = response();\n+    awa
 … [5103 more characters]
 ```
 
 <details><summary>result</summary>
 
 ```
-[{"type": "input_text", "text": "Script completed\nWall time 1.3 seconds\nOutput:\n"}, {"type": "input_text", "text": "{}"}, {"type": "input_text", "text": "{\"chunk_id\":\"83197d\",\"wall_time_seconds\":0.425985,\"exit_code\":1,\"original_token_count\":559,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v4.1.11 /Users/[redacted]/homeW/ai-dev-test/etf-landing\\n\\n ❯ tests/backend.test.ts (70 tests | 1 failed) 29ms\\n     × includes the full UTC day for a date-only to value 3ms\\n\\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\\n\\n FAIL  tests/backend.test.ts > stats authorization > includes the full UTC day for a date-only to value\\nAssertionError: expected { …(9) } to match object { Object (to, funnel) }\\n(10 matching properties omitted from actual)\\n\\n- Expected\\n+ Received\\n\\n@@ -4,8 +4,50 @@\\n        \\\"overall_conversion\\\": 1,\\n        \\\"sessions\\\": 1,\\n        \\\"step\\\": \\\"landed\\\",\\n        \\\"step_conversion\\\": 1,\\n      },\\n+     {\\n+       \\\"overall_conversion\\\": 0,\\n+       \\\"sessions\\\": 0,\\n+       \\\"step\\\": \\\"engaged\\\",\\n+       \\\"step_conversion\\\": 0,\\n+     },\\n+     {\\n+       \\\"overall_conversion\\\": 0,\\n+       \\\"sessions\\\": 0,\\n+       \\\"step\\\": \\\"interacted_tool\\\",\\n+       \\\"step_conversion\\\": null,\\n+     },\\n+     {\\n+       \\\"overall_conversion\\\": 0,\\n+       \\\"sessions\\\": 0,\\n+       \\\"step\\\": \\\"cta_click\\\",\\n+       \\\"step_conversion\\\": null,
+[{"type": "input_text", "text": "Script completed\nWall time 1.3 seconds\nOutput:\n"}, {"type": "input_text", "text": "{}"}, {"type": "input_text", "text": "{\"chunk_id\":\"83197d\",\"wall_time_seconds\":0.425985,\"exit_code\":1,\"original_token_count\":559,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v4.1.11 [redacted: local path] ❯ tests/backend.test.ts (70 tests | 1 failed) 29ms\\n     × includes the full UTC day for a date-only to value 3ms\\n\\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\\n\\n FAIL  tests/backend.test.ts > stats authorization > includes the full UTC day for a date-only to value\\nAssertionError: expected { …(9) } to match object { Object (to, funnel) }\\n(10 matching properties omitted from actual)\\n\\n- Expected\\n+ Received\\n\\n@@ -4,8 +4,50 @@\\n        \\\"overall_conversion\\\": 1,\\n        \\\"sessions\\\": 1,\\n        \\\"step\\\": \\\"landed\\\",\\n        \\\"step_conversion\\\": 1,\\n      },\\n+     {\\n+       \\\"overall_conversion\\\": 0,\\n+       \\\"sessions\\\": 0,\\n+       \\\"step\\\": \\\"engaged\\\",\\n+       \\\"step_conversion\\\": 0,\\n+     },\\n+     {\\n+       \\\"overall_conversion\\\": 0,\\n+       \\\"sessions\\\": 0,\\n+       \\\"step\\\": \\\"interacted_tool\\\",\\n+       \\\"step_conversion\\\": null,\\n+     },\\n+     {\\n+       \\\"overall_conversion\\\": 0,\\n+       \\\"sessions\\\": 0,\\n+       \\\"step\\\": \\\"cta_click\\\",\\n+       \\\"step_conversion\\\": null,
 … [1559 more characters]
 ```
 </details>
 
 → `exec`
 ```
-text(await tools.apply_patch("*** Begin Patch\n*** Update File: /Users/[redacted]/homeW/ai-dev-test/etf-landing/tests/backend.test.ts\n@@\n-    expect(result.body).toMatchObject({ to: '2026-10-11T00:00:00.000Z', funnel: [expect.objectContaining({ step: 'landed', sessions: 1 })] });\n+    expect(result.body).toMatchObject({\n+      to: '2026-10-11T00:00:00.000Z',\n+      funnel: expect.arrayContaining([expect.objectContaining({ step: 'landed', sessions: 1 })]),\n+    });\n*** End Patch"));
+text(await tools.apply_patch("*** Begin Patch\n*** Update File: [redacted: local path]    expect(result.body).toMatchObject({ to: '2026-10-11T00:00:00.000Z', funnel: [expect.objectContaining({ step: 'landed', sessions: 1 })] });\n+    expect(result.body).toMatchObject({\n+      to: '2026-10-11T00:00:00.000Z',\n+      funnel: expect.arrayContaining([expect.objectContaining({ step: 'landed', sessions: 1 })]),\n+    });\n*** End Patch"));
 text(await tools.exec_command({cmd:"npm test","max_output_tokens":2000}));
 text(await tools.exec_command({cmd:"npm run typecheck","max_output_tokens":2000}));
 
@@ -658,7 +659,7 @@ text(await tools.exec_command({cmd:"npm run typecheck","max_output_tokens":2000}
 <details><summary>result</summary>
 
 ```
-[{"type": "input_text", "text": "Script completed\nWall time 1.3 seconds\nOutput:\n"}, {"type": "input_text", "text": "{}"}, {"type": "input_text", "text": "{\"chunk_id\":\"3a3f82\",\"wall_time_seconds\":0.478288834,\"exit_code\":0,\"original_token_count\":67,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v4.1.11 /Users/[redacted]/homeW/ai-dev-test/etf-landing\\n\\n\\n Test Files  1 passed (1)\\n      Tests  70 passed (70)\\n   Start at  01:27:59\\n   Duration  197ms (transform 44ms, setup 0ms, import 60ms, tests 24ms, environment 0ms)\\n\\n\"}"}, {"type": "input_text", "text": "{\"chunk_id\":\"d1bd0d\",\"wall_time_seconds\":0.540395209,\"exit_code\":0,\"original_token_count\":12,\"output\":\"\\n> etf-landing@0.1.0 typecheck\\n> tsc --noEmit\\n\\n\"}"}]
+[{"type": "input_text", "text": "Script completed\nWall time 1.3 seconds\nOutput:\n"}, {"type": "input_text", "text": "{}"}, {"type": "input_text", "text": "{\"chunk_id\":\"3a3f82\",\"wall_time_seconds\":0.478288834,\"exit_code\":0,\"original_token_count\":67,\"output\":\"\\n> etf-landing@0.1.0 test\\n> vitest run\\n\\n\\n RUN  v4.1.11 [redacted: local path] Test Files  1 passed (1)\\n      Tests  70 passed (70)\\n   Start at  01:27:59\\n   Duration  197ms (transform 44ms, setup 0ms, import 60ms, tests 24ms, environment 0ms)\\n\\n\"}"}, {"type": "input_text", "text": "{\"chunk_id\":\"d1bd0d\",\"wall_time_seconds\":0.540395209,\"exit_code\":0,\"original_token_count\":12,\"output\":\"\\n> etf-landing@0.1.0 typecheck\\n> tsc --noEmit\\n\\n\"}"}]
 ```
 </details>
 
@@ -677,7 +678,7 @@ text(await tools.exec_command({cmd:"npm run typecheck","max_output_tokens":2000}
 **Codex:**
 
 [redacted: name]
-Обновил только `tests/backend.test.ts`: сырые потоки, границы дат и фоновая доставка webhook.
+Updated only `tests/backend.test.ts`: raw streams, date boundaries and background webhook delivery.
 
-`npm test` — 70/70; `npm run typecheck` — успешно. Исправил неверное ожидание массива в первом прогоне. Коммитов и процессов нет.
+`npm test` — 70/70; `npm run typecheck` — passed. Corrected an incorrect array expectation after the first run. No commits or processes.
 
