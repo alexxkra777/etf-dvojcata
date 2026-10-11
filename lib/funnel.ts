@@ -1,6 +1,6 @@
 import type { StoredEvent } from './validation.js';
 
-export const steps = ['landed', 'engaged', 'interacted_tool', 'cta_click', 'form_view', 'form_focus', 'form_submit', 'lead_ok'] as const;
+export const steps = ['landed', 'engaged', 'interacted_tool', 'cta_click', 'form_view', 'form_focus', 'form_submit', 'lead_ok', 'pdf_download', 'broker_answer'] as const;
 export type Step = typeof steps[number];
 export interface StatsOptions { from: Date; to: Date; includeBots: boolean }
 export interface SessionSummary {
@@ -18,11 +18,19 @@ const engagedTypes = new Set(['engaged_5s', ...toolTypes, 'cta_click']);
 
 function funnel(sessions: SessionSummary[]) {
   const counts = steps.map(step => sessions.filter(session => session.flags[step]).length);
-  return steps.map((step, index) => ({
-    step, sessions: counts[index],
-    step_conversion: (index ? counts[index - 1] : counts[0]) ? counts[index] / (index ? counts[index - 1] : counts[0]) : null,
-    overall_conversion: counts[0] ? counts[index] / counts[0] : null,
-  }));
+  return steps.map((step, index) => {
+    const previous = steps[index ? index - 1 : 0];
+    const denominator = counts[index ? index - 1 : 0];
+    // Visitors can skip the tool or CTA. Keep their totals, but measure each transition
+    // within the audience that reached its previous step.
+    const completed = sessions.filter(session => session.flags[previous] && session.flags[step]).length;
+    const landed = sessions.filter(session => session.flags.landed && session.flags[step]).length;
+    return {
+      step, sessions: counts[index],
+      step_conversion: denominator ? completed / denominator : null,
+      overall_conversion: counts[0] ? landed / counts[0] : null,
+    };
+  });
 }
 function split(sessions: SessionSummary[], key: 'variant' | 'utm_content' | 'device') {
   const groups = new Map<string, SessionSummary[]>();
@@ -71,7 +79,7 @@ export function computeStats(events: StoredEvent[], options: StatsOptions) {
     }
     if (engagedTypes.has(event.type)) session.flags.engaged = true;
     if (toolTypes.has(event.type)) session.flags.interacted_tool = true;
-    if (['cta_click', 'form_view', 'form_focus', 'form_submit', 'lead_ok'].includes(event.type)) {
+    if (['cta_click', 'form_view', 'form_focus', 'form_submit', 'lead_ok', 'pdf_download', 'broker_answer'].includes(event.type)) {
       session.flags[event.type as Step] = true;
     }
     if (event.type === 'lead_ok') session.lead_at ??= event.received_at;

@@ -74,7 +74,8 @@ export function parseEvents(value: unknown): EventInput[] {
   if (items.length < 1 || items.length > 20) return invalid();
   return items.map(item => {
     const input = object(item);
-    if (!eventTypes.includes(input.type as EventType)) return invalid();
+    // Only saving a lead can create this event; browsers must not inflate the lead count.
+    if (!eventTypes.includes(input.type as EventType) || input.type === 'lead_ok') return invalid();
     if (input.value !== undefined && input.value !== null &&
       (typeof input.value !== 'number' || !Number.isFinite(input.value))) return invalid();
     if (typeof input.ts !== 'number' || !Number.isSafeInteger(input.ts) || input.ts < 0 || input.ts > 8640000000000000) return invalid();

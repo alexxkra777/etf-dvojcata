@@ -52,7 +52,8 @@ function response() {
 
 function event(type: EventType, sid = SID, ts = 1000, extra: Partial<StoredEvent> = {}): StoredEvent {
   const receivedAt = new Date(Date.parse('2026-10-10T12:00:00Z') + ts - 1000);
-  return { ...enrich(parseEvents({ ...baseEvent, type, sid, ts })[0], '', receivedAt), ...extra };
+  const input = parseEvents({ ...baseEvent, type: type === 'lead_ok' ? 'form_submit' : type, sid, ts })[0];
+  return { ...enrich({ ...input, type }, '', receivedAt), ...extra };
 }
 
 beforeEach(() => {
@@ -120,6 +121,14 @@ describe('event endpoint and body limits', () => {
       expect(result.statusCode).toBe(400);
     }
     expect(memory.events).toHaveLength(0);
+  });
+
+  it('rejects a client-supplied lead_ok without storing any of the batch', async () => {
+    const { res, result } = response();
+    await eventHandler(request([baseEvent, { ...baseEvent, type: 'lead_ok' }]), res);
+    expect(result.statusCode).toBe(400);
+    expect(memory.events).toHaveLength(0);
+    expect(memory.leads.size).toBe(0);
   });
 
   it('rejects bodies over 4096 bytes, including multibyte text', async () => {
@@ -423,6 +432,36 @@ describe('stats authorization', () => {
 describe('in-memory funnel', () => {
   const range = { from: new Date('2026-10-01T00:00:00Z'), to: new Date('2026-10-11T00:00:00Z'), includeBots: false };
 
+  it('counts direct hero leads and calculates transitions only among previous-step sessions', () => {
+    const stats = computeStats([
+      event('page_view', SID), event('form_view', SID), event('form_focus', SID),
+      event('form_submit', SID), event('lead_ok', SID),
+      event('page_view', SID2), event('cta_click', SID2), event('form_view', SID2),
+      event('form_focus', SID2), event('form_submit', SID2), event('lead_ok', SID2),
+      event('page_view', SID3), event('form_view', SID3),
+    ], range);
+    const steps = Object.fromEntries(stats.funnel.map(step => [step.step, step]));
+    expect(steps.form_view.sessions).toBe(3);
+    expect(steps.form_view.step_conversion).toBe(1);
+    expect(steps.form_focus.step_conversion).toBeCloseTo(2 / 3);
+    expect(steps.lead_ok.sessions).toBe(2);
+    expect(steps.lead_ok.overall_conversion).toBeCloseTo(2 / 3);
+    expect(stats.funnel.every(step => step.step_conversion === null || step.step_conversion <= 1)).toBe(true);
+  });
+
+  it('does not treat disjoint audiences or sessions missing arrival as conversions', () => {
+    const stats = computeStats([
+      event('page_view', SID), event('cta_click', SID),
+      event('page_view', SID2), event('form_view', SID2),
+      event('lead_ok', SID3),
+    ], range);
+    const steps = Object.fromEntries(stats.funnel.map(step => [step.step, step]));
+    expect(steps.form_view.sessions).toBe(1);
+    expect(steps.form_view.step_conversion).toBe(0);
+    expect(steps.lead_ok.sessions).toBe(1);
+    expect(steps.lead_ok.overall_conversion).toBe(0);
+  });
+
   it('counts unique sessions, conversions, daily totals and median duration', () => {
     const stats = computeStats([
       event('page_view'), event('page_view', SID, 1500), event('calc_change', SID, 2000),
@@ -468,10 +507,32 @@ describe('in-memory funnel', () => {
       event('page_view', SID2, 1000, { variant: 'b', utm: { content: 'ad-b' }, device: 'desktop' }),
     ], range);
     expect(stats.by_variant.a[0].sessions).toBe(1);
-    expect(stats.by_variant.a.at(-1)?.sessions).toBe(1);
-    expect(stats.by_variant.b.at(-1)?.sessions).toBe(0);
-    expect(stats.by_utm_content['ad-a'].at(-1)?.sessions).toBe(1);
-    expect(stats.by_device.mobile.at(-1)?.sessions).toBe(1);
-    expect(stats.by_device.desktop.at(-1)?.sessions).toBe(0);
+    const leads = (group: typeof stats.funnel) => group.find(step => step.step === 'lead_ok')?.sessions;
+    expect(leads(stats.by_variant.a)).toBe(1);
+    expect(leads(stats.by_variant.b)).toBe(0);
+    expect(leads(stats.by_utm_content['ad-a'])).toBe(1);
+    expect(leads(stats.by_device.mobile)).toBe(1);
+    expect(leads(stats.by_device.desktop)).toBe(0);
+  });
+
+  it('counts unique PDF and broker interactions after the lead, including variant splits', () => {
+    const stats = computeStats([
+      event('page_view', SID, 1000, { variant: 'voo-hero' }), event('lead_ok', SID),
+      event('pdf_download', SID), event('pdf_download', SID), event('broker_answer', SID),
+      event('broker_answer', SID),
+      event('page_view', SID2, 1000, { variant: 'fx-calc' }), event('lead_ok', SID2),
+      event('broker_answer', SID2),
+      event('pdf_download', SID3, 1000, { is_bot: true }),
+    ], range);
+    const steps = Object.fromEntries(stats.funnel.map(step => [step.step, step]));
+    expect(steps.pdf_download.sessions).toBe(1);
+    expect(steps.pdf_download.step_conversion).toBe(0.5);
+    expect(steps.pdf_download.overall_conversion).toBe(0.5);
+    expect(steps.broker_answer.sessions).toBe(2);
+    expect(steps.broker_answer.step_conversion).toBe(1);
+    expect(steps.broker_answer.overall_conversion).toBe(1);
+    expect(stats.by_variant['voo-hero'].find(step => step.step === 'pdf_download')?.sessions).toBe(1);
+    expect(stats.by_variant['fx-calc'].find(step => step.step === 'pdf_download')?.sessions).toBe(0);
+    expect(stats.by_variant['fx-calc'].find(step => step.step === 'broker_answer')?.sessions).toBe(1);
   });
 });

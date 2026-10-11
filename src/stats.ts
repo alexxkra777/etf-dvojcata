@@ -17,6 +17,7 @@ const LABELS: Record<string, string> = {
   landed: 'Návštěva', engaged: 'Zaujetí (5 s nebo interakce)', interacted_tool: 'Tabulka nebo kalkulačka',
   cta_click: 'Klik na výzvu', form_view: 'Viděl formulář', form_focus: 'Klikl do formuláře',
   form_submit: 'Odeslal formulář', lead_ok: 'Lead',
+  pdf_download: 'Klik na stažení PDF', broker_answer: 'Odpověděl na brokera',
 };
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const esc = (text: string) => text.replace(/[&<>"]/g, char => `&${{ '&': 'amp', '<': 'lt', '>': 'gt', '"': 'quot' }[char]};`);
@@ -48,7 +49,8 @@ function split(id: string, groups: Record<string, Step[]>): void {
     const get = (key: string) => steps.find(step => step.step === key)?.sessions ?? 0;
     const landed = get('landed');
     const leads = get('lead_ok');
-    return `<tr><th scope="row">${esc(name || '(žádné)')}</th><td>${cz(landed)}</td><td>${cz(get('form_submit'))}</td><td>${cz(leads)}</td><td>${landed ? percent(leads / landed) : '–'}</td></tr>`;
+    const conversion = steps.find(step => step.step === 'lead_ok')?.overall_conversion ?? null;
+    return `<tr><th scope="row">${esc(name || '(žádné)')}</th><td>${cz(landed)}</td><td>${cz(get('form_submit'))}</td><td>${cz(leads)}</td><td>${percent(conversion)}</td></tr>`;
   });
   $(id).innerHTML = rows.length
     ? `<table class="split"><thead><tr><th scope="col"></th><th scope="col">Návštěvy</th><th scope="col">Odesláno</th><th scope="col">Leady</th><th scope="col">Konverze</th></tr></thead><tbody>${rows.join('')}</tbody></table>`

@@ -47,7 +47,9 @@ export const statsSql = `
         'form_view', bool_or(type = 'form_view'),
         'form_focus', bool_or(type = 'form_focus'),
         'form_submit', bool_or(type = 'form_submit'),
-        'lead_ok', bool_or(type = 'lead_ok')
+        'lead_ok', bool_or(type = 'lead_ok'),
+        'pdf_download', bool_or(type = 'pdf_download'),
+        'broker_answer', bool_or(type = 'broker_answer')
       ) AS flags,
       min(received_at) FILTER (WHERE type = 'page_view') AS page_at,
       min(received_at) FILTER (WHERE type = 'lead_ok') AS lead_at
