@@ -131,9 +131,8 @@ See [the section at the end](#appendix-how-i-worked-with-ai).
 
 **Setup.** One orchestrating Claude Code session did the planning, wrote every brief, reviewed
 every result and made all decisions. The research and build work went to sub-agents with written
-briefs, each in a fresh context. Codex (a different model family) wrote parts of the code (the backend API, the PDF guide and the ad
-creatives). Two Claude
-subscriptions plus Codex were rotated when a 5-hour usage limit ran out; the conversation moved with
+briefs, each in a fresh context. Codex (a different model family) wrote parts of the work: the
+backend API, the PDF guide and the ad creatives. Two Claude subscriptions plus Codex were rotated when a 5-hour usage limit ran out; the conversation moved with
 its full context and interrupted agents were resumed.
 
 **What every brief contained.** The goal and the deliverable file, the exact data contract (schema
