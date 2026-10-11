@@ -11,7 +11,10 @@
     "build": "vite build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "migrate": "node scripts/migrate.mjs"
+    "migrate": "node scripts/migrate.mjs",
+    "prebuild": "node scripts/build-data.mjs",
+    "screenshot": "node scripts/screenshot.mjs",
+    "og": "node scripts/og.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

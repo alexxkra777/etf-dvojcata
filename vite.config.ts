@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { renderPage } from './src/template';
 
 function localApi(): Plugin {
   return {
@@ -37,6 +38,13 @@ function localApi(): Plugin {
     },
   };
 }
+// Fills {{placeholders}} in the HTML from the data and fee model, and fixes Czech typography.
+function pageTemplate(): Plugin {
+  return {
+    name: 'page-template',
+    transformIndexHtml: { order: 'pre', handler: html => renderPage(html) },
+  };
+}
 export default defineConfig(({ mode, command }) => {
   if (command === 'serve') {
     const env = loadEnv(mode, process.cwd(), '');
@@ -44,5 +52,13 @@ export default defineConfig(({ mode, command }) => {
       if (process.env[key] === undefined && env[key]) process.env[key] = env[key];
     }
   }
-  return { plugins: [localApi()] };
+  return {
+    plugins: [localApi(), pageTemplate()],
+    build: {
+      // fonts must stay files: the CSP has font-src 'self', data: URIs would be blocked
+      assetsInlineLimit: 0,
+      modulePreload: { polyfill: false },
+      rollupOptions: { input: { main: 'index.html', stats: 'stats.html' } },
+    },
+  };
 });
