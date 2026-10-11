@@ -121,10 +121,12 @@ function scrollDepth(): void {
 // Fires once per element when half of it (or half the screen, for tall sections) has been on screen.
 export function onceVisible(elements: Element[], callback: (element: Element) => void): void {
   const thresholds = Array.from({ length: 21 }, (_, index) => index / 20);
+  const seen = new Set<Element>(); // one batch can hold several entries for the same element
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       const needed = Math.min(entry.boundingClientRect.height, entry.rootBounds?.height ?? innerHeight) * 0.5;
-      if (entry.isIntersecting && entry.intersectionRect.height >= needed - 1) {
+      if (entry.isIntersecting && entry.intersectionRect.height >= needed - 1 && !seen.has(entry.target)) {
+        seen.add(entry.target);
         observer.unobserve(entry.target);
         callback(entry.target);
       }

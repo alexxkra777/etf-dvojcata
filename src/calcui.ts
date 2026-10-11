@@ -44,7 +44,7 @@ function render(): void {
       <span class="bar__name">${esc(route.name)}</span>
       <span class="bar__value">${kc(round100(result.cost))}</span>
       <span class="bar__track"><span class="bar__fill" data-w="${max ? (result.cost / max) * 100 : 0}"></span></span>
-      <span class="bar__terms">${terms(result)} · <a href="${esc(route.src)}" rel="noopener" target="_blank">zdroj</a></span>
+      <span class="bar__terms">${terms(result)}${NBSP}· <a href="${esc(route.src)}" rel="noopener" target="_blank">zdroj</a></span>
       ${note}
     </li>`;
   }).join('');

@@ -92,7 +92,8 @@ async function submit(form: HTMLFormElement, variant: Variant): Promise<void> {
   const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
   if (button.disabled) return;
   if (!input.value.trim()) { showError(form, 'empty'); input.focus(); return; }
-  if (!input.checkValidity()) { showError(form, 'invalid'); input.focus(); return; }
+  // the browser accepts "jan@seznam", the server wouldn't; catch the obvious typos here
+  if (!input.checkValidity() || !/^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(input.value.trim())) { showError(form, 'invalid'); input.focus(); return; }
   const where = form.dataset.where!;
   track('form_submit', { props: { where } });
   flush();
