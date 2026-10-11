@@ -17,3 +17,7 @@ The review package contains translated, privacy-redacted records and this editor
 The revised snapshot passed all 84 tests, TypeScript checking and the production build. Generated data contains 16 US funds and 28 UCITS counterparts, including the direct VT counterpart. Local browser checks covered mobile and desktop layouts, calculator and fund details, form validation, mocked lead responses, optional marketing consent, PDF download, consent persistence, and authenticated statistics. Browser checks used a local environment and mocked lead responses; they do not establish production email delivery. Backend tests separately cover successful lead handling and event protections.
 
 The eight-page A4 PDF was rebuilt and each rendered page inspected, including the table overflow correction. All four advertising PNGs were rebuilt and inspected. README screenshots reflect the revised local build. The author requested a review stop before publication: these revisions are committed locally, with no new GitHub push or production deployment.
+
+## Human source verification confirmed
+
+Later on 11 October 2026, the author explicitly confirmed that he and a colleague checked all 60 claims in assignment A against their sources, rather than only reading the prepared findings. The final report and provenance now record that human source-by-source review. Earlier statements above describe the confirmation available when those notes were written. The numerical result remains 58 correct and two wrong on the original sample.

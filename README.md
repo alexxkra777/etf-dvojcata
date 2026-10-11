@@ -37,6 +37,7 @@ This angle was not present in the inspected sample of Czech finance ads in the M
 | Funnel tracking, lead capture, stats API | [src/track.ts](src/track.ts), [api/](api/), [lib/](lib/), [db/schema.sql](db/schema.sql) |
 | Private funnel dashboard | `/stats.html` (asks for `STATS_TOKEN`) |
 | Research with a source and date for every number | [research/](research/) |
+| Process and review stages | [docs/PROCESS.md](docs/PROCESS.md) |
 | Conversation exports | [ai-log/](ai-log/) |
 
 ## Ads
@@ -122,6 +123,12 @@ optional `VITE_META_PIXEL_ID`, `VITE_GA4_ID`. Schema: `npm run migrate`.
 - **Fee data freshness.** Fio, Portu and XTB changed price lists in 2026; the fees need an owner and a monthly check. IBKR, Lynx, Saxo, Revolut and Portu are left out of the calculator because their cost for this case isn't fully known, and the page says so.
 - **Meta policy re-check** on the day of launch (the policy page rate-limited my last fetch).
 - **Real CPC/CPL for Czech finance** — no public source; replace the planning numbers after 3–5 days of the test.
+
+## Human review before publication
+
+**Reviewer: [redacted: name] · 11 October 2026.** I reviewed the completed submission package
+and its written findings before publication. The browser, source and test checks described below
+were performed with AI assistance. My review of the finished work is a separate approval stage.
 
 ## How I worked with AI
 
