@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clampInput, commission, compare, DEFAULT_INPUT, simulate, spread, type Route } from './calc';
+import { clampInput, commission, compare, DEFAULT_INPUT, simulate, spread, type Commission, type Route } from './calc';
 import { rates, routes } from './brokers';
 import { cz, date, kc, nb, pct } from './cz';
 
@@ -10,7 +10,7 @@ const route = (patch: Partial<Route>): Route => ({
 const fakeRates = { EUR: 25, USD: 20 };
 
 describe('commission', () => {
-  const fio = { kind: 'tiers', tiers: [{ upTo: 1400, fee: 3.95 }, { upTo: 3000, fee: 4.95 }], pct: 0.15, min: 6.95 } as const;
+  const fio: Commission = { kind: 'tiers', tiers: [{ upTo: 1400, fee: 3.95 }, { upTo: 3000, fee: 4.95 }], pct: 0.15, min: 6.95 };
   it('picks the tier by order size, then a percentage with a minimum', () => {
     expect(commission(fio, 1400)).toBe(3.95);
     expect(commission(fio, 1400.01)).toBe(4.95);

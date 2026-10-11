@@ -85,5 +85,7 @@ export function spread(results: RouteResult[]): { cheapest: RouteResult; pricies
   const same = results.filter(result => result.route.sameFund).sort((a, b) => a.cost - b.cost);
   const cheapest = same[0];
   const priciest = same[same.length - 1];
-  return { cheapest, priciest, diff: Math.round((priciest.cost - cheapest.cost) / 100) * 100 };
+  // round each side first, so the sentence matches the two bars people see
+  const hundred = (value: number) => Math.round(value / 100) * 100;
+  return { cheapest, priciest, diff: hundred(priciest.cost) - hundred(cheapest.cost) };
 }

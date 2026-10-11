@@ -175,7 +175,7 @@ export interface Fund {
 export interface Listing { ex: string; cur: string; t: string }
 export interface Twin {
   isin: string; name: string; ticker: string; alias: string | null; listings: Listing[];
-  ter: number; size: number; acc: boolean; index: string; holdings: string; domicile: string;
+  ter: number; size: number; acc: boolean; index: string | null; holdings: string | null; domicile: string | null;
   match: Match; note: string; src: string; asOf: string;
 }
 export interface Data {
