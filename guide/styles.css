@@ -9,3 +9,9 @@
 .page{display:flow-root;break-inside:avoid;page-break-inside:avoid}header{height:14.3mm;break-inside:avoid;page-break-inside:avoid}.brand{height:10mm}
 /* Use a simple print header so Chrome does not fragment nested flex items. */
 header{display:block;position:relative}.brand{display:inline-block;height:10mm}.brand svg{vertical-align:middle;margin-right:2.5mm}.brand b{vertical-align:middle}header>span{position:absolute;right:0;top:3mm;text-align:right}
+
+/* Keep the added Global All Cap row and the ISIN note on the first table sheet. */
+.page:nth-child(3) .twins td{padding:.65mm 1mm}
+.page:nth-child(3) header{margin-bottom:3mm}
+.page:nth-child(3) .title{font-size:27pt;margin-bottom:4mm}
+.page:nth-child(3) .table-note{margin:3mm 0}

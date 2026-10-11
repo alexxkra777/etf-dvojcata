@@ -43,7 +43,7 @@ Final URL: `https://etf-dvojcata.vercel.app/?utm_source=meta&utm_medium=paid_soc
 | Headline | “Kolik vás stojí broker za 20 let?” |
 | Description | “Modelový výpočet a český průvodce ETF.” |
 | CTA button | “Zjistit více” |
-| Alternative primary 1 | “Provize, směna měn, úschova. Přepočítali jsme poplatky 4 brokerů na koruny. Zdarma a bez registrace.” |
+| Alternative primary 1 | “Provize, směna měn, poplatek za burzu. Přepočítali jsme poplatky 4 brokerů na koruny. Zdarma a bez registrace.” |
 | Alternative primary 2 | “15 700 Kč, nebo 63 400 Kč? Stejný fond, jiný broker. Zadejte svou částku do kalkulačky.” |
 
 Final URL: `https://etf-dvojcata.vercel.app/?utm_source=meta&utm_medium=paid_social&utm_campaign=etf_dvojcata_launch&utm_content=fx`

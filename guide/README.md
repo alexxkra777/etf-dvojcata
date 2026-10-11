@@ -14,9 +14,9 @@ Requires Python 3 and the installed Google Chrome. The script uses an isolated t
 
 ## Content and sources
 
-The guide follows [strategy](../docs/STRATEGY.md), [market research](../research/market-cro.md) and the dated [ETF records](../research/etf-data.json). It covers all 13 NYSE Arca examples, 26 selected European product/share-class profiles, and the three Nasdaq examples as a note. Gold counterparts are clearly labeled ETCs. Approximate index matches are explicit; this is not a ranking.
+The guide follows [strategy](../docs/STRATEGY.md), [market research](../research/market-cro.md) and the dated [ETF records](../research/etf-data.json). It covers all 13 NYSE Arca examples, 27 selected European product/share-class profiles, and the three Nasdaq examples as a note. Gold counterparts are clearly labeled ETCs. Approximate index matches are explicit; this is not a ranking.
 
-TER and product sizes preserve the justETF snapshot supplied in the research, accessed 11 October 2026. The source has no explicit valuation date or consistent fund-versus-share-class scope; the guide discloses this. Broker cells preserve raw fees and mark missing or secondary evidence. No scenario totals are included. Tax notes concern a Czech tax resident investing outside business assets; the 2026 removal of the securities cap is distinguished from the 2025 rule and crypto.
+TER and product sizes preserve the justETF snapshot supplied in the research, accessed 11 October 2026. The new Vanguard Global All Cap profile uses the issuer’s product page; EUR fund size is unknown and is shown as a dash. The source has no explicit valuation date or consistent fund-versus-share-class scope; the guide discloses this. Broker cells preserve raw fees and mark missing or secondary evidence. No scenario totals are included. Tax notes concern a Czech tax resident investing outside business assets; the 2026 removal of the securities cap is distinguished from the 2025 rule and crypto.
 
 Numbered references and fund-profile links are clickable in the PDF. The ČNB execution-only clarification, Fio US trade fee, current tax-law wording and IRS estate threshold were re-opened for verification. Other quoted figures use the supplied dated research; availability and fees can change.
 
