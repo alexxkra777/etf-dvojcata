@@ -1,9 +1,273 @@
 <!doctype html>
 <html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Průvodce ETF</title>
-  </head>
-  <body><main><h1>Průvodce ETF</h1></main></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOO si nekoupíte. Jeho evropské dvojče ano | ETF dvojčata</title>
+  <meta name="description" content="Americké ETF a jejich evropská dvojčata UCITS, která v Česku koupíte. Poplatky brokerů přepočtené na koruny, stav k {{date}}.">
+  <meta name="theme-color" content="#F5F1E8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./node_modules/@fontsource-variable/fraunces/files/fraunces-latin-ext-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="ETF dvojčata">
+  <meta property="og:title" content="VOO si u většiny českých brokerů nekoupíte. Jeho evropské dvojče ano.">
+  <meta property="og:description" content="Americká ETF a jejich evropská dvojčata. Poplatky brokerů v korunách, stav k {{date}}.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<a class="skip" href="#srovnani">Přeskočit na srovnání</a>
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="logo" href="#top" aria-label="ETF dvojčata, na začátek">{{logo}}<span>ETF dvojčata</span></a>
+    <p class="topbar__meta"><span>Nezávislé srovnání</span> <span class="topbar__dot" aria-hidden="true">·</span> <span>data k {{date}}</span></p>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-section="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <h1 id="hero-title" class="hero__title">VOO si u většiny českých brokerů nekoupíte. Jeho evropské <mark>dvojče ano</mark>.</h1>
+        <p class="hero__sub" data-hero="voo">Chybí mu evropský dokument KID, takže ho broker neprodá. Stejný index ale koupíte jako fond UCITS.</p>
+        <p class="hero__sub" data-hero="fx" hidden>Fond je stejný, liší se poplatek za nákup a za převod korun na eura. Počítáno pro {{monthly}} měsíčně a {{ret}} ročně.</p>
+      </div>
+
+      <figure class="twin" aria-label="Americký fond VOO a jeho evropské dvojče">
+        <span class="stamp">stav k {{date}}</span>
+        <div class="twin__side twin__side--us">
+          <span class="twin__label">Americký originál</span>
+          <strong class="twin__ticker">VOO</strong>
+          <span class="twin__meta">S&amp;P 500 · TER {{ter:VOO}}</span>
+          <span class="twin__tag twin__tag--no"><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.5" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>u většiny brokerů v ČR nekoupíte</span>
+        </div>
+        <span class="twin__arrow" aria-hidden="true">→</span>
+        <div class="twin__side twin__side--eu">
+          <span class="twin__label">Evropské dvojče</span>
+          <strong class="twin__ticker">CSPX<span class="twin__sep">/</span>VUAA</strong>
+          <span class="twin__meta">S&amp;P 500 · TER {{ter:CSPX}}</span>
+          <span class="twin__tag twin__tag--yes"><svg width="13" height="12" viewBox="0 0 13 12" aria-hidden="true"><path d="M1.5 6.5l3.5 3.5 6.5-8" fill="none" stroke="currentColor" stroke-width="2"/></svg>koupíte u XTB, Trading 212, DEGIRO…</span>
+        </div>
+        <figcaption class="twin__stamp">Zdroje: <a href="{{src:VOO}}" rel="noopener">Vanguard</a> · <a href="{{src:CSPX}}" rel="noopener">justETF</a></figcaption>
+      </figure>
+
+      <div class="hero__ask" data-form-slot="hero">
+        {{form:hero}}
+        <div class="hero__alt" hidden>
+          <a class="btn btn--signal" href="#srovnani" data-cta="hero_button">Ukázat srovnání</a>
+          <p class="lead__micro">Tabulka i kalkulačka jsou zdarma, bez e-mailu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="srovnani" data-section="table" aria-labelledby="table-title">
+    <div class="wrap">
+      <p class="eyebrow">Srovnání</p>
+      <h2 id="table-title">{{nyse}} amerických ETF a jejich evropská dvojčata</h2>
+      <p class="lede">Nejznámější fondy z americké burzy NYSE Arca. Ke každému evropská verze, kterou v Česku koupíte. Klepnutím otevřete detail.</p>
+      <dl class="glossary">
+        <div><dt>UCITS</dt><dd>evropský fond s dokumentem KID, broker vám ho prodat smí</dd></div>
+        <div><dt>TER</dt><dd>roční poplatek fondu, strhává se z hodnoty průběžně</dd></div>
+        <div><dt>akum./dist.</dt><dd>dividendy fond reinvestuje / vyplácí vám</dd></div>
+      </dl>
+      <div class="chips" role="group" aria-label="Filtrovat podle typu"></div>
+      <div class="twins" id="twins" aria-live="polite">
+        <noscript><p>Tabulka potřebuje JavaScript. Stejná data najdete v PDF průvodci.</p></noscript>
+      </div>
+      <aside class="nasdaq" id="nasdaq" aria-label="Fondy z burzy Nasdaq"></aside>
+    </div>
+  </section>
+
+  <section class="section section--calc" id="kalkulacka" data-section="calc" aria-labelledby="calc-title">
+    <div class="wrap calc">
+      <div class="calc__head">
+        <p class="eyebrow">Kalkulačka</p>
+        <h2 id="calc-title">Kolik vás stojí poplatky v korunách</h2>
+        <p class="lede">Stejný evropský fond na S&amp;P 500 (iShares Core S&amp;P 500, ticker CSPX, na Xetře SXR8, TER {{ter:CSPX}}), každý měsíc stejná částka. Mění se jen broker.</p>
+      </div>
+      <div class="calc__inputs" id="calc-form">
+        <div class="field">
+          <label for="calc-monthly">Měsíčně investuji</label>
+          <div class="field__pair">
+            <input id="calc-monthly-range" type="range" min="500" max="50000" step="500" value="3000" aria-label="Měsíční částka, posuvník">
+            <span class="field__num"><input id="calc-monthly" type="text" value="3 000" inputmode="numeric" autocomplete="off"><span>Kč</span></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="calc-years">Jak dlouho</label>
+          <div class="field__pair">
+            <input id="calc-years-range" type="range" min="5" max="30" step="1" value="20" aria-label="Počet let, posuvník">
+            <span class="field__num"><input id="calc-years" type="text" value="20" inputmode="numeric" autocomplete="off"><span>let</span></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="calc-ret">Předpokládaný výnos</label>
+          <select id="calc-ret">
+            <option value="5">5 % ročně (opatrně)</option>
+            <option value="7" selected>7 % ročně (střed)</option>
+            <option value="9">9 % ročně (optimisticky)</option>
+          </select>
+          <p class="field__hint">Je to předpoklad, ne slib. S&amp;P 500 vynesl v letech 1928–2025 v průměru {{history}} ročně v dolarech (<a href="{{src:history}}" rel="noopener">Damodaran</a>), Vanguard čeká na příštích 10 let {{forecast}} % (<a href="{{src:forecast}}" rel="noopener">výhled</a>). 7 % je střed mezi nimi.</p>
+        </div>
+      </div>
+
+      <div class="calc__out" aria-live="polite">
+        <p class="calc__big" id="calc-big"></p>
+        <ol class="bars" id="calc-bars"></ol>
+        <p class="calc__us" id="calc-us"></p>
+        <details class="calc__how">
+          <summary>Jak počítáme</summary>
+          <ul>
+            <li>Každý měsíc pošlete brokerovi stejnou částku v korunách. Odečte se poplatek za nákup (přepočtený kurzem ČNB {{rate:EUR}} Kč/€ a {{rate:USD}} Kč/$ ze dne {{rate:date}}, <a href="{{src:rates}}" rel="noopener">zdroj</a>) a poplatek za převod měny. Zbytek se investuje.</li>
+            <li>Portfolio roste o zvolený výnos minus TER fondu, měsíc po měsíci. Kurz koruny držíme po celou dobu stejný.</li>
+            <li>„Náklad“ je rozdíl proti stejnému investování úplně bez poplatků. Zahrnuje i výnos, který by poplatky jinak vydělaly.</li>
+            <li>Nepočítáme daně, prodej na konci ani spread na burze. U Fio není v ceníku kurzový rozdíl banky, proto chybí a skutečný náklad je vyšší.</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="calc__ask" data-form-slot="calc">
+        <p class="calc__ask-title">Chcete výpočet a celé srovnání v PDF?</p>
+        {{form:calc}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="naklady" data-section="costs" aria-labelledby="costs-title">
+    <div class="wrap">
+      <p class="eyebrow">Na co si dát pozor</p>
+      <h2 id="costs-title">3 věci, na kterých Češi zbytečně ztrácejí</h2>
+      <ol class="costs">
+        <li>
+          <h3>Poplatek za převod měny</h3>
+          <p>ETF na Xetře se kupuje v eurech. Broker vám koruny smění a vezme si {{fx:min}}–{{fx:max}} z každého nákupu. Při {{monthly}} měsíčně je to {{fx:min-kc}} až {{fx:max-kc}} Kč pokaždé. Za 20 let z toho jsou tisíce.</p>
+          <a class="more" href="#pruvodce" data-cta="costs_fx">Podrobně v průvodci →</a>
+        </li>
+        <li>
+          <h3>Dividendy a formulář W-8BEN</h3>
+          <p>Z dividend amerického fondu si USA strhnou 30 %, s formulářem W-8BEN 15 %. Akumulační evropské ETF dividendy nevyplácí, rovnou je reinvestuje. Dokud neprodáte, nemáte co danit.</p>
+          <a class="more" href="#pruvodce" data-cta="costs_div">Podrobně v průvodci →</a>
+        </li>
+        <li>
+          <h3>Časový test 3 roky</h3>
+          <p>Držíte ETF déle než 3 roky? Zisk z prodeje je osvobozený od daně. Prodáte-li za rok cenné papíry celkem do 100 000 Kč, platí to taky. Strop 40 mil. Kč se na ně od 1. 1. 2026 nevztahuje (<a href="{{src:tax}}" rel="noopener">zákon</a>).</p>
+          <a class="more" href="#pruvodce" data-cta="costs_tax">Podrobně v průvodci →</a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--guide" id="pruvodce" data-section="guide" aria-labelledby="guide-title">
+    <div class="wrap guide">
+      <div class="guide__pages" aria-hidden="true">
+        <div class="page page--cover">
+          <span class="page__brand">{{logo}}</span>
+          <span class="page__h">Americké ETF a jejich evropská <em>dvojčata</em></span>
+          <span class="page__twin"><b class="us">VOO</b> → <b class="eu">CSPX</b></span>
+          <span class="page__foot">stav k {{date}}</span>
+        </div>
+        <div class="page page--table">
+          <span class="page__kicker">03 · Dvojčata</span>
+          <span class="page__rows"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="page page--bars">
+          <span class="page__kicker">05 · Poplatky</span>
+          <span class="page__bars"><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="page page--tax">
+          <span class="page__kicker">06 · Daně</span>
+          <span class="page__big">3 roky</span>
+          <span class="page__lines"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+      <div class="guide__copy">
+        <p class="eyebrow">PDF průvodce, 8 stran</p>
+        <h2 id="guide-title">Co je v průvodci</h2>
+        <ul class="ticks">
+          <li><b>Proč VOO nekoupíte</b> a co znamená KID, na jedné stránce.</li>
+          <li><b>Všechna dvojčata z tabulky</b> s tickery na Xetře a v Londýně, TER, velikostí a tím, jestli vyplácí dividendy.</li>
+          <li><b>Poplatky brokerů v korunách</b>, včetně převodu měny, který srovnání obvykle vynechávají.</li>
+          <li><b>Daně na jedné stránce</b>: časový test, limit 100 000 Kč, W-8BEN, akumulační vs. distribuční.</li>
+          <li><b>První nákup v 5 krocích</b> a odkazy na všechny zdroje.</li>
+        </ul>
+        <div data-form-slot="guide">
+          {{form:guide}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" data-section="faq" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <p class="eyebrow">Otázky</p>
+      <h2 id="faq-title">Na co se lidé ptají</h2>
+      <details>
+        <summary>Proč si nekoupím VOO?</summary>
+        <p>Od roku 2018 platí v EU pravidla PRIIPs: broker musí drobnému investorovi před nákupem fondu dát dokument KID. Americké fondy ho nevydávají, takže XTB, Trading 212, DEGIRO, Interactive Brokers i Saxo nákup zablokují. Výjimkou je Fio e-Broker: americká ETF zprostředkuje, ale za nákup v USA si účtuje {{fee:fio-voo}}. Kolik to dělá za 20 let, ukazuje <a href="#kalkulacka">kalkulačka</a>.</p>
+      </details>
+      <details>
+        <summary>Je to investiční doporučení?</summary>
+        <p>Ne. Je to vzdělávací srovnání veřejných údajů. Neříkáme, co máte koupit vy, a neznáme vaši situaci. Nemáme provizní odkazy na brokery a nikdo nám za umístění neplatí.</p>
+      </details>
+      <details>
+        <summary>Kdo za stránkou stojí?</summary>
+        <p>Stránku připravil {{operator}}. Data jsme sebrali z webů správců fondů, z justETF a z oficiálních ceníků brokerů, u každého čísla je odkaz a datum. Napište na <a href="mailto:{{email}}">{{email}}</a>, pokud najdete chybu.</p>
+      </details>
+      <details>
+        <summary>Co bude s mým e-mailem?</summary>
+        <p>Pošleme vám srovnání a váš výpočet. Novinky jen tehdy, když zaškrtnete souhlas, a odhlásit se půjde jedním klikem. E-mail nikomu neprodáváme. Podrobnosti v části <a href="#ochrana-udaju">Ochrana údajů</a>.</p>
+      </details>
+      <details>
+        <summary>Proč zrovna UCITS?</summary>
+        <p>UCITS je evropská norma pro fondy. Takový fond má KID, takže vám ho broker prodat smí. Většina dvojčat sídlí v Irsku, takže se na ně podle běžného výkladu nevztahuje americká dědická daň. Index je u řady z nich stejný jako u amerického originálu.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <section id="ochrana-udaju" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Ochrana údajů</h2>
+      <p><b>Správce:</b> {{controller}}, <a href="mailto:{{email}}">{{email}}</a>.</p>
+      <p><b>Co ukládáme:</b> e-mail, jestli jste zaškrtli souhlas s novinkami (a kdy), čísla z kalkulačky, ze které reklamy jste přišli (UTM) a verzi stránky.</p>
+      <p><b>Proč:</b> abychom vám poslali srovnání, o které jste požádali (čl. 6 odst. 1 písm. b GDPR). Novinky posíláme jen se souhlasem (písm. a), který můžete kdykoli odvolat.</p>
+      <p><b>Jak dlouho:</b> {{retention}} měsíců od posledního kontaktu, nebo do odhlášení, podle toho, co nastane dřív.</p>
+      <p><b>Vaše práva:</b> přístup k údajům, oprava, výmaz, námitka a odvolání souhlasu. Stačí napsat na e-mail výše. Stížnost můžete podat u <a href="https://uoou.gov.cz" rel="noopener">ÚOOÚ</a>.</p>
+      <p><b>Měření:</b> návštěvnost měříme sami a bez cookies. Náhodné ID žije jen v otevřené záložce, ukládáme typ zařízení, ne IP adresu.</p>
+    </section>
+    <section id="metodika" aria-labelledby="method-title">
+      <h2 id="method-title">Metodika</h2>
+      <p>Dvojče je evropský fond UCITS, který sleduje stejný nebo co nejpodobnější index jako americký originál. „Stejný index“ znamená stejný index, „podobný“ znamená jinou šíři nebo jiného poskytovatele indexu. Údaje o fondech jsou ze stránek správců a z justETF, ceníky přímo od brokerů. Vše stav k {{date}}, kontrolujeme jednou měsíčně.</p>
+    </section>
+    <section id="zdroje" aria-labelledby="sources-title">
+      <h2 id="sources-title">Zdroje</h2>
+      <ul class="sources" id="sources-list">
+        <li><a href="https://www.cnb.cz/cs/dohled-financni-trh/legislativni-zakladna/stanoviska-k-regulaci-financniho-trhu/RS2018-12" rel="noopener">ČNB: PRIIPs a execution-only (RS2018-12)</a></li>
+        <li><a href="https://www.home.saxo/cs-cz/rates-and-conditions/etf/commissions" rel="noopener">Saxo: ETF bez KID jen pro profesionály</a></li>
+        <li><a href="https://www.justetf.com/en/news/etf/us-domiciled-etfs.html" rel="noopener">justETF: americká ETF a KID</a></li>
+        <li><a href="{{src:tax}}" rel="noopener">Zákon o daních z příjmů (586/1992 Sb.)</a></li>
+        <li><a href="{{src:rates}}" rel="noopener">ČNB: kurzy devizového trhu</a></li>
+      </ul>
+    </section>
+    <section class="footer__legal" aria-label="Upozornění">
+      <p>Informace mají vzdělávací charakter, nejde o investiční doporučení ani poradenství. Nejde ani o daňové poradenství.</p>
+      <p>Minulé výnosy nejsou zárukou budoucích. Investice nese riziko ztráty, včetně ztráty z pohybu kurzu koruny.</p>
+      <p>Nemáme provizní odkazy na brokery a žádný broker nám neplatí.</p>
+      <p class="footer__sign">{{logo}} ETF dvojčata · {{operator}} · stav k {{date}}</p>
+    </section>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" hidden>
+  <button class="btn btn--signal sticky__btn" type="button" data-cta="sticky">Získat PDF srovnání</button>
+</div>
+</body>
 </html>
