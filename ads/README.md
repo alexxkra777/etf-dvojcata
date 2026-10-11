@@ -6,15 +6,19 @@ Educational Czech ETF comparison, prepared 11 October 2026. Two promises, two ma
 
 `a-feed.html`, `a-story.html`, `b-feed.html`, `b-story.html` share `creative.css`. Feed is 1080 × 1350; story is 1080 × 1920. All story text fits between y=250 and y=1670. The background extends to every edge. Hooks are at least 70 px. The mark uses two overlapping circles. The creatives import the landing design tokens and load local Fraunces and IBM Plex Sans font files, including Czech glyphs. Georgia and system sans are fallbacks. The renderer resolves local font and token URLs for its temporary HTML.
 
-Run from the repository root:
+Run from the repository root with the three numbers the landing calculator shows for its default
+scenario (3 000 Kč a month, 20 years, 7 % a year, CSPX/SXR8 bought monthly):
 
 ```sh
-ads/build.sh 41300
+ads/build.sh 47700 15700 63400   # difference, cheapest route, most expensive route
 ```
 
-This example supplies a number; it is **not a verified calculator result**. The script renders all four files into `ads/out/`, formats whole crowns with non-breaking thousands separators (`41 300`), uses isolated temporary Chrome profiles, and removes its temporary files. Chrome must be installed at `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`; Python 3 is required. No package installation is needed. Template `{{N}}` placeholders remain untouched.
-
-The layout check used `ads/build.sh 0`. Only A's production PNGs remain in `out/`; B's dummy PNGs were removed after visual inspection. B is pending the landing calculator's confirmed value. Before rebuilding B, record the calculator settings (monthly contribution, years, selected brokers, FX rates, returns, commission and liquidation assumptions). Reproduce that same scenario on the first screen or directly reachable calculator. The value must describe a modeled cost difference, not an investment return or guaranteed saving. For a value wider than the available number line, adjust type size while keeping hook text at least 48 px and inspect both outputs again.
+These are the calculator's own outputs (`src/calc.ts`, checked by `src/calc.test.ts`): Trading 212
+15 700 Kč, Fio e-Broker on Xetra 63 400 Kč, difference 47 700 Kč. Most of the gap is Fio's €3.95
+commission per monthly purchase, not the currency conversion, so creative B talks about fees in
+general and shows both ends of the range instead of blaming FX. If fees or rates change, rerun the
+calculator tests first, then rebuild with the new numbers. The script renders all four files into
+`ads/out/` with isolated temporary Chrome profiles and cleans up after itself.
 
 ## A — Mýtus VOO
 
@@ -35,16 +39,16 @@ Final URL: `https://{DOMAIN}/?utm_source=meta&utm_medium=paid_social&utm_campaig
 
 | Field | Copy |
 |---|---|
-| Primary text | “Stejný fond na S&P 500, jiný broker: rozdíl až {{N}} Kč za 20 let. Porovnejte poplatky v korunách.” |
-| Headline | “Kolik stojí směna měn u brokera?” |
+| Primary text | “Stejný fond na S&P 500, jiný broker: rozdíl až 47 700 Kč za 20 let. Spočítejte si poplatky v korunách.” |
+| Headline | “Kolik vás stojí broker za 20 let?” |
 | Description | “Modelový výpočet a český průvodce ETF.” |
 | CTA button | “Zjistit více” |
-| Alternative primary 1 | “Nulová provize není nulový náklad. Za směnu měn se platí. Porovnejte ETF brokery v korunách.” |
-| Alternative primary 2 | “Rozdíl až {{N}} Kč za 20 let? Záleží i na brokerovi. Ověřte předpoklady v kalkulačce poplatků.” |
+| Alternative primary 1 | “Provize, směna měn, úschova. Přepočítali jsme poplatky 4 brokerů na koruny. Zdarma a bez registrace.” |
+| Alternative primary 2 | “15 700 Kč, nebo 63 400 Kč? Stejný fond, jiný broker. Zadejte svou částku do kalkulačky.” |
 
 Final URL: `https://{DOMAIN}/?utm_source=meta&utm_medium=paid_social&utm_campaign=etf_dvojcata_launch&utm_content=fx`
 
-**Promise → first screen:** `utm_content=fx` must repeat the same `{{N}}` amount, identify it as a modeled fee difference, show the 20-year scenario and offer the editable calculator plus the guide. Use the same fund and assumptions across brokers. “Až” must refer to an identified comparison among the listed brokers, not an unlimited claim. The ad number, headline and calculator must be checked together before launch. Do not publish either `{{N}}` or the layout-check value 0.
+**Promise → first screen:** `utm_content=fx` repeats the same 47 700 Kč amount, identify it as a modeled fee difference, show the 20-year scenario and offer the editable calculator plus the guide. Use the same fund and assumptions across brokers. “Až” must refer to an identified comparison among the listed brokers, not an unlimited claim. The ad number, headline and calculator must be checked together before launch. 
 
 All primary texts and alternatives are below 125 characters at template length; both headlines are below 40 characters. Recheck B's length after number substitution. Keep the full primary hook before “Zobrazit více”; actual truncation depends on placement.
 
@@ -79,6 +83,6 @@ Do not stop early merely because the five-day smoke test cannot reach the 30-lea
 - [ ] No “safe”, “guaranteed” or “best” claims; no headline returns. Both creatives carry “Nejde o investiční doporučení” and a capital-at-risk warning. A disclaimer alone does not remove MAR duties if content actually recommends a trade.
 - [ ] Landing and PDF disclose author [redacted: name], data date, sources, methodology, risks, past-performance warning and absence of affiliate links. Keep facts separate from assumptions and avoid personalized recommendations in comments.
 - [ ] Verify current Meta financial-services requirements and country/category restrictions in Ads Manager, including any authorization request. The research's education exemption is not a blanket approval of this campaign.
-- [ ] Replace `{DOMAIN}` with the final HTTPS hostname, substitute B's confirmed `{{N}}`, verify message match on mobile, check download and consent behavior, and review every placement crop.
+- [ ] Replace `{DOMAIN}` with the final HTTPS hostname, verify message match on mobile, check download and consent behavior, and review every placement crop.
 
 Policy references: [Meta financial services](https://transparency.meta.com/en-gb/policies/ad-standards/restricted-goods-services/financial-services/), [Meta category help](https://www.facebook.com/business/help/298000447747885), [ČNB financial influencer warning](https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/upozorneni/Upozorneni-Ceske-narodni-banky-pro-influencery-v-oblasti-financi/). Checked against repository research dated 11 October 2026. ČNB's page was re-opened during preparation; Meta's policy re-fetch returned HTTP 429, so the live wording and account requirements remain to be verified before launch.

@@ -2,21 +2,22 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-if [[ $# -ne 1 || ! "$1" =~ ^[0-9]+$ ]]; then
-  echo 'Usage: ads/build.sh N (whole crowns; use 0 only for a layout check)' >&2
+if [[ $# -ne 3 || ! "$1$2$3" =~ ^[0-9]+$ ]]; then
+  echo 'Usage: ads/build.sh N LOW HIGH (whole crowns from the calculator defaults: difference, cheapest, most expensive)' >&2
   exit 2
 fi
 [[ -x "$CHROME" ]] || { echo 'Google Chrome is required.' >&2; exit 1; }
 TEMP="$(mktemp -d "$ROOT/ads/.render.XXXXXX")"
 trap 'rm -rf "$TEMP"' EXIT
 mkdir -p "$ROOT/ads/out"
-python3 - "$ROOT" "$TEMP" "$1" <<'PY'
+python3 - "$ROOT" "$TEMP" "$1" "$2" "$3" <<'PY'
 from pathlib import Path
 import re, sys
-root,temp,raw=map(str,sys.argv[1:])
-number=f'{int(raw):,}'.replace(',', '\u00a0')
+root,temp,*raw=map(str,sys.argv[1:])
+n,low,high=(f'{int(x):,}'.replace(',', '\u00a0') for x in raw)
 for source in Path(root,'ads').glob('*-*.html'):
-    Path(temp,source.name).write_text(source.read_text().replace('{{N}}',number))
+    text=source.read_text().replace('{{N}}',n).replace('{{LOW}}',low).replace('{{HIGH}}',high)
+    Path(temp,source.name).write_text(text)
 css=Path(root,'ads/creative.css').read_text()
 def absolute_url(match):
     relative=match.group(1).strip('"\'')
