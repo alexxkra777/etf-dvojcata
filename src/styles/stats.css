@@ -24,4 +24,6 @@
 .daily { list-style: none; display: grid; gap: var(--space-2); font-size: var(--text-sm); }
 .daily li { display: grid; grid-template-columns: 7.5em 1fr 6em; align-items: center; gap: var(--space-3); }
 .daily .tk { text-align: right; }
+.daily .bar__track { grid-area: auto; }
+.daily .bar__fill { background: var(--eu); }
 @media (min-width: 720px) { .stats__grid { grid-template-columns: 1fr 1fr; } }
