@@ -14,7 +14,7 @@ The brief asked for a NYSE ETF comparison for a Czech visitor arriving from a mo
 4. Create two ad concepts and first-screen message matching, then track the journey through forms, PDF download and broker answer.
 5. Review sources and implementation. Correct DEGIRO Xetra pricing, add the newly launched direct VT counterpart, remove an unimplemented email-delivery promise, protect server-only lead events, and calculate funnel transitions from matching session cohorts.
 6. Rebuild and inspect all eight PDF pages and four advertising images. Check mobile and desktop layouts, consent, forms and downloads locally, using mocked lead responses for interface checks.
-7. Run the calculator and backend tests, TypeScript checks and production build. [redacted: name] reviews the finished submission package before publication.
+7. Run the calculator and backend tests, TypeScript checks and production build. A human reviewer checks the finished submission package before publication.
 
 ## Result and limits
 

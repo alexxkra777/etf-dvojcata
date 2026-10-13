@@ -118,25 +118,25 @@ optional `VITE_META_PIXEL_ID`, `VITE_GA4_ID`. Schema: `npm run migrate`.
 
 ## What's missing / would do next
 
-- **Email delivery.** The PDF downloads instantly on the page; the follow-up email sequence needs the client's ESP (webhook is ready). I didn't set up a sending domain for a test task.
+- **Email delivery.** The PDF downloads instantly on the page; the follow-up email sequence needs the client's ESP (webhook is ready). We didn't set up a sending domain for a test task.
 - **Czech copy.** The copy awaits review by a native Czech speaker.
 - **Fee data freshness.** Fio, Portu and XTB changed price lists in 2026; the fees need an owner and a monthly check. IBKR, Lynx, Saxo, Revolut and Portu are left out of the calculator because their cost for this case isn't fully known, and the page says so.
-- **Meta policy re-check** on the day of launch (the policy page rate-limited my last fetch).
+- **Meta policy re-check** on the day of launch (the policy page rate-limited our last fetch).
 - **Real CPC/CPL for Czech finance** — no public source; replace the planning numbers after 3–5 days of the test.
 
 ## Human review before publication
 
-**Reviewer: [redacted: name] · 11 October 2026.** I reviewed the completed submission package
-and its written findings before publication. The browser, source and test checks described below
-were performed with AI assistance. My review of the finished work is a separate approval stage.
+**Human review · 11 October 2026.** The completed submission package and its written findings
+were reviewed by a person before publication. The browser, source and test checks described below
+were performed with AI assistance. That review of the finished work is a separate approval stage.
 
-## How I worked with AI
+## How we worked with AI
 
-See [the section at the end](#appendix-how-i-worked-with-ai).
+See [the section at the end](#appendix-how-we-worked-with-ai).
 
 ---
 
-## Appendix: how I worked with AI
+## Appendix: how we worked with AI
 
 **Setup.** One orchestrating Claude Code session did the planning, wrote every brief, reviewed
 every result and made all decisions. The research and build work went to sub-agents with written
@@ -182,7 +182,7 @@ log in [ai-log/](ai-log/).
   then found Fio e-Broker does (execution-only), so the copy says "u většiny brokerů".
 - **Consent bundled with the download.** The backend required `consent: true` to deliver the PDF,
   i.e. marketing consent as the price of the guide. That conflicts with GDPR art. 7(4) and
-  Czech law 480/2004 §7. Caught in review against the strategy; I changed it to an optional,
+  Czech law 480/2004 §7. Caught in review against the strategy; we changed it to an optional,
   separate `marketing_consent` and a stored privacy-notice version.
 - **Local tests wrote to production.** `vercel env pull` put the production `DATABASE_URL` into
   `.env.local`, so the front-end agent's local test lead landed in the live database. Caught by
@@ -194,10 +194,10 @@ log in [ai-log/](ai-log/).
 - **Empty space and a wrong count in ad A** ("12 twins" when one fund has no twin) — caught on the
   rendered PNGs.
 - **Instructions leaking between contexts.** A research agent wrote its notes in Russian because it
-  picked up my personal assistant settings; the brief didn't say "write in English". Caught when
+  picked up personal assistant settings; the brief didn't say "write in English". Caught when
   reading the file before committing; fixed, and every later brief states the language.
 - **Shared resources.** One agent's "clean up my scratch files" deleted other agents' files in a
-  shared temp folder (including a brief); a research agent's browser navigation took over a tab I
-  was using. Fix: every agent gets its own work folder and its own headless browser.
+  shared temp folder (including a brief); a research agent's browser navigation took over a tab we
+  were using. Fix: every agent gets its own work folder and its own headless browser.
 - **Tooling side effects.** `vercel integration add` silently put AI-agent skill files into the
   repo (`.agents/`, `.claude/`); caught in `git status`, removed and excluded.
