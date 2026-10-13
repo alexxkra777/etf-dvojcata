@@ -590,10 +590,10 @@ for e in d['etfs']:
 ```
 </details>
 
-→ `Bash` — cd [redacted: local path] && grep -rn -i "@\(gmail\|seznam\)\|[redacted: name]\|[redacted]\|kontakt\|contact" --include=*.ts --include=*.md --include=*.jso
+→ `Bash` — cd [redacted: local path] && grep -rn -i "@\(gmail\|seznam\)\|[redacted: name]\|[redacted: name]\|kontakt\|contact" --include=*.ts --include=*.md --include=*.jso
 … [200 more characters]
 ```sh
-cd [redacted: local path] && grep -rn -i "@\(gmail\|seznam\)\|[redacted: name]\|[redacted]\|kontakt\|contact" --include=*.ts --include=*.md --include=*.json --include=*.mjs . 2>/dev/null | grep -v node_modules | head; cat lib/webhook.ts | head -30; cat tests/backend.test.ts | head -30; ls ..; npm view @fontsource-variable/fraunces version 2>&1 | tail -1
+cd [redacted: local path] && grep -rn -i "@\(gmail\|seznam\)\|[redacted: name]\|[redacted: name]\|kontakt\|contact" --include=*.ts --include=*.md --include=*.json --include=*.mjs . 2>/dev/null | grep -v node_modules | head; cat lib/webhook.ts | head -30; cat tests/backend.test.ts | head -30; ls ..; npm view @fontsource-variable/fraunces version 2>&1 | tail -1
 ```
 
 <details><summary>result</summary>
