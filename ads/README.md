@@ -81,7 +81,7 @@ Do not stop early merely because the five-day smoke test cannot reach the 30-lea
 - [ ] No promotion of CFDs, binary options, leverage or prohibited financial products. No broker logos, people, stock photos or fabricated broker interfaces.
 - [ ] No PII or financial details requested in the ad. The landing form asks for email only; marketing consent is separate and initially unticked. Download access must not depend on marketing consent.
 - [ ] No “safe”, “guaranteed” or “best” claims; no headline returns. Both creatives carry “Nejde o investiční doporučení” and a capital-at-risk warning. A disclaimer alone does not remove MAR duties if content actually recommends a trade.
-- [ ] Landing and PDF disclose author [redacted: name], data date, sources, methodology, risks, past-performance warning and absence of affiliate links. Keep facts separate from assumptions and avoid personalized recommendations in comments.
+- [ ] Landing and PDF disclose author Alex Krajuškin, data date, sources, methodology, risks, past-performance warning and absence of affiliate links. Keep facts separate from assumptions and avoid personalized recommendations in comments.
 - [ ] Verify current Meta financial-services requirements and country/category restrictions in Ads Manager, including any authorization request. The research's education exemption is not a blanket approval of this campaign.
 - [ ] verify message match on mobile, check download and consent behavior, and review every placement crop.
 
