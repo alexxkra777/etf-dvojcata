@@ -1,5 +1,7 @@
 # ETF dvojčata — lead-magnet landing page for Czech ETF beginners
 
+[![CI](https://github.com/alexxkra777/etf-dvojcata/actions/workflows/ci.yml/badge.svg)](https://github.com/alexxkra777/etf-dvojcata/actions/workflows/ci.yml)
+
 **Live:** https://etf-dvojcata.vercel.app
 (ad versions: [`?utm_content=voo`](https://etf-dvojcata.vercel.app/?utm_source=meta&utm_medium=paid_social&utm_content=voo) ·
 [`?utm_content=fx`](https://etf-dvojcata.vercel.app/?utm_source=meta&utm_medium=paid_social&utm_content=fx))
