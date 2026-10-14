@@ -10,7 +10,7 @@ const fund = (ticker: string) => data.funds.find(item => item.ticker === ticker)
 const twin = (isin: string) => data.twins.find(item => item.isin === isin)!;
 const esc = (text: string) => text.replace(/[&<>"]/g, char => `&${{ '&': 'amp', '<': 'lt', '>': 'gt', '"': 'quot' }[char]};`);
 
-export const logo = (size = 34) => `<svg class="logo__mark" width="${size}" height="${Math.round(size * 0.63)}" viewBox="0 0 70 44" aria-hidden="true" focusable="false"><circle cx="24" cy="22" r="19" fill="none" stroke="#3A5A80" stroke-width="4"/><circle cx="46" cy="22" r="19" fill="none" stroke="#0E6B47" stroke-width="4"/></svg>`;
+export const logo = (size = 34) => `<svg class="logo__mark" width="${size}" height="${Math.round(size * 0.63)}" viewBox="0 0 70 44" aria-hidden="true" focusable="false"><circle cx="24" cy="22" r="19" fill="none" stroke="#5A6676" stroke-width="4"/><circle cx="46" cy="22" r="19" fill="none" stroke="#0A7B53" stroke-width="4"/></svg>`;
 
 export function leadForm(where: string, button: string): string {
   const id = `email-${where}`;

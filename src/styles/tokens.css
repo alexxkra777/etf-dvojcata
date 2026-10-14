@@ -1,49 +1,52 @@
 /* Design tokens for the ETF dvojčata landing page.
-   Also imported by the PDF guide and ad creatives, so keep names stable. */
+   Also imported by the ad creatives, so keep names stable.
+   Idea: a plain white comparison page. Colour carries the story: slate is the US original
+   you can't buy, green is the European twin you can, and green is also every action. */
 :root {
-  /* paper and ink */
-  --paper: #F5F1E8;
-  --paper-raised: #FBF9F4;
-  --paper-sunk: #EDE7DA;
-  --ink: #16201B;
-  --ink-muted: #4A554F;
-  --rule: #D9D2C3;
-  --rule-strong: #B9B09C;
+  /* page */
+  --paper: #FFFFFF;
+  --paper-raised: #FFFFFF;
+  --paper-sunk: #F2F5F4;
+  --ink: #111816;
+  --ink-muted: #56615C;
+  --rule: #E2E7E5;
+  --rule-strong: #C3CCC8;
 
   /* the twins: US original vs European UCITS twin */
-  --us: #3A5A80;
-  --us-tint: #E3E8EE;
-  --eu: #0E6B47;
-  --eu-tint: #DDEBE3;
+  --us: #5A6676;
+  --us-tint: #EEF1F4;
+  --eu: #0A7B53;
+  --eu-tint: #E6F4EC;
 
-  /* signal: CTA background (white text on it is 4.9:1) and a darker shade for text on paper (5.1:1) */
-  --signal: #C8431E;
-  --signal-hover: #A93512;
-  --signal-ink: #B83A16;
-  --marker: #F2E36B;
+  /* actions are green like the twin (white on it is 5.3:1); red only for errors and the costliest broker */
+  --signal: #0A7B53;
+  --signal-hover: #086B48;
+  --signal-ink: #0A7B53;
+  --alert: #B42318;
+  --marker: #E6F4EC;
 
-  --focus: #16201B;
+  --focus: #111816;
   --on-signal: #FFFFFF;
 
-  /* type */
-  --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
-  --font-body: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  /* type: one family, newspaper grotesk with tabular figures */
+  --font-display: 'Schibsted Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Schibsted Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Schibsted Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lg: 1.125rem;
-  --text-xl: 1.375rem;
+  --text-xl: 1.3125rem;
   --text-2xl: 1.75rem;
   --text-3xl: clamp(1.9rem, 1.35rem + 2.6vw, 3.1rem);
   --text-num: clamp(2rem, 1.5rem + 2.4vw, 3.25rem);
 
-  --leading-tight: 1.08;
+  --leading-tight: 1.06;
   --leading-snug: 1.3;
   --leading-body: 1.55;
-  --tracking-display: -0.02em;
-  --tracking-caps: 0.08em;
+  --tracking-display: -0.015em;
+  --tracking-caps: 0.04em;
 
   /* spacing scale (4 px base) */
   --space-1: 0.25rem;
@@ -58,8 +61,8 @@
   /* layout */
   --content-max: 1080px;
   --gutter: 1rem;
-  --radius: 4px;
-  --radius-lg: 8px;
+  --radius: 6px;
+  --radius-lg: 10px;
   --tap: 44px;
   --rule-width: 1px;
 }
